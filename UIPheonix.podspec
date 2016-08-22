@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "UIPheonix"
   s.version      = "1.0.0"
-  s.summary      = "UIPheonix is simple, it is a framework+concept for build apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development!"
+  s.summary      = "UIPheonix is simple, it is a framework+concept for build apps where you create reusable UI controls and relate them to different states."
 
   s.homepage     = "https://github.com/MKGitHub/UIPheonix"
 
