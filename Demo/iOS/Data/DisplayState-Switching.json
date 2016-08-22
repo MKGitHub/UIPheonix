@@ -1,0 +1,24 @@
+{
+    "UIPCVModelViewRelationships":
+    {
+        "SimpleLabelModel":"SimpleLabelModelCVCell",
+        "SimpleButtonModel":"SimpleButtonModelCVCell"
+    },
+
+    "UIPCVCellModels":
+    [
+        {
+            "type":"SimpleLabelModel",
+            "text":"\nActually, this example is already happening!\nEach time you switch to a different example,\nthe display state is changed.\n😁🤔🤑\n",
+            "size":13,
+            "alignment":"center",
+            "backgroundColorHue":0.15
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":0,
+            "title":"Go back…"
+        }
+    ]
+}
+

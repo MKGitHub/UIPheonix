@@ -1,0 +1,62 @@
+{
+    "UIPCVModelViewRelationships":
+    {
+        "SimpleLabelModel":"SimpleLabelModelCVCell",
+        "SimpleCounterModel":"SimpleCounterModelCVCell",
+        "SimpleButtonModel":"SimpleButtonModelCVCell"
+    },
+
+    "UIPCVCellModels":
+    [
+        {
+            "type":"SimpleLabelModel",
+            "text":"\nIn this example we ”connect” two RUICs together, and the great thing is that we are practising good decoupling.\nI.e. there is no boilerplate, no glue-code, no KVO, no unnecessary complexity etc.\nWe simply use notifications – easy as pie! 😍😘🍲🍰\n",
+            "size":13,
+            "alignment":"center",
+            "style":"bold",
+            "backgroundColorHue":0.25
+        },
+        {
+            "type":"SimpleLabelModel",
+            "text":"The counter value is: ?",
+            "alignment":"center",
+            "backgroundColorHue":0.15,
+            "notificationId":"Counter_1"
+        },
+        {
+            "type":"SimpleCounterModel",
+            "value":-5,
+            "notificationId":"Counter_1"
+        },
+        {
+            "type":"SimpleLabelModel",
+            "text":"The counter value is: ?",
+            "alignment":"center",
+            "backgroundColorHue":0.45,
+            "notificationId":"Counter_2"
+        },
+        {
+            "type":"SimpleCounterModel",
+            "value":0,
+            "notificationId":"Counter_2"
+        },
+        {
+            "type":"SimpleLabelModel",
+            "text":"The counter value is: ?",
+            "alignment":"center",
+            "backgroundColorHue":0.65,
+            "notificationId":"Counter_3"
+        },
+        {
+            "type":"SimpleCounterModel",
+            "value":5,
+            "notificationId":"Counter_3"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":0,
+            "title":"Go back…"
+        }
+    ]
+}
+

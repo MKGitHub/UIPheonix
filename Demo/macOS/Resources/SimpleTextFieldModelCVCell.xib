@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11191"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="GT6-wh-gJB" customClass="SimpleTextFieldModelCVCell" customModule="UIPheonixDemo_macOS">
+            <connections>
+                <outlet property="ibTextField" destination="dPc-iC-wOC" id="xxx-2x-yYy"/>
+                <outlet property="view" destination="9wv-Ah-Yn2" id="Lli-1C-ajB"/>
+            </connections>
+        </collectionViewItem>
+        <customView wantsLayer="YES" id="9wv-Ah-Yn2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dPc-iC-wOC">
+                    <rect key="frame" x="20" y="9" width="280" height="22"/>
+                    <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="&lt;text field&gt;" drawsBackground="YES" id="IBR-mv-q7D">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.87827003002166748" green="0.95839822292327881" blue="0.99972933530807495" alpha="1" colorSpace="calibratedRGB"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="editingChanged:" target="GT6-wh-gJB" id="oYo-bn-0jj"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="dPc-iC-wOC" firstAttribute="top" secondItem="9wv-Ah-Yn2" secondAttribute="top" constant="9" id="Qpf-I4-QEU"/>
+                <constraint firstAttribute="trailing" secondItem="dPc-iC-wOC" secondAttribute="trailing" constant="20" id="jJQ-YB-FSt"/>
+                <constraint firstAttribute="bottom" secondItem="dPc-iC-wOC" secondAttribute="bottom" constant="9" id="kwZ-H0-BGb"/>
+                <constraint firstItem="dPc-iC-wOC" firstAttribute="leading" secondItem="9wv-Ah-Yn2" secondAttribute="leading" constant="20" id="sVq-0U-D4V"/>
+            </constraints>
+            <point key="canvasLocation" x="-15" y="-107"/>
+        </customView>
+    </objects>
+</document>

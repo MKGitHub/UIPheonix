@@ -1,0 +1,51 @@
+{
+    "UIPCVModelViewRelationships":
+    {
+        "SimpleLabelModel":"SimpleLabelModelCVCell",
+        "SimpleButtonModel":"SimpleButtonModelCVCell",
+        "SimpleVerticalSpaceModel":"SimpleVerticalSpaceModelCVCell"
+    },
+
+    "UIPCVCellModels":
+    [
+        {
+            "type":"SimpleLabelModel",
+            "text":"  Just a label.",
+            "size":30,
+            "--alignment--":"",
+            "--style--":"",
+            "backgroundColorHue":0.25
+        },
+        {
+            "type":"SimpleLabelModel",
+            "text":"Just a 🤗\nmultiline label, right aligned, small font 😏",
+            "size":20,
+            "alignment":"right",
+            "--style--":"",
+            "backgroundColorHue":0.50
+        },
+        {
+            "type":"SimpleVerticalSpaceModel",
+            "size":40
+        },
+        {
+            "type":"SimpleLabelModel",
+            "text":"I'm so centered & bold!\nAnd I have vertical space above & below me.",
+            "size":30,
+            "alignment":"center",
+            "style":"bold",
+            "backgroundColorHue":0.80
+        },
+        {
+            "type":"SimpleVerticalSpaceModel",
+            "size":50
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":0,
+            "title":"Go back…",
+            "focus":true
+        }
+    ]
+}
+

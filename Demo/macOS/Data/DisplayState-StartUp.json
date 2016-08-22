@@ -1,0 +1,50 @@
+{
+    "UIPCVModelViewRelationships":
+    {
+        "SimpleLabelModel":"SimpleLabelModelCVCell",
+        "SimpleButtonModel":"SimpleButtonModelCVCell"
+    },
+
+    "UIPCVCellModels":
+    [
+        {
+            "type":"SimpleLabelModel",
+            "text":"EXAMPLES",
+            "size":20,
+            "alignment":"center",
+            "style":"bold",
+            "backgroundColorHue":0.25
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":100,
+            "title":"Mixed models/views in a display state"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":101,
+            "title":"Animation example"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":102,
+            "title":"Switching between different display states"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":1030,
+            "title":"Appending models/views to same display state"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":1040,
+            "title":"Persistent models"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":105,
+            "title":"Update specific model & view"
+        }
+    ]
+}
+

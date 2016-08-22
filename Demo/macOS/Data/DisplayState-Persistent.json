@@ -1,0 +1,21 @@
+{
+    "UIPCVModelViewRelationships":
+    {
+        "SimpleTextFieldModel":"SimpleTextFieldModelCVCell",
+        "SimpleButtonModel":"SimpleButtonModelCVCell"
+    },
+
+    "UIPCVCellModels":
+    [
+        {
+            "type":"SimpleTextFieldModel",
+            "text":"Some text in me, you will enter…"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":1041,
+            "title":"Go back, but persist data…"
+        }
+    ]
+}
+

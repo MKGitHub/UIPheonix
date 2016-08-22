@@ -1,1 +1,62 @@
-# UIPheonix
+[![Status](https://img.shields.io/badge/Status-Active doing well & alive-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Pod](https://img.shields.io/badge/pod-1.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+
+[![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Swift](https://img.shields.io/badge/Swift Version-3 beta 6-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+
+[![RUIC Implementation Version](https://img.shields.io/badge/RUIC Implementation Version-1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+
+
+UIPheonix
+------
+![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/Logo.png)
+
+When Chuck Norris develops an app, he uses UIPheonix!
+
+UIPheonix is simple, it is a framework+concept for build apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development!
+
+![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/macOS.png)
+![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/iOS.png)
+![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/tvOS.png)
+
+* Reusable UI Control (from here on mentioned as a "RUIC") – Is basically just a Model and a View.
+You can configure a RUIC in any way you want, in the demo apps I'm using JSON files to configure models which are sent to cell views for a collection view.
+
+![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/RUIC.png)
+
+* Display List – An array of [RUIC, RUIC, RUIC…] etc. this is how UIPheonix know what to display.
+
+![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/States.png)
+
+* Display State – In the demo apps I'm using different states to…know the current state of the app.
+You may find alternative solutions, and your milage may vary :-)
+
+* Display Dictionary – A dictionary defining the relationship between model+view, and the properties of the model.
+In the demo apps I'm using JSON files.
+
+UIPheonix and the demo app is cross-platform (macOS, iOS and tvOS), that’s how I Kung Fu!
+
+
+Contributing
+------
+Please contribute or create your own RUICs!
+
+In the folder "3rd Party RUICs" you may add your own RUICs, if you already have a Cocoa Control (www.cocoacontrols.com) please consider converting it to the simple UIPheonix architecture.
+A great thing about RUICs in UIPheonix is that they all have the same architecture, so you don't have to implement and follow different implementations for each Cocoa Control in your app = less fragmentation!
+
+As UIPheonix may progress and evolve the "RUIC Implementation Version" will increase, and so in order to know which version of UIPheonix a RUIC is compatible with please add this info to your RUIC. I don't see this happening often.
+
+
+Notes
+------
+   https://github.com/MKGitHub/UIPheonix
+
+   http://www.xybernic.com
+
+   http://www.khanofsweden.com
+
+   Copyright 2016 Mohsan Khan
+
+   Licensed under the Apache License, Version 2.0.
+

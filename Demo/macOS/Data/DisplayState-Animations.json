@@ -1,0 +1,29 @@
+{
+    "UIPCVModelViewRelationships":
+    {
+        "SimpleViewAnimationModel":"SimpleViewAnimationModelCVCell",
+        "SimpleButtonModel":"SimpleButtonModelCVCell"
+    },
+
+    "UIPCVCellModels":
+    [
+        {
+            "type":"SimpleViewAnimationModel",
+            "animationState":false
+        },
+        {
+            "type":"SimpleViewAnimationModel",
+            "animationState":true
+        },
+        {
+            "type":"SimpleViewAnimationModel",
+            "animationState":false
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":0,
+            "title":"Go back…"
+        }
+    ]
+}
+
