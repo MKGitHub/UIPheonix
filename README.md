@@ -10,24 +10,24 @@
 
 UIPheonix
 ------
-![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/Logo.png)
+![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Logo.png)
 
 When Chuck Norris develops an app, he uses UIPheonix!
 
 UIPheonix is simple, it is a framework+concept for build apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development!
 
-![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/macOS.png)
-![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/iOS.png)
-![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/tvOS.png)
+![macOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/macOS.png)
+![iOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/iOS.png)
+![tvOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/tvOS.png)
 
 * Reusable UI Control (from here on mentioned as a "RUIC") – Is basically just a Model and a View.
 You can configure a RUIC in any way you want, in the demo apps I'm using JSON files to configure models which are sent to cell views for a collection view.
 
-![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/RUIC.png)
+![RUIC Diagram](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/RUIC.png)
 
 * Display List – An array of [RUIC, RUIC, RUIC…] etc. this is how UIPheonix know what to display.
 
-![UIPheonix Logo](https://github.com/MKGitHub/UIPheonix/Images/States.png)
+![States](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/States.png)
 
 * Display State – In the demo apps I'm using different states to…know the current state of the app.
 You may find alternative solutions, and your milage may vary :-)
