@@ -560,12 +560,14 @@
 					};
 					4D6FADF71D53E9B400A31C8F = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					66847F531D3FAC9D00A0427A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 76C479XDTD;
 						DevelopmentTeamName = "MOHSIN KHAN";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 					};
 				};
