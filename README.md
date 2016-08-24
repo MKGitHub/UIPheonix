@@ -10,7 +10,7 @@
 
 UIPheonix
 ------
-![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Logo.png)
+![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Banner.png)
 
 When Chuck Norris develops an app, he uses UIPheonix!
 

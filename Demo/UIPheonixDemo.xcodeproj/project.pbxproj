@@ -10,6 +10,8 @@
 		4D3C7A791D5BF6BD0006C7AE /* SimpleButtonModelCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAF71E1D379D7C00A4B1FC /* SimpleButtonModelCVCell.swift */; };
 		4D3C7A7A1D5BF79A0006C7AE /* SimpleButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAF7181D379D7C00A4B1FC /* SimpleButtonModel.swift */; };
 		4D3C7A7B1D5BF8C90006C7AE /* SimpleButtonModelCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3C7A771D5BEDB10006C7AE /* SimpleButtonModelCVCell.xib */; };
+		4D3E212E1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */; };
+		4D3E212F1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */; };
 		4D6FADFB1D53E9B500A31C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6FADFA1D53E9B500A31C8F /* AppDelegate.swift */; };
 		4D6FADFD1D53E9B500A31C8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6FADFC1D53E9B500A31C8F /* ViewController.swift */; };
 		4D6FADFF1D53E9B500A31C8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6FADFE1D53E9B500A31C8F /* Assets.xcassets */; };
@@ -23,7 +25,6 @@
 		4D74B2F81D53F2AC00682A02 /* UIPInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAF6EF1D379D6C00A4B1FC /* UIPInstantiatable.swift */; };
 		4D74B2F91D53F2AC00682A02 /* UIPBaseCVCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAF6F11D379D6C00A4B1FC /* UIPBaseCVCellView.swift */; };
 		4D832C941D4FF9BA0066A989 /* SimpleTextFieldModelCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D832C931D4FF9BA0066A989 /* SimpleTextFieldModelCVCell.xib */; };
-		4D9B3A6A1D6A4A90006717AF /* UIPheonix.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */; };
 		4DA5F88F1D57CEF80049956B /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5F88E1D57CEF80049956B /* UIPMisc.swift */; };
 		4DA5F8901D57CF540049956B /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5F88C1D57CEC50049956B /* DemoViewController.swift */; };
 		4DA5F8911D57CF5E0049956B /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5F88E1D57CEF80049956B /* UIPMisc.swift */; };
@@ -131,6 +132,8 @@
 
 /* Begin PBXFileReference section */
 		4D3C7A771D5BEDB10006C7AE /* SimpleButtonModelCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleButtonModelCVCell.xib; sourceTree = "<group>"; };
+		4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UIPheonix_RELEASE.xcconfig; sourceTree = "<group>"; };
+		4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UIPheonix_DEBUG.xcconfig; sourceTree = "<group>"; };
 		4D5439C71CA75C4500AA882D /* UIPheonixDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPheonixDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6FADF81D53E9B400A31C8F /* UIPheonixDemo-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPheonixDemo-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6FADFA1D53E9B500A31C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +142,6 @@
 		4D6FAE011D53E9B500A31C8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D6FAE031D53E9B500A31C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D832C931D4FF9BA0066A989 /* SimpleTextFieldModelCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTextFieldModelCVCell.xib; sourceTree = "<group>"; };
-		4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UIPheonix.xcconfig; sourceTree = "<group>"; };
 		4DA5F88C1D57CEC50049956B /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		4DA5F88E1D57CEF80049956B /* UIPMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPMisc.swift; sourceTree = "<group>"; };
 		4DA5F8931D57D20F0049956B /* CustomViewControllerPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewControllerPresentationAnimator.swift; sourceTree = "<group>"; };
@@ -246,7 +248,8 @@
 		4D5439BE1CA75C4500AA882D = {
 			isa = PBXGroup;
 			children = (
-				4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */,
+				4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */,
+				4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */,
 				66AAF6F91D379D7C00A4B1FC /* Demo */,
 				66AAF6E51D379D6C00A4B1FC /* UIPheonix */,
 				4D5439C81CA75C4500AA882D /* Products */,
@@ -635,9 +638,10 @@
 				4DC567071D593B98005A3F70 /* DisplayState-StartUp.json in Resources */,
 				4DC567021D593B98005A3F70 /* DisplayState-Animations.json in Resources */,
 				4DC5670A1D593C15005A3F70 /* SimpleLabelModelCVCell.xib in Resources */,
+				4D3E212F1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig in Resources */,
+				4D3E212E1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig in Resources */,
 				4DAB68F51D5E763200BFF15A /* SimpleTextFieldModelCVCell.xib in Resources */,
 				4DC567031D593B98005A3F70 /* DisplayState-Appending.json in Resources */,
-				4D9B3A6A1D6A4A90006717AF /* UIPheonix.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,7 +802,7 @@
 /* Begin XCBuildConfiguration section */
 		4D5439ED1CA75C4600AA882D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
@@ -876,7 +880,7 @@
 		};
 		4D5439EE1CA75C4600AA882D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_OPTIMIZATION = time;
@@ -946,7 +950,7 @@
 		};
 		4D5439F01CA75C4600AA882D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -958,7 +962,7 @@
 		};
 		4D5439F11CA75C4600AA882D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -970,7 +974,7 @@
 		};
 		4D6FAE041D53E9B500A31C8F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -986,7 +990,7 @@
 		};
 		4D6FAE051D53E9B500A31C8F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -1001,7 +1005,7 @@
 		};
 		66847F601D3FAC9D00A0427A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1017,7 +1021,7 @@
 		};
 		66847F611D3FAC9D00A0427A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D9B3A691D6A4A90006717AF /* UIPheonix.xcconfig */;
+			baseConfigurationReference = 4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
