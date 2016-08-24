@@ -8,8 +8,6 @@
 [![RUIC Implementation Version](https://img.shields.io/badge/RUIC Implementation Version-1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 
-UIPheonix
-------
 ![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Banner.png)
 
 When Chuck Norris develops an app, he uses UIPheonix!
