@@ -12,7 +12,7 @@
 
 When Chuck Norris develops an app, he uses UIPheonix!
 
-UIPheonix is simple, it is a framework+concept for build apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development!
+UIPheonix is simple, it is a framework+concept for building apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development! Think of it as using Lego blocks, you can use similar ones and/or move them around.
 
 ![macOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/macOS.png)
 ![iOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/iOS.png)
