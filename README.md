@@ -10,9 +10,9 @@
 
 ![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Banner.png)
 
-When Chuck Norris develops an app, he uses UIPheonix!
+When Chuck Norris develops an app, he uses UIPheonix! Because Chuck Norris is right and does not like the glue code, the boilerplate and the very common overly engineered unnecessary complexity phenomenon! Chuck Norris likes when stuff is flexible, dynamic and scalable, and he works with designers that change stuff many times so he needs technology that can handle the agility.
 
-UIPheonix is simple, it is a framework+concept for building apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development! Think of it as using Lego blocks, you can use similar ones and/or move them around.
+UIPheonix is simple, it is a framework+concept for building apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development! Think of it as using Lego blocks, you can use similar ones and move them around easy as pie.
 
 ![macOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/macOS.png)
 ![iOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/iOS.png)
@@ -23,7 +23,7 @@ You can configure a RUIC in any way you want, in the demo apps I'm using JSON fi
 
 ![RUIC Diagram](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/RUIC.png)
 
-* Display List – An array of [RUIC, RUIC, RUIC…] etc. this is how UIPheonix know what to display.
+* Display List – An array of [RUIC, RUIC, RUIC…], etc., this is how UIPheonix knows what to display.
 
 ![States](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/States.png)
 
@@ -34,6 +34,12 @@ You may find alternative solutions, and your milage may vary :-)
 In the demo apps I'm using JSON files.
 
 UIPheonix and the demo app is cross-platform (macOS, iOS and tvOS), that’s how I Kung Fu!
+
+
+Whats Next?
+------
+* Add more features.
+* Try to make everything even simpler.
 
 
 Contributing
