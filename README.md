@@ -5,7 +5,7 @@
 [![Pod](https://img.shields.io/badge/pod-1.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Swift](https://img.shields.io/badge/Swift Version-3 beta 6-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Swift](https://img.shields.io/badge/Swift Version-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![RUIC Implementation Version](https://img.shields.io/badge/RUIC Implementation Version-1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
