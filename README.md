@@ -16,7 +16,7 @@ When Chuck Norris develops an app, he uses UIPheonix! Because Chuck Norris is ri
 
 Inspired by game development UIPheonix is a simple framework + concept for building apps where you create reusable UI controls and relate them to different states. The same API apply for cross platform development! Think of it as using Lego blocks, you can use similar ones and move them around easy as pie.
 
-![macOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/macOS.png)
+![macOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/macOS.gif)
 ![iOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/iOS.png)
 ![tvOS Demo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/tvOS.png)
 
@@ -36,6 +36,14 @@ You may find alternative solutions, and your milage may vary :-)
 In the demo apps I'm using JSON files.
 
 UIPheonix and the demo app is cross-platform (macOS, iOS and tvOS), that’s how I Kung Fu!
+
+
+Example RUICs
+------
+Making a RUIC is pretty much about breaking down your UI into small reusable pieces/blocks. Then create a JSON file, a model and the view – then you simply put them in a display list.
+
+![ExampleRUIC1](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Example1.png)
+![ExampleRUIC1](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Example2.png)
 
 
 Whats Next?
