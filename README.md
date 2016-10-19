@@ -52,6 +52,11 @@ Whats Next?
 * Try to make everything even simpler.
 
 
+Used By
+------
+[McDonald's Sweden](https://itunes.apple.com/se/app/mcdonalds-sverige/id322810359?mt=8)
+
+
 Contributing
 ------
 Please contribute or create your own RUICs!
