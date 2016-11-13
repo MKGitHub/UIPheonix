@@ -1,7 +1,9 @@
 //
-//   Last Update: 6 Sep 2016
-// Xcode Version: 8 beta 6 (8S201h)
-// Swift Version: 3 beta 6
+// Debug
+//
+//   Last Update: 1 Nov 2016, version 7
+// Xcode Version: 8 GM (8A218a)
+// Swift Version: 3.0
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
 //
@@ -11,9 +13,13 @@
 
 SWIFT_VERSION = 3.0
 
+ENABLE_BITCODE = YES
+
 ONLY_ACTIVE_ARCH = YES
 
-DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+DEBUG_INFORMATION_FORMAT = dwarf
+DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*] = dwarf
+DEBUG_INFORMATION_FORMAT[sdk=iphoneos*] = dwarf-with-dsym
 
 GCC_OPTIMIZATION_LEVEL = 0
 
@@ -27,7 +33,7 @@ SWIFT_OPTIMIZATION_LEVEL = -Onone
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
 
-OTHER_SWIFT_FLAGS = -D DEBUG -Xfrontend -debug-time-function-bodies
+OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies
 
 RUN_CLANG_STATIC_ANALYZER = NO
 CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep
@@ -59,6 +65,8 @@ CLANG_ENABLE_OBJC_ARC = YES
 
 ENABLE_STRICT_OBJC_MSGSEND = NO
 
+CLANG_WARN_SUSPICIOUS_MOVE = YES
+
 CLANG_WARN_EMPTY_BODY = YES
 
 CLANG_WARN_BOOL_CONVERSION = YES
@@ -66,8 +74,6 @@ CLANG_WARN_BOOL_CONVERSION = YES
 CLANG_WARN_CONSTANT_CONVERSION = YES
 
 GCC_WARN_64_TO_32_BIT_CONVERSION = YES
-
-CLANG_WARN_SUSPICIOUS_MOVE = YES
 
 CLANG_WARN_ENUM_CONVERSION = YES
 
