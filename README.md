@@ -54,6 +54,11 @@ Making a RUIC is pretty simple as making a model+view.
 ![ExampleRUIC1](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Example2.png)
 
 
+What’s New?
+------
+* Version 2 adds support for table view as well as many refactorings to make UIPheonix even easier to use.
+
+
 How to Install
 ------
 * CocoaPods: `pod 'UIPheonix', '~> 2.0.0'`
