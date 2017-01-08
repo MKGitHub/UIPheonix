@@ -1,8 +1,8 @@
 //
 // Debug
 //
-//   Last Update: 1 Nov 2016, version 7
-// Xcode Version: 8 GM (8A218a)
+//   Last Update: 10 Dec 2016, version 9
+// Xcode Version: 8.1 (8B62)
 // Swift Version: 3.0
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
@@ -33,7 +33,8 @@ SWIFT_OPTIMIZATION_LEVEL = -Onone
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
 
-OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies
+// limit compile time to 100ms, warn if longer
+OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies //-warn-long-function-bodies=100
 
 RUN_CLANG_STATIC_ANALYZER = NO
 CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep
@@ -48,7 +49,7 @@ COMBINE_HIDPI_IMAGES = YES
 LD_NO_PIE = NO
 GCC_DYNAMIC_NO_PIC = YES
 
-GCC_NO_COMMON_BLOCKS = NO
+GCC_NO_COMMON_BLOCKS = YES;
 
 GCC_UNROLL_LOOPS = YES
 
@@ -63,7 +64,7 @@ CLANG_ENABLE_MODULES = YES
 
 CLANG_ENABLE_OBJC_ARC = YES
 
-ENABLE_STRICT_OBJC_MSGSEND = NO
+ENABLE_STRICT_OBJC_MSGSEND = YES;
 
 CLANG_WARN_SUSPICIOUS_MOVE = YES
 
@@ -130,6 +131,8 @@ ENABLE_TESTABILITY = YES
 ASSETCATALOG_COMPILER_OPTIMIZATION = time
 
 EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO
+
+MTL_ENABLE_DEBUG_INFO = YES;
 
 
 //

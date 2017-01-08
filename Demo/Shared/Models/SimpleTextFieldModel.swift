@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -26,13 +26,19 @@
 //
 
 
-class SimpleTextFieldModel:UIPBaseCVCellModel
+final class SimpleTextFieldModel:UIPBaseCellModel
 {
+    // MARK: Public Constants
+    struct Key
+    {
+        static let text:String = "text"
+    }
+
     // MARK: Public Member
     public var mText:String!
 
 
-    // MARK: UIPInstantiatable
+    // MARK: UIPBaseCellModelProtocol
 
 
     required init()
@@ -41,9 +47,9 @@ class SimpleTextFieldModel:UIPBaseCVCellModel
     }
 
 
-    override func setContents(with dictionary:Dictionary<String, AnyObject>)
+    override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mText = dictionary["text"] as! String
+        mText = dictionary[Key.text] as! String
     }
 
 
@@ -58,28 +64,14 @@ class SimpleTextFieldModel:UIPBaseCVCellModel
     }
 
 
-    // MARK: UIPBaseCVCellModel
-
-
-    override class func viewReuseIdStatic()
-    -> String
-    {
-        return "\(self)"
-    }
-
-
-    override func viewReuseId()
-    -> String
-    {
-        return "\(type(of:self))"
-    }
+    // MARK: UIPBaseCellModel
 
 
     override func toDictionary()
     -> Dictionary<String, Any>
     {
         return [
-            "mText":mText
+            Key.text:mText
         ]
     }
 }

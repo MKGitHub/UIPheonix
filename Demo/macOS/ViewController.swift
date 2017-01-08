@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -34,22 +34,32 @@ class ViewController:NSViewController
     {
         super.viewDidAppear()
 
-        // create a nice launch screen effect like in iOS
+        // adjust window position
+        if let window:NSWindow = self.view.window
+        {
+            window.setFrameOrigin(window.frame.offsetBy(dx:0, dy:200).origin)
+        }
+
+        // create a nice/delayed launch screen effect like in iOS
         DispatchQueue.main.asyncAfter(deadline:(.now() + .seconds(1)), execute:
         {
             // start the UIPheonix macOS demo
             // create & present a new instance of the demo VC
-            let demoViewController:DemoViewController = DemoViewController.newInstance(with:UIDisplayState.startUp)
+            let demoViewController:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:[DemoCollectionViewController.AttributeKeyName.appDisplayState:AppDisplayState.startUp])
+            // or:
+            //let demoViewController:DemoTableViewController = DemoTableViewController.newInstance(with:[:])
+
+            // present using a custom view controller presentation animator
             self.presentViewController(demoViewController, animator:CustomViewControllerPresentationAnimator())
         })
     }
 
 
-    override var representedObject:Any?
+    /*override var representedObject:Any?
     {
         didSet {
             // Update the view, if already loaded.
         }
-    }
+    }*/
 }
 

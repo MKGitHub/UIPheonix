@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -28,13 +28,19 @@
 import CoreGraphics
 
 
-class SimpleVerticalSpaceModel:UIPBaseCVCellModel
+final class SimpleVerticalSpaceModel:UIPBaseCellModel
 {
+    // MARK: Public Constants
+    struct Key
+    {
+        static let size:String = "size"
+    }
+
     // MARK: Public Members
     public var mSize:CGFloat!
 
 
-    // MARK: UIPInstantiatable
+    // MARK: UIPBaseCellModelProtocol
 
 
     required init()
@@ -43,9 +49,9 @@ class SimpleVerticalSpaceModel:UIPBaseCVCellModel
     }
 
 
-    override func setContents(with dictionary:Dictionary<String, AnyObject>)
+    override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mSize = dictionary["size"] as! CGFloat
+        mSize = dictionary[Key.size] as! CGFloat
     }
 
 
@@ -60,28 +66,14 @@ class SimpleVerticalSpaceModel:UIPBaseCVCellModel
     }
 
 
-    // MARK: UIPBaseCVCellModel
-
-
-    override class func viewReuseIdStatic()
-    -> String
-    {
-        return "\(self)"
-    }
-
-
-    override func viewReuseId()
-    -> String
-    {
-        return "\(type(of:self))"
-    }
+    // MARK: UIPBaseCellModel
 
 
     override func toDictionary()
     -> Dictionary<String, Any>
     {
         return [
-            "mSize":mSize
+            Key.size:mSize
         ]
     }
 }

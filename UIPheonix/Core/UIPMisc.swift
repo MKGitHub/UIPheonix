@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -50,6 +50,21 @@ func NOTE()
 }
 
 
+// MARK:- Constants
+
+
+struct UIPConstants
+{
+    static let modelType:String = "type"
+
+    struct Collection
+    {
+        static let modelViewRelationships:String = "UIPCVModelViewRelationships"
+        static let cellModels:String = "UIPCVCellModels"
+    }
+}
+
+
 // MARK:- Return Types
 
 
@@ -59,6 +74,11 @@ func NOTE()
 /// - false = the size is relative and should be added/subtracted to the original size
 ///
 typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool, height:CGFloat)
+
+///
+/// Convenient variable for an unmodified cell size.
+///
+var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHeight:false, height:0)
 
 
 // MARK:- Cross Platform Types
@@ -80,7 +100,9 @@ typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool,
     typealias UIPPlatformLabel = UILabel
     typealias UIPPlatformButton = UIButton
     typealias UIPPlatformCollectionViewCell = UICollectionViewCell
+    typealias UIPPlatformTableViewCell = UITableViewCell
     typealias UIPPlatformCollectionView = UICollectionView
+    typealias UIPPlatformTableView = UITableView
     typealias UIPPlatformViewController = UIViewController
 #elseif os(macOS)
     typealias UIPPlatformFloat = CGFloat
@@ -94,7 +116,9 @@ typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool,
     typealias UIPPlatformLabel = NSTextField
     typealias UIPPlatformButton = NSButton
     typealias UIPPlatformCollectionViewCell = NSCollectionViewItem
+    typealias UIPPlatformTableViewCell = NSTableCellView
     typealias UIPPlatformCollectionView = NSCollectionView
+    typealias UIPPlatformTableView = NSTableView
     typealias UIPPlatformViewController = NSViewController
 #endif
 
@@ -114,39 +138,6 @@ extension CGFloat
         #elseif os(macOS)
             return mac
         #endif
-    }
-}
-
-
-// MARK:- Dictionary
-
-
-func += <K, V>(left:inout Dictionary<K, V>, right:Dictionary<K, V>)
-{
-    for (k, v) in right
-    {
-        left.updateValue(v, forKey:k)
-    }
-}
-
-
-extension Dictionary
-{
-    mutating func merge(with dictionary:Dictionary)
-    {
-        for (key, value) in dictionary
-        {
-            self[key] = value
-        }
-    }
-
-
-    mutating func mergeInPlace<S:Sequence>(sequence:S) where S.Iterator.Element == (Key,Value)
-    {
-        for (key, value) in sequence
-        {
-            self[key] = value
-        }
     }
 }
 

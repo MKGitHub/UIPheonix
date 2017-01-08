@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="GT6-wh-gJB" customClass="SimpleButtonModelCVCell" customModule="UIPheonixDemo_macOS">
+            <connections>
+                <outlet property="ibButton" destination="fVB-Ff-PMH" id="J62-YQ-gwY"/>
+                <outlet property="ibCenterConstraint" destination="0Zf-1F-A4p" id="vfG-vd-Ydt"/>
+                <outlet property="view" destination="9wv-Ah-Yn2" id="Lli-1C-ajB"/>
+            </connections>
+        </collectionViewItem>
+        <customView wantsLayer="YES" focusRingType="none" id="9wv-Ah-Yn2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-Ff-PMH">
+                    <rect key="frame" x="120" y="7" width="80" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="qG8-zI-env"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" title="&lt;title&gt;" bezelStyle="texturedRounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="C1i-cX-QMj">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="buttonAction:" target="GT6-wh-gJB" id="OpL-J9-pQk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fVB-Ff-PMH" firstAttribute="centerX" secondItem="9wv-Ah-Yn2" secondAttribute="centerX" id="0Zf-1F-A4p"/>
+                <constraint firstItem="fVB-Ff-PMH" firstAttribute="top" secondItem="9wv-Ah-Yn2" secondAttribute="top" constant="10" id="K43-CJ-Y2v"/>
+                <constraint firstAttribute="bottom" secondItem="fVB-Ff-PMH" secondAttribute="bottom" constant="9" id="Rul-hg-FF0"/>
+            </constraints>
+            <point key="canvasLocation" x="-15" y="-107.5"/>
+        </customView>
+    </objects>
+</document>

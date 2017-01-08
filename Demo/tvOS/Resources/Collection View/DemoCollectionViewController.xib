@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DemoViewController" customModule="UIPheonixDemo_tvOS">
+            <connections>
+                <outlet property="ibCollectionView" destination="a52-kp-TPN" id="fks-aJ-Y1v"/>
+                <outlet property="view" destination="iN0-l3-epB" id="H73-dK-oMo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="none" prefetchingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a52-kp-TPN">
+                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="tj3-2h-7E4">
+                        <size key="itemSize" width="1920" height="100"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="a52-kp-TPN" secondAttribute="trailing" id="5wZ-Q0-qZo"/>
+                <constraint firstItem="a52-kp-TPN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gNg-Ng-n2j"/>
+                <constraint firstAttribute="bottom" secondItem="a52-kp-TPN" secondAttribute="bottom" id="gVT-9j-QHM"/>
+                <constraint firstItem="a52-kp-TPN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wOH-B8-0zn"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

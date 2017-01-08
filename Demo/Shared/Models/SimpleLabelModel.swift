@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -34,8 +34,32 @@ import CoreGraphics
 #endif
 
 
-class SimpleLabelModel:UIPBaseCVCellModel
+final class SimpleLabelModel:UIPBaseCellModel
 {
+    // MARK: Public Constants
+    struct Key
+    {
+        static let text:String = "text"
+        static let size:String = "size"
+        static let alignment:String = "alignment"
+        static let style:String = "style"
+        static let backgroundColorHue:String = "backgroundColorHue"
+        static let notificationId:String = "notificationId"
+    }
+
+    struct Alignment
+    {
+        static let left:String = "left"
+        static let center:String = "center"
+        static let right:String = "right"
+    }
+
+    struct Style
+    {
+        static let regular:String = "regular"
+        static let bold:String = "bold"
+    }
+
     // MARK: Public Members
     public var mText:String!
     public var mSize:CGFloat!
@@ -45,7 +69,7 @@ class SimpleLabelModel:UIPBaseCVCellModel
     public var mNotificationId:String!
 
 
-    // MARK: UIPInstantiatable
+    // MARK:- UIPBaseCellModelProtocol
 
 
     required init()
@@ -54,9 +78,9 @@ class SimpleLabelModel:UIPBaseCVCellModel
     }
 
 
-    override func setContents(with dictionary:Dictionary<String, AnyObject>)
+    override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mText = dictionary["text"] as! String
+        mText = dictionary[Key.text] as! String
 
         #if os(iOS)
             let crossPlatformFontSize:CGFloat = UIPPlatformFont.systemFontSize
@@ -65,58 +89,45 @@ class SimpleLabelModel:UIPBaseCVCellModel
         #elseif os(macOS)
             let crossPlatformFontSize:CGFloat = 12
         #endif
-        mSize = (dictionary["size"] as? CGFloat) ?? crossPlatformFontSize    // fallback to default value
+        mSize = (dictionary[Key.size] as? CGFloat) ?? crossPlatformFontSize    // fallback to default value
 
-        mAlignment = (dictionary["alignment"] as? String) ?? "left"          // fallback to default value
-        mStyle = (dictionary["style"] as? String) ?? "regular"               // fallback to default value
+        mAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.left          // fallback to default value
+        mStyle = (dictionary[Key.style] as? String) ?? Style.regular               // fallback to default value
 
-        mBackgroundColorHue = dictionary["backgroundColorHue"] as! CGFloat
+        mBackgroundColorHue = dictionary[Key.backgroundColorHue] as! CGFloat
 
-        mNotificationId = (dictionary["notificationId"] as? String) ?? nil   // fallback to default value
+        mNotificationId = (dictionary[Key.notificationId] as? String) ?? nil   // fallback to default value
     }
 
 
-    // MARK: Life Cycle
+    // MARK:- Life Cycle
 
 
-    init(text:String, size:CGFloat, alignment:String, backgroundColorHue:CGFloat, notificationId:String)
+    init(text:String, size:CGFloat, alignment:String, style:String, backgroundColorHue:CGFloat, notificationId:String)
     {
         super.init()
 
         mText = text
         mSize = size
         mAlignment = alignment
+        mStyle = style
         mBackgroundColorHue = backgroundColorHue
         mNotificationId = notificationId
     }
 
 
-    // MARK: UIPBaseCVCellModel
-
-
-    override class func viewReuseIdStatic()
-    -> String
-    {
-        return "\(self)"
-    }
-
-
-    override func viewReuseId()
-    -> String
-    {
-        return "\(type(of:self))"
-    }
+    // MARK:- UIPBaseCellModel
 
 
     override func toDictionary()
     -> Dictionary<String, Any>
     {
         return [
-            "mText":mText,
-            "mSize":mSize,
-            "mAlignment":mAlignment,
-            "mBackgroundColorHue":CGFloat(mBackgroundColorHue),
-            "mNotificationId":mNotificationId
+            Key.text:mText,
+            Key.size:mSize,
+            Key.alignment:mAlignment,
+            Key.backgroundColorHue:CGFloat(mBackgroundColorHue),
+            Key.notificationId:mNotificationId
         ]
     }
 }

@@ -45,6 +45,11 @@
             "type":"SimpleButtonModel",
             "id":105,
             "title":"Update specific model & view"
+        },
+        {
+            "type":"SimpleButtonModel",
+            "id":106,
+            "title":"Custom made models"
         }
     ]
 }

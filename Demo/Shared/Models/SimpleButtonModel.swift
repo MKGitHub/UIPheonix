@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -26,22 +26,38 @@
 //
 
 
-class SimpleButtonModel:UIPBaseCVCellModel
+final class SimpleButtonModel:UIPBaseCellModel
 {
+    // MARK: Public Constants
+    struct Key
+    {
+        static let id:String = "id"
+        static let title:String = "title"
+        static let alignment:String = "alignment"
+        static let focus:String = "focus"
+    }
+
+    struct Alignment
+    {
+        static let left:String = "left"
+        static let center:String = "center"
+        static let right:String = "right"
+    }
+
     // MARK: Public Members
-    public var mButtonId:Int!
-    public var mButtonTitle:String!
+    public var mId:Int!
+    public var mTitle:String!
 
     #if os(macOS)
         public var mAlignment:String!
     #endif
 
     #if os(tvOS)
-        public var mButtonFocus:Bool = false
+        public var mFocus:Bool = false
     #endif
 
 
-    // MARK: UIPInstantiatable
+    // MARK:- UIPBaseCellModelProtocol
 
 
     required init()
@@ -50,22 +66,22 @@ class SimpleButtonModel:UIPBaseCVCellModel
     }
 
 
-    override func setContents(with dictionary:Dictionary<String, AnyObject>)
+    override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mButtonId = dictionary["id"] as! Int
-        mButtonTitle = dictionary["title"] as! String
+        mId = dictionary[Key.id] as! Int
+        mTitle = dictionary[Key.title] as! String
 
         #if os(macOS)
-            mAlignment = (dictionary["alignment"] as? String) ?? "center"    // fallback to default value
+            mAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.center    // fallback to default value
         #endif
 
         #if os(tvOS)
-            mButtonFocus = (dictionary["focus"] as? Bool) ?? false    // fallback to default value
+            mFocus = (dictionary[Key.focus] as? Bool) ?? false    // fallback to default value
         #endif
     }
 
 
-    // MARK: Life Cycle
+    // MARK:- Life Cycle
 
 
     #if os(iOS)
@@ -73,63 +89,49 @@ class SimpleButtonModel:UIPBaseCVCellModel
         {
             super.init()
 
-            mButtonId = id
-            mButtonTitle = title
+            mId = id
+            mTitle = title
         }
     #elseif os(tvOS)
         init(id:Int, title:String, focus:Bool)
         {
             super.init()
 
-            mButtonId = id
-            mButtonTitle = title
+            mId = id
+            mTitle = title
 
-            mButtonFocus = focus
+            mFocus = focus
         }
     #elseif os(macOS)
         init(id:Int, title:String, alignment:String)
         {
             super.init()
 
-            mButtonId = id
-            mButtonTitle = title
+            mId = id
+            mTitle = title
 
             mAlignment = alignment
         }
     #endif
 
 
-    // MARK: UIPBaseCVCellModel
-
-
-    override class func viewReuseIdStatic()
-    -> String
-    {
-        return "\(self)"
-    }
-
-
-    override func viewReuseId()
-    -> String
-    {
-        return "\(type(of:self))"
-    }
+    // MARK:- UIPBaseCellModel
 
 
     override func toDictionary()
     -> Dictionary<String, Any>
     {
-        var dict:Dictionary<String, Any> = Dictionary<String, Any>(minimumCapacity:3)
+        var dict:Dictionary<String, Any> = Dictionary<String, Any>(minimumCapacity:2)
 
-        dict["mButtonId"] = mButtonId
-        dict["mButtonTitle"] = mButtonTitle
+        dict[Key.id] = mId
+        dict[Key.title] = mTitle
 
         #if os(macOS)
-            dict["mAlignment"] = mAlignment
+            dict[Key.alignment] = mAlignment
         #endif
 
         #if os(tvOS)
-            dict["mButtonFocus"] = mButtonFocus
+            dict[Key.focus] = mFocus
         #endif
 
         return dict

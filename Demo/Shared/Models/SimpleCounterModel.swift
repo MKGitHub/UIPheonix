@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -26,14 +26,21 @@
 //
 
 
-class SimpleCounterModel:UIPBaseCVCellModel
+final class SimpleCounterModel:UIPBaseCellModel
 {
+    // MARK: Public Constants
+    struct Key
+    {
+        static let value:String = "value"
+        static let notificationId:String = "notificationId"
+    }
+
     // MARK: Public Members
     public var mValue:Int!
     public var mNotificationId:String!
 
 
-    // MARK: UIPInstantiatable
+    // MARK:- UIPBaseCellModelProtocol
 
 
     required init()
@@ -42,15 +49,15 @@ class SimpleCounterModel:UIPBaseCVCellModel
     }
 
 
-    override func setContents(with dictionary:Dictionary<String, AnyObject>)
+    override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mValue = dictionary["value"] as! Int
+        mValue = dictionary[Key.value] as! Int
 
-        mNotificationId = (dictionary["notificationId"] as? String) ?? nil    // fallback to default value
+        mNotificationId = (dictionary[Key.notificationId] as? String) ?? nil    // fallback to default value
     }
 
 
-    // MARK: Life Cycle
+    // MARK:- Life Cycle
 
 
     init(value:Int, notificationId:String)
@@ -62,29 +69,15 @@ class SimpleCounterModel:UIPBaseCVCellModel
     }
 
 
-    // MARK: UIPBaseCVCellModel
-
-
-    override class func viewReuseIdStatic()
-    -> String
-    {
-        return "\(self)"
-    }
-
-
-    override func viewReuseId()
-    -> String
-    {
-        return "\(type(of:self))"
-    }
+    // MARK:- UIPBaseCellModel
 
 
     override func toDictionary()
     -> Dictionary<String, Any>
     {
         return [
-            "mValue":mValue,
-            "mNotificationId":mNotificationId
+            Key.value:mValue,
+            Key.notificationId:mNotificationId
         ]
     }
 }

@@ -1,6 +1,6 @@
 //
 //  UIPheonix
-//  Copyright © 2016 Mohsan Khan. All rights reserved.
+//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
 //
 
 //
@@ -10,7 +10,7 @@
 //
 
 //
-//  Copyright 2016 Mohsan Khan
+//  Copyright 2016/2017 Mohsan Khan
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -37,8 +37,7 @@ import CoreGraphics
 fileprivate enum UIPDelegateViewType
 {
     case collection
-    //case table
-    //case stack
+    case table
 }
 
 
@@ -49,13 +48,13 @@ final class UIPheonix
     fileprivate var mUIPDelegateViewType:UIPDelegateViewType!
 
     // (initialized as empty for convenience)
-    fileprivate var mDisplayDictionary:Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+    fileprivate var mModelViewRelationships:Dictionary<String, String> = Dictionary<String, String>()
     fileprivate var mViewReuseIds:Dictionary<String, Any> = Dictionary<String, Any>()
-    fileprivate var mUIDisplayList:Array<UIPInstantiatable> = Array<UIPInstantiatable>()
+    fileprivate var mDisplayModels:Array<UIPBaseCellModelProtocol> = Array<UIPBaseCellModelProtocol>()
 
     // MARK: Private Weak Reference
-    fileprivate weak var mDelegate:UIPDelegate?
     fileprivate weak var mDelegateCollectionView:UIPPlatformCollectionView?
+    fileprivate weak var mDelegateTableView:UIPPlatformTableView?
 
 
     // MARK:- Life Cycle
@@ -64,135 +63,284 @@ final class UIPheonix
     ///
     /// Init for UICollectionView.
     ///
-    init(delegate:UIPDelegate?, collectionView:UIPPlatformCollectionView?, displayDictionary:Dictionary<String, AnyObject>)
+    /// - Parameters:
+    ///   - collectionView: The collection view.
+    ///
+    init(with collectionView:UIPPlatformCollectionView?)
     {
         // init members
         mUIPDelegateViewType = UIPDelegateViewType.collection
         mApplicationNameDot = getApplicationName() + "."
 
-        mDelegate = delegate
         mDelegateCollectionView = collectionView
-        mDisplayDictionary = displayDictionary
-
-        // connect & display
-        connectCollectionView()
-        createDisplayList(append:false)
     }
 
 
-    // MARK:- JSON
-
-
     ///
-    /// Convenience JSON file loader.
+    /// Init for UITableView.
     ///
-    class func loadJSONFile(_ filePath:String)
-    -> Dictionary<String, AnyObject>?
+    /// - Parameters:
+    ///   - tableView: The table view.
+    ///
+    init(with tableView:UIPPlatformTableView?)
     {
-        if let jsonFilePath:String = Bundle.main.path(forResource:filePath, ofType:"json")
-        {
-            do
-            {
-                let fileUrl:URL = URL(fileURLWithPath:jsonFilePath)
-                let jsonData:Data = try Data(contentsOf:fileUrl, options:NSData.ReadingOptions.uncached)
-                let jsonDictionary:Dictionary<String, AnyObject> = try JSONSerialization.jsonObject(with:jsonData, options:JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, AnyObject>
+        // init members
+        mUIPDelegateViewType = UIPDelegateViewType.table
+        mApplicationNameDot = getApplicationName() + "."
 
-                return jsonDictionary
+        mDelegateTableView = tableView
+    }
+
+
+    // MARK:- Model-View Relationships
+
+
+    func setModelViewRelationships(_ dictionary:Dictionary<String, String>)
+    {
+        guard (dictionary.count != 0) else {
+            fatalError("[UIPheonix] Can't set model-view relationships with dictionary because it is empty!")
+        }
+
+        mModelViewRelationships = dictionary
+
+        connectWithDelegateViewType()
+    }
+
+
+    // MARK:- Display Models
+
+
+    ///
+    /// - Parameters:
+    ///   - rawModelsArray: An array containing dictionary objects with model data.
+    ///   - append: Append to, or replace, the current model list.
+    ///
+    func setDisplayModels(_ rawModelDataArray:Array<Any>, append:Bool)
+    {
+        guard (rawModelDataArray.count != 0) else {
+            fatalError("[UIPheonix] Raw model data array is empty!")
+        }
+
+        // don't append, but replace
+        if (!append)
+        {
+            // prepare a new empty display models list
+            mDisplayModels.removeAll(keepingCapacity:false)
+        }
+
+        // instantiate model classes with their data in the display dictionary
+        // add the models to the display list
+        for aModelType:Any in rawModelDataArray
+        {
+            let modelDict:Dictionary<String, Any> = aModelType as! Dictionary<String, Any>
+            let modelTypeName:String? = modelDict[UIPConstants.modelType] as? String
+
+            // `type` field does not exist
+            if (modelTypeName == nil) {
+                fatalError("[UIPheonix] The key `type` was not found for the model `\(aModelType)`!")
             }
-            catch let error
+
+            // create & add models
+            if let modelClassType:UIPBaseCellModelProtocol.Type = NSClassFromString(mApplicationNameDot + modelTypeName!) as? UIPBaseCellModelProtocol.Type
             {
-                print("[UIPheonix] \(error.localizedDescription)")
+                let aModelObj:UIPBaseCellModelProtocol = modelClassType.init()
+                aModelObj.setContents(with:modelDict)
+
+                mDisplayModels.append(aModelObj)
             }
         }
-        else
+    }
+
+
+    ///
+    /// I.e. replace
+    ///
+    func setDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
+    {
+        mDisplayModels = array
+    }
+
+
+    func addDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
+    {
+        mDisplayModels.append(contentsOf:array)
+    }
+
+
+    func displayModels()
+    -> Array<UIPBaseCellModelProtocol>
+    {
+        return mDisplayModels
+    }
+
+
+    ///
+    /// The number of display models.
+    ///
+    func count()
+    -> Int
+    {
+        return mDisplayModels.count
+    }
+
+
+    ///
+    /// Get model.
+    ///
+    func model(at index:Int)
+    -> UIPBaseCellModel?
+    {
+        if let cellModel:UIPBaseCellModel = mDisplayModels[index] as? UIPBaseCellModel
         {
-            print("[UIPheonix] Filename/path not found: \(filePath)")
+            return cellModel
         }
 
         return nil
     }
 
 
-    // MARK:- Display List
-
-
-    func setDisplayList(_ displayDictionary:Dictionary<String, AnyObject>, append:Bool=false)
-    {
-        guard (mDelegate != nil) else {
-            fatalError("[UIPheonix] `setUIDisplayList` failed, `mDelegate` is nil!")
-        }
-
-        mDisplayDictionary = displayDictionary
-
-        // connect & display
-        connectCollectionView()
-        createDisplayList(append:append)
-
-        mDelegate!.displayListDidSet()
-    }
-
-
-    func setDisplayList(_ array:Array<UIPInstantiatable>)
-    {
-        guard (mDelegate != nil) else {
-            fatalError("[UIPheonix] `setUIDisplayList` failed, `mDelegate` is nil!")
-        }
-
-        mUIDisplayList = array
-
-        mDelegate!.displayListDidSet()
-    }
-
-
-    func displayList()
-    -> Array<UIPInstantiatable>
-    {
-        return mUIDisplayList
-    }
-
-
     // MARK:- UICollectionView
 
 
+    ///
+    /// Call this after setting content on the cell to have a fitting layout size returned.
+    /// **Note!** The cell's size is determined using Auto Layout & constraints.
+    ///
     class func calculateLayoutSizeForCell(_ cell:UIPPlatformCollectionViewCell, preferredWidth:CGFloat)
     -> CGSize
     {
         var size:CGSize
 
-        // The cell's size is determined in the nib.
-        // We need to set it's width (in this case), and inside the cell view use its width
-        // to set any label's `preferredMaxLayoutWidth`, thus, the height can be determined.
         #if os(iOS) || os(tvOS)
+            // set bounds, and match with the `contentView`
             cell.bounds = CGRect(x:0, y:0, width:preferredWidth, height:cell.bounds.size.height)
             cell.contentView.bounds = cell.bounds
 
-            // layout subviews, this will let labels on this cell to set `preferredMaxLayoutWidth`
+            // layout subviews
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
 
-            // we only need the fitting height
+            // we use the `preferredWidth`
+            // and the fitting height because of the layout pass done above
             size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
             size.width = preferredWidth
-            size.height = CGFloat(ceilf(Float(size.height)))
+            //size.height = CGFloat(ceilf(Float(size.height)))    // don't need to do this as per Apple's advice
         #elseif os(macOS)
             cell.view.bounds = CGRect(x:0, y:0, width:preferredWidth, height:cell.view.bounds.size.height)
 
             // layout subviews
             cell.view.layoutSubtreeIfNeeded()
 
-            // use size
+            // we use the `preferredWidth`
+            // and the height from the layout pass done above
             size = cell.view.bounds.size
-            size.width = preferredWidth    // TODO: is this really needed?
+            size.width = preferredWidth
         #endif
 
         return size
     }
 
 
-    func viewForModel(with viewReuseId:String)
-    -> UIPBaseCVCellView?
+    class func viewSize(with baseSize:CGSize, addedSize:UIPCellSize)
+    -> CGSize
     {
-        return mViewReuseIds[viewReuseId] as? UIPBaseCVCellView
+        // by default, we use the cells layout size
+        var finalSize:CGSize = baseSize
+
+        // Replace or add/subtract size. //
+
+        // width
+        if (addedSize.absoluteWidth)
+        {
+            finalSize.width = addedSize.width
+        }
+        else
+        {
+            finalSize.width += addedSize.width
+        }
+
+        // height
+        if (addedSize.absoluteHeight)
+        {
+            finalSize.height = addedSize.height
+        }
+        else
+        {
+            finalSize.height += addedSize.height
+        }
+
+        return finalSize
+    }
+
+
+    ///
+    /// Dequeue reusable cell view.
+    ///
+    func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
+    -> UIPBaseCollectionViewCell?
+    {
+        guard (mDelegateCollectionView != nil) else {
+            fatalError("[UIPheonix] `view for reuseIdentifier` failed, `mDelegateCollectionView` is nil!")
+        }
+
+        #if os(iOS) || os(tvOS)
+            if let cellView:UIPBaseCollectionViewCell = mDelegateCollectionView!.dequeueReusableCell(withReuseIdentifier:reuseIdentifier, for:indexPath) as? UIPBaseCollectionViewCell
+            {
+                return cellView
+            }
+        #elseif os(macOS)
+            if let cellView:UIPBaseCollectionViewCell = mDelegateCollectionView!.makeItem(withIdentifier:reuseIdentifier, for:indexPath) as? UIPBaseCollectionViewCell
+            {
+                return cellView
+            }
+        #endif
+
+        return nil
+    }
+
+
+    func view(forReuseIdentifier viewReuseId:String)
+    -> UIPBaseCollectionViewCell?
+    {
+        return mViewReuseIds[viewReuseId] as? UIPBaseCollectionViewCell
+    }
+
+
+    // MARK:- UITableView
+
+
+    ///
+    /// Dequeue reusable cell view.
+    ///
+    /// • macOS does not use `indexPath`.
+    ///
+    func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
+    -> UIPBaseTableViewCell?
+    {
+        guard (mDelegateTableView != nil) else {
+            fatalError("[UIPheonix] `view for reuseIdentifier` failed, `mDelegateTableView` is nil!")
+        }
+
+        #if os(iOS) || os(tvOS)
+            if let cellView:UIPBaseTableViewCell = mDelegateTableView!.dequeueReusableCell(withIdentifier:reuseIdentifier, for:indexPath) as? UIPBaseTableViewCell
+            {
+                return cellView
+            }
+        #elseif os(macOS)
+            if let cellView:UIPBaseTableViewCell = mDelegateTableView!.make(withIdentifier:reuseIdentifier, owner:nil) as? UIPBaseTableViewCell
+            {
+                return cellView
+            }
+        #endif
+
+        return nil
+    }
+
+
+    func view(forReuseIdentifier viewReuseId:String)
+    -> UIPBaseTableViewCell?
+    {
+        return mViewReuseIds[viewReuseId] as? UIPBaseTableViewCell
     }
 
 
@@ -213,26 +361,33 @@ final class UIPheonix
 
 
     ///
-    /// Registers all cell-views with the delegate UICollectionView,
-    /// by using the model's name as the cell-view's reuse-id.
+    /// * Uses the model's name as the cell-view's reuse-id.
+    /// * Registers all cell-views with the delegate view.
     ///
-    fileprivate func connectCollectionView()
+    fileprivate func connectWithDelegateViewType()
     {
-        guard (mDelegateCollectionView != nil) else {
-            fatalError("[UIPheonix] `connectCollectionView` failed, `delegateCollectionView` is nil!")
+        if (mUIPDelegateViewType == UIPDelegateViewType.collection)
+        {
+            guard (mDelegateCollectionView != nil) else {
+                fatalError("[UIPheonix] `connectWithDelegateViewType` failed, `mDelegateCollectionView` is nil!")
+            }
+        }
+        else if (mUIPDelegateViewType == UIPDelegateViewType.table)
+        {
+            guard (mDelegateTableView != nil) else {
+                fatalError("[UIPheonix] `connectWithDelegateViewType` failed, `mDelegateTableView` is nil!")
+            }
         }
 
-        // read the model-view relationship from the display dictionary
-        let modelViewRelationshipsDict:Dictionary<String, String> = mDisplayDictionary["UIPCVModelViewRelationships"] as! Dictionary<String, String>
-
-        guard (modelViewRelationshipsDict.count != 0) else {
-            fatalError("[UIPheonix] The key `UIPCVModelViewRelationships` could not be found in the display dictionary!")
+        guard (mModelViewRelationships.count != 0) else {
+            fatalError("[UIPheonix] Model-View relationships dictionary is empty!")
         }
+
 
         var modelClassNames:Array<String> = Array<String>()
         var nibNames:Array<String> = Array<String>()
 
-        for (modelClassName, viewClassName) in modelViewRelationshipsDict
+        for (modelClassName, viewClassName) in mModelViewRelationships
         {
             modelClassNames.append(modelClassName)
             nibNames.append(viewClassName)
@@ -242,10 +397,11 @@ final class UIPheonix
             fatalError("[UIPheonix] Number of `modelClassNames` & `nibNames` count does not match!")
         }
 
+
         for i in 0 ..< modelClassNames.count
         {
-            let nibName:String = nibNames[i]
             let modelName:String = modelClassNames[i]
+            let nibName:String = nibNames[i]
 
             // only add new models/views that have not been registered
             if (mViewReuseIds[modelName] == nil)
@@ -265,6 +421,7 @@ final class UIPheonix
                     fatalError("[UIPheonix] Nib is empty: \(nibName)")
                 }
 
+
                 // find the element we are looking for, since the xib contents order is not guaranteed
                 let filteredNibContents:[Any] = nibContents!.filter(
                 {
@@ -275,6 +432,7 @@ final class UIPheonix
                 guard (filteredNibContents.count == 1) else {
                     fatalError("[UIPheonix] Nib \"\(nibName)\" contains more elements, expected only 1!")
                 }
+
 
                 // with the reuse-id, connect the cell-view in the nib
                 #if os(iOS) || os(tvOS)
@@ -287,7 +445,14 @@ final class UIPheonix
                 #if os(iOS) || os(tvOS)
                     let nib:UINib = UINib(nibName:nibName, bundle:nil)
 
-                    mDelegateCollectionView!.register(nib, forCellWithReuseIdentifier:modelName)
+                    if (mUIPDelegateViewType == UIPDelegateViewType.collection)
+                    {
+                        mDelegateCollectionView!.register(nib, forCellWithReuseIdentifier:modelName)
+                    }
+                    else if (mUIPDelegateViewType == UIPDelegateViewType.table)
+                    {
+                        mDelegateTableView!.register(nib, forCellReuseIdentifier:modelName)
+                    }
                 #elseif os(macOS)
                     let nib:NSNib? = NSNib(nibNamed:nibName, bundle:nil)
 
@@ -295,48 +460,15 @@ final class UIPheonix
                         fatalError("[UIPheonix] Nib could not be instantiated: \(nibName)")
                     }
 
-                    mDelegateCollectionView!.register(nib, forItemWithIdentifier:modelName)
+                    if (mUIPDelegateViewType == UIPDelegateViewType.collection)
+                    {
+                        mDelegateCollectionView!.register(nib, forItemWithIdentifier:modelName)
+                    }
+                    else if (mUIPDelegateViewType == UIPDelegateViewType.table)
+                    {
+                        mDelegateTableView!.register(nib, forIdentifier:modelName)
+                    }
                 #endif
-            }
-        }
-    }
-
-
-    fileprivate func createDisplayList(append:Bool)
-    {
-        // read models
-        let uipCVCellModelsArray:Array<AnyObject> = mDisplayDictionary["UIPCVCellModels"] as! Array<AnyObject>
-
-        guard (uipCVCellModelsArray.count != 0) else {
-            fatalError("[UIPheonix] The key `UIPCVCellModels` could not be found in the display dictionary!")
-        }
-
-        // don't append, but replace
-        if (!append)
-        {
-            // prepare a new empty display list
-            mUIDisplayList.removeAll(keepingCapacity:false)
-        }
-
-        // instantiate model classes with their data in the display dictionary
-        // add the models to the display list
-        for aModelType:AnyObject in uipCVCellModelsArray
-        {
-            let modelDict:Dictionary<String, AnyObject> = aModelType as! Dictionary<String, AnyObject>
-            let modelTypeName:String? = modelDict["type"] as? String
-
-            // `type` field does not exist
-            if (modelTypeName == nil) {
-                fatalError("[UIPheonix] The key `type` was not found for the model `\(aModelType)`!")
-            }
-
-            // create & add models
-            if let modelClassType:UIPInstantiatable.Type = NSClassFromString(mApplicationNameDot + modelTypeName!) as? UIPInstantiatable.Type
-            {
-                let aModelObj:UIPInstantiatable = modelClassType.init()
-                aModelObj.setContents(with:modelDict)
-
-                mUIDisplayList.append(aModelObj)
             }
         }
     }
