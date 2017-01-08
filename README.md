@@ -31,6 +31,8 @@ Well not any more…
 
 ![OSScreenshots](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/OSScreenshots.png)
 
+![iOSMovie](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/iOSMovie.mov)
+
 * Reusable UI Component/Control (from here on mentioned as a "RUIC") – Is basically just a model+view.
 You can configure a RUIC in any way you want, in the demo apps I'm using both JSON files and manual code setup for the models.
 
