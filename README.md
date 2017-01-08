@@ -64,7 +64,7 @@ What’s New?
 How to Install
 ------
 * CocoaPods: `pod 'UIPheonix', '~> 2.0.0'`
-* Carthage: `github "MKGitHub/UIPheonix" >= 2.0.0`
+* Carthage: `github "MKGitHub/UIPheonix" ~> 2.0.0`
 * Manual: `Copy the UIPheonix folder (contains sub-folders: Core, Models, Protocols, Views) to your Xcode project.`
 
 
