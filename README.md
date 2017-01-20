@@ -59,13 +59,20 @@ Making a RUIC is pretty simple as making a model+view.
 What’s New?
 ------
 * Version 2 adds support for table view as well as many refactorings to make UIPheonix even easier to use.
+* Please run & read the simple code in the demo apps.
 
 
 How to Install
 ------
+There is no framework/library distibution or one that you can be build, I recommend that you add the UIPheonix/Sources folder to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
+
+* Manual: `Drag & Drop the UIPheonix/Sources folder to your Xcode project.`
+* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources folder to your Xcode project.` 
+
+![Manual Install](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/ManualInstall.png)
+
+I don’t recommend using CocoaPods, but if you really have to.
 * CocoaPods: `pod 'UIPheonix', '~> 2.0.0'`
-* Carthage: `github "MKGitHub/UIPheonix" ~> 2.0.0`
-* Manual: `Copy the UIPheonix folder (contains sub-folders: Core, Models, Protocols, Views) to your Xcode project.`
 
 
 Whats Next?
