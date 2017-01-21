@@ -31,6 +31,8 @@ Well not any more…
 
 ![OSScreenshots](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/OSScreenshots.png)
 
+Demo App
+
 ![iOSMovie](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/iOSMovie.gif)
 
 * Reusable UI Component/Control (from here on mentioned as a "RUIC") – Is basically just a model+view.
@@ -66,13 +68,11 @@ How to Install
 ------
 There is no framework/library distibution or one that you can be build, I recommend that you add the UIPheonix/Sources folder to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
 
-* Manual: `Drag & Drop the UIPheonix/Sources folder to your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources folder to your Xcode project.` 
-
 ![Manual Install](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/ManualInstall.png)
 
-I don’t recommend using CocoaPods, but if you really have to.
-* CocoaPods: `pod 'UIPheonix', '~> 2.0.0'`
+* Manual: `Drag & Drop the UIPheonix/Sources folder to your Xcode project.`
+* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources folder to your Xcode project.` 
+* CocoaPods (not recommended!): `pod 'UIPheonix', '~> 2.0.0'`
 
 
 Whats Next?
