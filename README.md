@@ -75,12 +75,12 @@ Requirements
 
 How to Install
 ------
-There is no framework/library distibution, I recommend that you add the UIPheonix/Sources folder to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
-* Git: run `git clone https://github.com/MKGitHub/UIPheonix.git` then `Drag & Drop the UIPheonix/Sources folder into your Xcode project.`
+There is no framework/library distibution, I recommend that you add the UIPheonix/Sources|SingleFileSource to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
+* Git: run `git clone https://github.com/MKGitHub/UIPheonix.git` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
+* Manual: `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
+* Single File Install: All the UIPheonix source files have been merged into one single file for easy install, `Drag & Drop the SingleFileSource/UIPheonix_*_*_*.swift file into your Xcode project.`
+* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
 ![Manual Install](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/ManualInstall.png)
-* Manual: `Drag & Drop the UIPheonix/Sources folder into your Xcode project.`
-* Single File Install: This will concatenate all the UIPheonix source files into one single file for easy install, run `./BuildSingleFile.sh` then `Drag & Drop the SingleFileSource/UIPheonix_*_*_*.swift file into your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources folder into your Xcode project.`
 * Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
 * CocoaPods (not recommended!): `pod 'UIPheonix', '~> 2.0.0'`
 
