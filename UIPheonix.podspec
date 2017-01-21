@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/MKGitHub/UIPheonix.git", :tag => "#{s.version}" }
 
-  s.source_files = "UIPheonix/**/*.{swift}"
+  s.source_files = "Sources/*.{swift}"
 
   s.requires_arc = true
 
