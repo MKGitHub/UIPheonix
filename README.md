@@ -64,14 +64,21 @@ What’s New?
 * Please run & read the simple code in the demo apps.
 
 
+Deployment Targets
+------
+macOS 10.11 and later
+iOS 9.0 and later
+tvOS 9.0 and later
+
+
 How to Install
 ------
-There is no framework/library distibution or one that you can be build, I recommend that you add the UIPheonix/Sources folder to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
-
+There is no framework/library distibution, I recommend that you add the UIPheonix/Sources folder to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
+* Git: `git clone https://github.com/MKGitHub/UIPheonix.git` then `Drag & Drop the UIPheonix/Sources folder to your Xcode project.`
 ![Manual Install](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/ManualInstall.png)
-
 * Manual: `Drag & Drop the UIPheonix/Sources folder to your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources folder to your Xcode project.` 
+* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.0` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources folder to your Xcode project.`
+* Swift Package Manager (still quite meaningless): `swift build` or `swift package generate-xcodeproj`
 * CocoaPods (not recommended!): `pod 'UIPheonix', '~> 2.0.0'`
 
 
