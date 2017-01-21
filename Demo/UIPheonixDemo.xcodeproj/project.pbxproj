@@ -39,16 +39,36 @@
 		4D279AE71DFDF3DE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D279ACD1DFDEEBE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift */; };
 		4D279AE81DFDF3DE006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D279ACE1DFDEEBE006EDC1E /* SimpleViewAnimationModelCVCell.swift */; };
 		4D279AE91DFDF3DE006EDC1E /* SimpleLabelModelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D279AD01DFDEEBE006EDC1E /* SimpleLabelModelTVCell.swift */; };
-		4D3814401E3379280098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814361E3379280098A0F2 /* UIPBaseCellModel.swift */; };
-		4D3814411E3379280098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814371E3379280098A0F2 /* UIPBaseCellModelProtocol.swift */; };
-		4D3814421E3379280098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814381E3379280098A0F2 /* UIPBaseCollectionViewCell.swift */; };
-		4D3814431E3379280098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814391E3379280098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
-		4D3814441E3379280098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38143A1E3379280098A0F2 /* UIPBaseTableViewCell.swift */; };
-		4D3814451E3379280098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38143B1E3379280098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
-		4D3814461E3379280098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38143C1E3379280098A0F2 /* UIPBaseViewController.swift */; };
-		4D3814471E3379280098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38143D1E3379280098A0F2 /* UIPDelegates.swift */; };
-		4D3814481E3379280098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38143E1E3379280098A0F2 /* UIPheonix.swift */; };
-		4D3814491E3379280098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38143F1E3379280098A0F2 /* UIPMisc.swift */; };
+		4D3814551E339D610098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
+		4D3814561E339D610098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
+		4D3814571E339D610098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
+		4D3814581E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
+		4D3814591E339D610098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
+		4D38145A1E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
+		4D38145B1E339D610098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
+		4D38145C1E339D610098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
+		4D38145D1E339D610098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
+		4D38145E1E339D610098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
+		4D38145F1E339D720098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
+		4D3814601E339D720098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
+		4D3814611E339D720098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
+		4D3814621E339D720098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
+		4D3814631E339D720098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
+		4D3814641E339D720098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
+		4D3814651E339D720098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
+		4D3814661E339D720098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
+		4D3814671E339D720098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
+		4D3814681E339D720098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
+		4D3814691E339D720098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
+		4D38146A1E339D720098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
+		4D38146B1E339D720098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
+		4D38146C1E339D720098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
+		4D38146D1E339D720098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
+		4D38146E1E339D720098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
+		4D38146F1E339D720098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
+		4D3814701E339D720098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
+		4D3814711E339D720098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
+		4D3814721E339D720098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
 		4D3C7A7A1D5BF79A0006C7AE /* SimpleButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAF7181D379D7C00A4B1FC /* SimpleButtonModel.swift */; };
 		4D3DEFFB1E06F1FB000D8B70 /* DemoCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DEFF01E06F1FB000D8B70 /* DemoCollectionViewController.xib */; };
 		4D3DEFFC1E06F1FB000D8B70 /* SimpleButtonModelCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DEFF11E06F1FB000D8B70 /* SimpleButtonModelCVCell.xib */; };
@@ -171,16 +191,16 @@
 		4D279ACD1DFDEEBE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVerticalSpaceModelCVCell.swift; sourceTree = "<group>"; };
 		4D279ACE1DFDEEBE006EDC1E /* SimpleViewAnimationModelCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleViewAnimationModelCVCell.swift; sourceTree = "<group>"; };
 		4D279AD01DFDEEBE006EDC1E /* SimpleLabelModelTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLabelModelTVCell.swift; sourceTree = "<group>"; };
-		4D3814361E3379280098A0F2 /* UIPBaseCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCellModel.swift; sourceTree = "<group>"; };
-		4D3814371E3379280098A0F2 /* UIPBaseCellModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCellModelProtocol.swift; sourceTree = "<group>"; };
-		4D3814381E3379280098A0F2 /* UIPBaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		4D3814391E3379280098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
-		4D38143A1E3379280098A0F2 /* UIPBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseTableViewCell.swift; sourceTree = "<group>"; };
-		4D38143B1E3379280098A0F2 /* UIPBaseTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseTableViewCellProtocol.swift; sourceTree = "<group>"; };
-		4D38143C1E3379280098A0F2 /* UIPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseViewController.swift; sourceTree = "<group>"; };
-		4D38143D1E3379280098A0F2 /* UIPDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPDelegates.swift; sourceTree = "<group>"; };
-		4D38143E1E3379280098A0F2 /* UIPheonix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPheonix.swift; sourceTree = "<group>"; };
-		4D38143F1E3379280098A0F2 /* UIPMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPMisc.swift; sourceTree = "<group>"; };
+		4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCellModel.swift; sourceTree = "<group>"; };
+		4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCellModelProtocol.swift; sourceTree = "<group>"; };
+		4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseTableViewCell.swift; sourceTree = "<group>"; };
+		4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseTableViewCellProtocol.swift; sourceTree = "<group>"; };
+		4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseViewController.swift; sourceTree = "<group>"; };
+		4D3814521E339D610098A0F2 /* UIPDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPDelegates.swift; sourceTree = "<group>"; };
+		4D3814531E339D610098A0F2 /* UIPheonix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPheonix.swift; sourceTree = "<group>"; };
+		4D3814541E339D610098A0F2 /* UIPMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPMisc.swift; sourceTree = "<group>"; };
 		4D3DEFF01E06F1FB000D8B70 /* DemoCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewController.xib; sourceTree = "<group>"; };
 		4D3DEFF11E06F1FB000D8B70 /* SimpleButtonModelCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleButtonModelCVCell.xib; sourceTree = "<group>"; };
 		4D3DEFF21E06F1FB000D8B70 /* SimpleCounterModelCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleCounterModelCVCell.xib; sourceTree = "<group>"; };
@@ -316,23 +336,6 @@
 			path = "Table View";
 			sourceTree = "<group>";
 		};
-		4D2471EE1E32DAFB00286437 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				4D38143E1E3379280098A0F2 /* UIPheonix.swift */,
-				4D38143F1E3379280098A0F2 /* UIPMisc.swift */,
-				4D38143D1E3379280098A0F2 /* UIPDelegates.swift */,
-				4D38143C1E3379280098A0F2 /* UIPBaseViewController.swift */,
-				4D3814361E3379280098A0F2 /* UIPBaseCellModel.swift */,
-				4D3814371E3379280098A0F2 /* UIPBaseCellModelProtocol.swift */,
-				4D3814381E3379280098A0F2 /* UIPBaseCollectionViewCell.swift */,
-				4D3814391E3379280098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */,
-				4D38143A1E3379280098A0F2 /* UIPBaseTableViewCell.swift */,
-				4D38143B1E3379280098A0F2 /* UIPBaseTableViewCellProtocol.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		4D279AC81DFDEEBE006EDC1E /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +357,24 @@
 				4D43BF031E06342700E71655 /* SimpleUserProfileModelTVCell.swift */,
 			);
 			path = "Table View";
+			sourceTree = "<group>";
+		};
+		4D38144A1E339D610098A0F2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4D3814531E339D610098A0F2 /* UIPheonix.swift */,
+				4D3814541E339D610098A0F2 /* UIPMisc.swift */,
+				4D3814521E339D610098A0F2 /* UIPDelegates.swift */,
+				4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */,
+				4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */,
+				4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */,
+				4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */,
+				4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */,
+				4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */,
+				4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */,
+			);
+			name = Sources;
+			path = ../Sources;
 			sourceTree = "<group>";
 		};
 		4D3DEFEF1E06F1FB000D8B70 /* Collection View */ = {
@@ -387,7 +408,7 @@
 				4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */,
 				4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */,
 				66AAF6F91D379D7C00A4B1FC /* Demo */,
-				66AAF6E51D379D6C00A4B1FC /* UIPheonix */,
+				4D38144A1E339D610098A0F2 /* Sources */,
 				4D5439C81CA75C4500AA882D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -518,15 +539,6 @@
 				4DD1C8BE1E187CC300257178 /* Table View */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		66AAF6E51D379D6C00A4B1FC /* UIPheonix */ = {
-			isa = PBXGroup;
-			children = (
-				4D2471EE1E32DAFB00286437 /* Sources */,
-			);
-			name = UIPheonix;
-			path = ../UIPheonix;
 			sourceTree = "<group>";
 		};
 		66AAF6F91D379D7C00A4B1FC /* Demo */ = {
@@ -800,8 +812,12 @@
 				4DC4A46A1E195C0C00FEC973 /* SimpleButtonModelTVCell.swift in Sources */,
 				66AAF7321D379D7C00A4B1FC /* ViewController.swift in Sources */,
 				66AAF7261D379D7C00A4B1FC /* AppDelegate.swift in Sources */,
+				4D3814671E339D720098A0F2 /* UIPheonix.swift in Sources */,
+				4D38145F1E339D720098A0F2 /* UIPBaseCellModel.swift in Sources */,
 				4D279AE01DFDF3DD006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */,
 				4D279AE21DFDF3DD006EDC1E /* SimpleLabelModelTVCell.swift in Sources */,
+				4D3814681E339D720098A0F2 /* UIPMisc.swift in Sources */,
+				4D3814621E339D720098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
 				4D43BF021E06336B00E71655 /* SimpleUserProfileModel.swift in Sources */,
 				66AAF73B1D379D7C00A4B1FC /* SimpleLabelModel.swift in Sources */,
 				4D43BEFD1E062D9300E71655 /* SimpleLabelModel2.swift in Sources */,
@@ -811,13 +827,19 @@
 				4D279ADE1DFDF3DD006EDC1E /* SimpleLabelModelCVCell.swift in Sources */,
 				66AAF73E1D379D7C00A4B1FC /* SimpleVerticalSpaceModel.swift in Sources */,
 				4D279AE11DFDF3DD006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */,
+				4D3814601E339D720098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
 				4D279ADC1DFDF3DD006EDC1E /* SimpleButtonModelCVCell.swift in Sources */,
 				4D43BEF91E0620F400E71655 /* DemoTableViewController.swift in Sources */,
 				4D279ADF1DFDF3DD006EDC1E /* SimpleTextFieldModelCVCell.swift in Sources */,
+				4D3814651E339D720098A0F2 /* UIPBaseViewController.swift in Sources */,
+				4D3814641E339D720098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
 				4D43BF041E06342700E71655 /* SimpleUserProfileModelTVCell.swift in Sources */,
+				4D3814611E339D720098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
 				4DA8FFA11DF47D4A00DC0B18 /* DataProvider.swift in Sources */,
 				66AAF7391D379D7C00A4B1FC /* Types.swift in Sources */,
 				66AAF7491D37DA6700A4B1FC /* SimpleCounterModel.swift in Sources */,
+				4D3814661E339D720098A0F2 /* UIPDelegates.swift in Sources */,
+				4D3814631E339D720098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
 				66AAF73C1D379D7C00A4B1FC /* SimpleTextFieldModel.swift in Sources */,
 				66AAF73D1D379D7C00A4B1FC /* SimpleViewAnimationModel.swift in Sources */,
 			);
@@ -828,36 +850,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D279AD11DFDEEBE006EDC1E /* SimpleButtonModelCVCell.swift in Sources */,
-				4D3814401E3379280098A0F2 /* UIPBaseCellModel.swift in Sources */,
+				4D3814551E339D610098A0F2 /* UIPBaseCellModel.swift in Sources */,
 				4DC4A46B1E195C0D00FEC973 /* SimpleButtonModelTVCell.swift in Sources */,
 				4D6FADFD1D53E9B500A31C8F /* ViewController.swift in Sources */,
-				4D3814431E3379280098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
+				4D3814581E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
 				4D74B2E61D53F23F00682A02 /* Types.swift in Sources */,
 				4D74B2E91D53F24300682A02 /* SimpleLabelModel.swift in Sources */,
 				4DAB68FA1D5E871D00BFF15A /* SimpleCounterModel.swift in Sources */,
 				4DA5F8951D57D31B0049956B /* CustomViewControllerPresentationAnimator.swift in Sources */,
-				4D3814471E3379280098A0F2 /* UIPDelegates.swift in Sources */,
+				4D38145C1E339D610098A0F2 /* UIPDelegates.swift in Sources */,
 				4D43BEFC1E062CF200E71655 /* SimpleLabelModel2.swift in Sources */,
 				4DAB68F61D5E77F600BFF15A /* SimpleTextFieldModel.swift in Sources */,
 				4D6FADFB1D53E9B500A31C8F /* AppDelegate.swift in Sources */,
-				4D3814411E3379280098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
-				4D3814481E3379280098A0F2 /* UIPheonix.swift in Sources */,
+				4D3814561E339D610098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
+				4D38145D1E339D610098A0F2 /* UIPheonix.swift in Sources */,
 				4D279AD41DFDEEBE006EDC1E /* SimpleTextFieldModelCVCell.swift in Sources */,
 				4DD1C8DE1E188BFB00257178 /* SimpleUserProfileModel.swift in Sources */,
-				4D3814421E3379280098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
+				4D3814571E339D610098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
 				4D1F118A1E1B14A70091D9FD /* DemoTableViewController.swift in Sources */,
 				4D3C7A7A1D5BF79A0006C7AE /* SimpleButtonModel.swift in Sources */,
 				4D279AD61DFDEEBE006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */,
 				4D279AD71DFDEEBE006EDC1E /* SimpleLabelModelTVCell.swift in Sources */,
 				4D279AD21DFDEEBE006EDC1E /* SimpleCounterModelCVCell.swift in Sources */,
-				4D3814451E3379280098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
-				4D3814491E3379280098A0F2 /* UIPMisc.swift in Sources */,
+				4D38145A1E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
+				4D38145E1E339D610098A0F2 /* UIPMisc.swift in Sources */,
 				4DA8FFA01DF47D4A00DC0B18 /* DataProvider.swift in Sources */,
 				4D279AD51DFDEEBE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */,
 				4DD1C8DF1E188C0D00257178 /* SimpleUserProfileModelTVCell.swift in Sources */,
-				4D3814461E3379280098A0F2 /* UIPBaseViewController.swift in Sources */,
+				4D38145B1E339D610098A0F2 /* UIPBaseViewController.swift in Sources */,
 				4DAB68F21D5E6E3300BFF15A /* SimpleVerticalSpaceModel.swift in Sources */,
-				4D3814441E3379280098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
+				4D3814591E339D610098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
 				4D1F11781E1AF9470091D9FD /* DemoCollectionViewController.swift in Sources */,
 				4DBE5A7D1D626C92001ED6F5 /* SimpleViewAnimationModel.swift in Sources */,
 				4D279AD31DFDEEBE006EDC1E /* SimpleLabelModelCVCell.swift in Sources */,
@@ -871,8 +893,12 @@
 				4DC4A4691E195BF700FEC973 /* SimpleButtonModelTVCell.swift in Sources */,
 				66847F741D3FAF5900A0427A /* SimpleTextFieldModel.swift in Sources */,
 				4D279AE71DFDF3DE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */,
+				4D3814711E339D720098A0F2 /* UIPheonix.swift in Sources */,
+				4D3814691E339D720098A0F2 /* UIPBaseCellModel.swift in Sources */,
 				4D279AE91DFDF3DE006EDC1E /* SimpleLabelModelTVCell.swift in Sources */,
 				66847F751D3FAF5900A0427A /* SimpleViewAnimationModel.swift in Sources */,
+				4D3814721E339D720098A0F2 /* UIPMisc.swift in Sources */,
+				4D38146C1E339D720098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
 				66847F591D3FAC9D00A0427A /* ViewController.swift in Sources */,
 				4D279AE41DFDF3DE006EDC1E /* SimpleCounterModelCVCell.swift in Sources */,
 				66847F691D3FAF4E00A0427A /* Types.swift in Sources */,
@@ -882,13 +908,19 @@
 				66847F731D3FAF5900A0427A /* SimpleLabelModel.swift in Sources */,
 				4D279AE81DFDF3DE006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */,
 				4D279AE31DFDF3DE006EDC1E /* SimpleButtonModelCVCell.swift in Sources */,
+				4D38146A1E339D720098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
 				4DD1C8D31E187EAA00257178 /* DemoTableViewController.swift in Sources */,
 				4DD1C8D21E187EA600257178 /* DemoCollectionViewController.swift in Sources */,
 				4D279AE61DFDF3DE006EDC1E /* SimpleTextFieldModelCVCell.swift in Sources */,
+				4D38146F1E339D720098A0F2 /* UIPBaseViewController.swift in Sources */,
+				4D38146E1E339D720098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
 				4DA8FFA21DF47D4A00DC0B18 /* DataProvider.swift in Sources */,
+				4D38146B1E339D720098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
 				4DD1C8E01E188C0E00257178 /* SimpleUserProfileModelTVCell.swift in Sources */,
 				66847F761D3FAF5900A0427A /* SimpleVerticalSpaceModel.swift in Sources */,
 				66847F711D3FAF5900A0427A /* SimpleButtonModel.swift in Sources */,
+				4D3814701E339D720098A0F2 /* UIPDelegates.swift in Sources */,
+				4D38146D1E339D720098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
 				66847F721D3FAF5900A0427A /* SimpleCounterModel.swift in Sources */,
 				66847F571D3FAC9D00A0427A /* AppDelegate.swift in Sources */,
 			);

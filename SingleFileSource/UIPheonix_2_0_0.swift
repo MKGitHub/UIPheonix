@@ -1,3 +1,7 @@
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseCellModel.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -59,6 +63,10 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
     }
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseCellModelProtocol.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -100,6 +108,10 @@ protocol UIPBaseCellModelProtocol:class
     func setContents(with dictionary:Dictionary<String, Any>)
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseCollectionViewCell.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -191,6 +203,10 @@ class UIPBaseCollectionViewCell:UIPPlatformCollectionViewCell, UIPBaseCollection
     }
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseCollectionViewCellProtocol.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -231,6 +247,10 @@ protocol UIPBaseCollectionViewCellProtocol:class
     func update(with model:Any, delegate:Any, for indexPath:IndexPath) -> UIPCellSize
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseTableViewCell.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -329,6 +349,10 @@ class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtoco
     }
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseTableViewCellProtocol.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -372,6 +396,10 @@ protocol UIPBaseTableViewCellProtocol:class
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPBaseViewController.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -466,6 +494,10 @@ protocol UIPBaseViewControllerProtocol
 
 #endif
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPDelegates.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -501,6 +533,10 @@ protocol UIPButtonDelegate:class
     func buttonAction(_ buttonId:Int)
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPMisc.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
@@ -644,6 +680,10 @@ extension CGFloat
     }
 }
 
+//----------------------------------------------------------------------------------------------------
+// MARK:- UIPheonix.swift
+// MARK:-
+//----------------------------------------------------------------------------------------------------
 //
 //  UIPheonix
 //  Copyright © 2016/2017 Mohsan Khan. All rights reserved.

@@ -3,7 +3,7 @@
 #
 
 
-cat Sources/*.swift >> SingleFileSource/UIPheonix_2_0_0.swift
+cat Sources/*.swift > SingleFileSource/UIPheonix_2_0_0.swift
 
 
 #…
