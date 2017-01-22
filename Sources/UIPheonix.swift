@@ -104,7 +104,6 @@ final class UIPheonix
     // MARK:- Model-View Relationships
 
 
-
     ///
     /// Creates relationships between each model and its view.
     ///
@@ -213,7 +212,6 @@ final class UIPheonix
     }
 
 
-
     ///
     /// Get a model at index in the display list.
     ///
@@ -233,9 +231,6 @@ final class UIPheonix
 
 
     // MARK:- UICollectionView
-
-
-
 
 
     ///
