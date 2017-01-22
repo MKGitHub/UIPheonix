@@ -30,10 +30,18 @@
 //
 
 
+///
+/// The standard base class for all cell models.
+///
 class UIPBaseCellModel:UIPBaseCellModelProtocol
 {
     // MARK: UIPBaseCellModelProtocol
+
+
+    /// Name of this class.
     var nameOfClass:String { get { return "\(type(of:self))" } }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get { return "\(self)" } }
 
 
@@ -43,6 +51,11 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
     }
 
 
+    ///
+    /// Set the contents of the model using the dictionary i.e. model mapping.
+    ///
+    /// - Parameter dictionary: Dictionary containing data for the model.
+    ///
     func setContents(with dictionary:Dictionary<String, Any>)
     {
         fatalError("[UIPheonix] You must override \(#function) in your subclass!")
@@ -55,6 +68,8 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
     ///
     /// Currently this has no purpose other than to serve as a "forced" implementation
     /// that may/will come in hand when there is a need to debug a model.
+    ///
+    /// - Returns: Models properties returned as a dictionary.
     ///
     func toDictionary()
     -> Dictionary<String, Any>
@@ -97,14 +112,26 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
 import Foundation
 
 
+///
+/// The standard protocol for all cell models.
+///
 protocol UIPBaseCellModelProtocol:class
 {
-    // we can't use "className" because that belongs to Objective-C NSObject
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
     var nameOfClass:String { get }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get }
 
     init()
 
+    ///
+    /// Set the contents of the model using the dictionary i.e. model mapping.
+    ///
+    /// - Parameter dictionary: Dictionary containing data for the model.
+    ///
     func setContents(with dictionary:Dictionary<String, Any>)
 }
 
@@ -146,18 +173,19 @@ protocol UIPBaseCellModelProtocol:class
 #endif
 
 
+///
+/// The standard base class for all collection view cell views.
+///
 class UIPBaseCollectionViewCell:UIPPlatformCollectionViewCell, UIPBaseCollectionViewCellProtocol
 {
     // MARK: UIPPlatformCollectionViewCell
 
 
     #if os(tvOS)
-    // MARK: Overriding Member
-    override var canBecomeFocused:Bool
-    {
-        // by default, the cell view should not receive focus – its contents should receive focus instead
-        return false
-    }
+    // MARK: Overriding Members
+
+    /// By default, the cell view should not receive focus, its contents should receive focus instead.
+    override var canBecomeFocused:Bool { return false }
     #endif
 
 
@@ -192,10 +220,22 @@ class UIPBaseCollectionViewCell:UIPPlatformCollectionViewCell, UIPBaseCollection
     // MARK:- UIPBaseCollectionViewCellProtocol
 
 
+    /// Name of this class.
     var nameOfClass:String { get { return "\(type(of:self))" } }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get { return "\(self)" } }
 
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    /// - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
     -> UIPCellSize
     {
@@ -238,12 +278,28 @@ import Foundation
 import CoreGraphics
 
 
+///
+/// The standard protocol for all collection view cell views.
+///
 protocol UIPBaseCollectionViewCellProtocol:class
 {
-    // we can't use "className" because that belongs to Objective-C NSObject
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
     var nameOfClass:String { get }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get }
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    /// - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath) -> UIPCellSize
 }
 
@@ -285,6 +341,9 @@ protocol UIPBaseCollectionViewCellProtocol:class
 #endif
 
 
+///
+/// The standard base class for all table view cell views.
+///
 class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtocol
 {
     // MARK: UIPPlatformTableViewCell
@@ -292,11 +351,9 @@ class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtoco
 
     #if os(tvOS)
     // MARK: Overriding Member
-    override var canBecomeFocused:Bool
-    {
-        // by default, the cell view should not receive focus – its contents should receive focus instead
-        return false
-    }
+
+    /// By default, the cell view should not receive focus, its contents should receive focus instead.
+    override var canBecomeFocused:Bool { return false }
     #endif
 
 
@@ -331,18 +388,35 @@ class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtoco
     // MARK:- UIPBaseTableViewCellProtocol
 
 
+    /// Name of this class.
     var nameOfClass:String { get { return "\(type(of:self))" } }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get { return "\(self)" } }
 
     #if os(iOS) || os(tvOS)
+        /// The height of the row.
         var rowHeight:CGFloat { get { return UITableViewAutomaticDimension } }
+
+        /// The estimated height of the row.
         var estimatedRowHeight:CGFloat { get { return UITableViewAutomaticDimension } }
     #elseif os(macOS)
+        /// The height of the row.
         var rowHeight:CGFloat { get { return -1 } }             // macOS does not have any "Automatic Dimension" yet, -1 will crash and needs therefor to be overridden
+
+        /// The estimated height of the row.
         var estimatedRowHeight:CGFloat { get { return -1 } }    // macOS does not have any "Automatic Dimension" yet, -1 will crash and needs therefor to be overridden
     #endif
 
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
     {
         fatalError("[UIPheonix] You must override \(#function) in your subclass!")
@@ -384,15 +458,33 @@ import Foundation
 import CoreGraphics
 
 
+///
+/// The standard protocol for all table view cell views.
+///
 protocol UIPBaseTableViewCellProtocol:class
 {
-    // we can't use "className" because that belongs to Objective-C NSObject
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
     var nameOfClass:String { get }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get }
 
+    /// The height of the row.
     var rowHeight:CGFloat { get }
+
+    /// The estimated height of the row.
     var estimatedRowHeight:CGFloat { get }
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
 }
 
@@ -434,16 +526,30 @@ protocol UIPBaseTableViewCellProtocol:class
 #endif
 
 
+///
+/// The base view controller protocol.
+///
 protocol UIPBaseViewControllerProtocol
 {
+    ///
+    /// Create a new instance of a view controller with provided dictionary to initialize its contents.
+    ///
+    /// - Parameter attributes: Dictionary with attributes.
+    /// - Returns: A new instance of the view controller.
+    ///
     static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>) -> T
 }
 
 
 #if os(iOS) || os(tvOS)
 
+    ///
+    /// The base view controller. Subclass this to gain its features.
+    /// Example code is provided in this file.
+    ///
     class UIPBaseViewController:UIViewController
     {
+        /// The provided dictionary with attributes when the view controller was instanced.
         var mPreparedAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
@@ -468,8 +574,13 @@ protocol UIPBaseViewControllerProtocol
 
 #elseif os(macOS)
 
+    ///
+    /// The base view controller. Subclass this to gain its features.
+    /// Example code is provided in this file.
+    ///
     class UIPBaseViewController:NSViewController
     {
+        /// The provided dictionary with attributes when the view controller was instanced.
         var mPreparedAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
@@ -528,8 +639,16 @@ protocol UIPBaseViewControllerProtocol
 import Foundation
 
 
+///
+/// A simple button delegate for handling button actions.
+///
 protocol UIPButtonDelegate:class
 {
+    ///
+    /// A button action is called.
+    ///
+    /// - Parameter buttonId: The buttons id.
+    ///
     func buttonAction(_ buttonId:Int)
 }
 
@@ -592,6 +711,9 @@ func NOTE()
 // MARK:- Constants
 
 
+///
+/// Internal constants.
+///
 struct UIPConstants
 {
     static let modelType:String = "type"
@@ -615,7 +737,7 @@ struct UIPConstants
 typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool, height:CGFloat)
 
 ///
-/// Convenient variable for an unmodified cell size.
+/// Convenient variable for providing an unmodified cell size.
 ///
 var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHeight:false, height:0)
 
@@ -667,6 +789,15 @@ var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHe
 
 extension CGFloat
 {
+    ///
+    /// Convenient function to handle values cross platform.
+    ///
+    /// - Parameters:
+    ///   - mac: The macOS value.
+    ///   - mobile: The iOS iPhone/iPod/iPad value.
+    ///   - tv: The tvOS value.
+    /// - Returns: The value which matches the current running platform.
+    ///
     static func valueForPlatform(mac:CGFloat, mobile:CGFloat, tv:CGFloat)
     -> CGFloat
     {
@@ -728,6 +859,10 @@ fileprivate enum UIPDelegateViewType
 
 
 @available(OSX 10.11, iOS 9.0, tvOS 9.0, *)
+
+///
+/// The core class of UIPheonix.
+///
 final class UIPheonix
 {
     // MARK: Private Members (uninitialized)
@@ -782,6 +917,12 @@ final class UIPheonix
     // MARK:- Model-View Relationships
 
 
+
+    ///
+    /// Creates relationships between each model and its view.
+    ///
+    /// - Parameter dictionary: A dictionary with model-name:view-name relationship.
+    ///
     func setModelViewRelationships(_ dictionary:Dictionary<String, String>)
     {
         guard (dictionary.count != 0) else {
@@ -797,6 +938,8 @@ final class UIPheonix
     // MARK:- Display Models
 
 
+    ///
+    /// Set/Append the models to display for a Collection View or Table View.
     ///
     /// - Parameters:
     ///   - rawModelsArray: An array containing dictionary objects with model data.
@@ -840,7 +983,10 @@ final class UIPheonix
 
 
     ///
-    /// I.e. replace
+    /// Sets the models to display for a Collection View or Table View.
+    ///
+    /// - Parameters:
+    ///   - array: An array containing dictionary objects with model data.
     ///
     func setDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
     {
@@ -848,12 +994,21 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Append the models to display for a Collection View or Table View.
+    ///
+    /// - Parameters:
+    ///   - array: An array containing dictionary objects with model data.
+    ///
     func addDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
     {
         mDisplayModels.append(contentsOf:array)
     }
 
 
+    ///
+    /// - Returns: Array containing all current models for display.
+    ///
     func displayModels()
     -> Array<UIPBaseCellModelProtocol>
     {
@@ -862,7 +1017,7 @@ final class UIPheonix
 
 
     ///
-    /// The number of display models.
+    /// - Returns: The number of display models.
     ///
     func count()
     -> Int
@@ -871,8 +1026,12 @@ final class UIPheonix
     }
 
 
+
     ///
-    /// Get model.
+    /// Get a model at index in the display list.
+    ///
+    /// - Parameter index: The index.
+    /// - Returns: The model.
     ///
     func model(at index:Int)
     -> UIPBaseCellModel?
@@ -889,9 +1048,17 @@ final class UIPheonix
     // MARK:- UICollectionView
 
 
+
+
+
     ///
     /// Call this after setting content on the cell to have a fitting layout size returned.
     /// **Note!** The cell's size is determined using Auto Layout & constraints.
+    ///
+    /// - Parameters:
+    ///   - cell: The cell.
+    ///   - preferredWidth: The preferred width of the cell.
+    /// - Returns: A size.
     ///
     class func calculateLayoutSizeForCell(_ cell:UIPPlatformCollectionViewCell, preferredWidth:CGFloat)
     -> CGSize
@@ -928,6 +1095,14 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Use the base size and add or subtract another size.
+    ///
+    /// - Parameters:
+    ///   - baseSize: Base size.
+    ///   - addedSize: Added or subtract size.
+    /// - Returns: The new size.
+    ///
     class func viewSize(with baseSize:CGSize, addedSize:UIPCellSize)
     -> CGSize
     {
@@ -961,7 +1136,12 @@ final class UIPheonix
 
 
     ///
-    /// Dequeue reusable cell view.
+    /// Dequeue a reusable collection view cell view.
+    ///
+    /// - Parameters:
+    ///   - reuseIdentifier: The cell identifier.
+    ///   - indexPath: Index path of cell.
+    /// - Returns: A collection view cell view.
     ///
     func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
     -> UIPBaseCollectionViewCell?
@@ -986,6 +1166,12 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Get a collection view cell view.
+    ///
+    /// - Parameter viewReuseId: The cell identifier.
+    /// - Returns: A collection view cell view.
+    ///
     func view(forReuseIdentifier viewReuseId:String)
     -> UIPBaseCollectionViewCell?
     {
@@ -997,9 +1183,12 @@ final class UIPheonix
 
 
     ///
-    /// Dequeue reusable cell view.
+    /// Dequeue a reusable table view cell view.
     ///
-    /// • macOS does not use `indexPath`.
+    /// - Parameters:
+    ///   - reuseIdentifier: The cell identifier.
+    ///   - indexPath: Index path of cell. NOTE! macOS target does not use this `indexPath`.
+    /// - Returns: A table view cell view.
     ///
     func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
     -> UIPBaseTableViewCell?
@@ -1024,6 +1213,12 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Get a table view cell view.
+    ///
+    /// - Parameter viewReuseId: The cell identifier.
+    /// - Returns: A table view cell view.
+    ///
     func view(forReuseIdentifier viewReuseId:String)
     -> UIPBaseTableViewCell?
     {
@@ -1034,7 +1229,7 @@ final class UIPheonix
     // MARK:- Private
 
 
-    func getApplicationName()
+    fileprivate func getApplicationName()
     -> String
     {
         let appNameAndClassName:String = NSStringFromClass(UIPheonix.self)                                          // i.e. "<AppName>.<ClassName>" = UIPheonix_iOS.UIPheonix
