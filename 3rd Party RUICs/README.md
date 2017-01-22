@@ -10,7 +10,7 @@ Please keep it clean & simple :-)
     Name: My cool UIPheonix RUIC
     URL: https://github.com/JohnAppleseedweed/CoolUIPheonixRUIC
     Platforms: macOS, iOS, tvOS
-    RUIC Implementation Version: 3 @ UIPheonix 2.0.0
+    RUIC Implementation Version: UIPheonix 2.0.0
     Short Description: A reusable UI Component/Control to do cool stuff.
 
 
