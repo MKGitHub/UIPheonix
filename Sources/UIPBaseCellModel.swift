@@ -30,10 +30,18 @@
 //
 
 
+///
+/// The standard base class for all cell models.
+///
 class UIPBaseCellModel:UIPBaseCellModelProtocol
 {
     // MARK: UIPBaseCellModelProtocol
+
+
+    /// Name of this class.
     var nameOfClass:String { get { return "\(type(of:self))" } }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get { return "\(self)" } }
 
 
@@ -43,6 +51,11 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
     }
 
 
+    ///
+    /// Set the contents of the model using the dictionary i.e. model mapping.
+    ///
+    /// - Parameter dictionary: Dictionary containing data for the model.
+    ///
     func setContents(with dictionary:Dictionary<String, Any>)
     {
         fatalError("[UIPheonix] You must override \(#function) in your subclass!")
@@ -55,6 +68,8 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
     ///
     /// Currently this has no purpose other than to serve as a "forced" implementation
     /// that may/will come in hand when there is a need to debug a model.
+    ///
+    /// - Returns: Models properties returned as a dictionary.
     ///
     func toDictionary()
     -> Dictionary<String, Any>

@@ -57,6 +57,9 @@ func NOTE()
 // MARK:- Constants
 
 
+///
+/// Internal constants.
+///
 struct UIPConstants
 {
     static let modelType:String = "type"
@@ -80,7 +83,7 @@ struct UIPConstants
 typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool, height:CGFloat)
 
 ///
-/// Convenient variable for an unmodified cell size.
+/// Convenient variable for providing an unmodified cell size.
 ///
 var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHeight:false, height:0)
 
@@ -132,6 +135,15 @@ var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHe
 
 extension CGFloat
 {
+    ///
+    /// Convenient function to handle values cross platform.
+    ///
+    /// - Parameters:
+    ///   - mac: The macOS value.
+    ///   - mobile: The iOS iPhone/iPod/iPad value.
+    ///   - tv: The tvOS value.
+    /// - Returns: The value which matches the current running platform.
+    ///
     static func valueForPlatform(mac:CGFloat, mobile:CGFloat, tv:CGFloat)
     -> CGFloat
     {

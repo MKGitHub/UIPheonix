@@ -33,15 +33,33 @@ import Foundation
 import CoreGraphics
 
 
+///
+/// The standard protocol for all table view cell views.
+///
 protocol UIPBaseTableViewCellProtocol:class
 {
-    // we can't use "className" because that belongs to Objective-C NSObject
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
     var nameOfClass:String { get }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get }
 
+    /// The height of the row.
     var rowHeight:CGFloat { get }
+
+    /// The estimated height of the row.
     var estimatedRowHeight:CGFloat { get }
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
 }
 

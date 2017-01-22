@@ -36,6 +36,9 @@
 #endif
 
 
+///
+/// The standard base class for all table view cell views.
+///
 class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtocol
 {
     // MARK: UIPPlatformTableViewCell
@@ -43,11 +46,9 @@ class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtoco
 
     #if os(tvOS)
     // MARK: Overriding Member
-    override var canBecomeFocused:Bool
-    {
-        // by default, the cell view should not receive focus – its contents should receive focus instead
-        return false
-    }
+
+    /// By default, the cell view should not receive focus, its contents should receive focus instead.
+    override var canBecomeFocused:Bool { return false }
     #endif
 
 
@@ -82,18 +83,35 @@ class UIPBaseTableViewCell:UIPPlatformTableViewCell, UIPBaseTableViewCellProtoco
     // MARK:- UIPBaseTableViewCellProtocol
 
 
+    /// Name of this class.
     var nameOfClass:String { get { return "\(type(of:self))" } }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get { return "\(self)" } }
 
     #if os(iOS) || os(tvOS)
+        /// The height of the row.
         var rowHeight:CGFloat { get { return UITableViewAutomaticDimension } }
+
+        /// The estimated height of the row.
         var estimatedRowHeight:CGFloat { get { return UITableViewAutomaticDimension } }
     #elseif os(macOS)
+        /// The height of the row.
         var rowHeight:CGFloat { get { return -1 } }             // macOS does not have any "Automatic Dimension" yet, -1 will crash and needs therefor to be overridden
+
+        /// The estimated height of the row.
         var estimatedRowHeight:CGFloat { get { return -1 } }    // macOS does not have any "Automatic Dimension" yet, -1 will crash and needs therefor to be overridden
     #endif
 
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
     {
         fatalError("[UIPheonix] You must override \(#function) in your subclass!")

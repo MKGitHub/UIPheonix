@@ -46,6 +46,10 @@ fileprivate enum UIPDelegateViewType
 
 
 @available(OSX 10.11, iOS 9.0, tvOS 9.0, *)
+
+///
+/// The core class of UIPheonix.
+///
 final class UIPheonix
 {
     // MARK: Private Members (uninitialized)
@@ -100,6 +104,12 @@ final class UIPheonix
     // MARK:- Model-View Relationships
 
 
+
+    ///
+    /// Creates relationships between each model and its view.
+    ///
+    /// - Parameter dictionary: A dictionary with model-name:view-name relationship.
+    ///
     func setModelViewRelationships(_ dictionary:Dictionary<String, String>)
     {
         guard (dictionary.count != 0) else {
@@ -115,6 +125,8 @@ final class UIPheonix
     // MARK:- Display Models
 
 
+    ///
+    /// Set/Append the models to display for a Collection View or Table View.
     ///
     /// - Parameters:
     ///   - rawModelsArray: An array containing dictionary objects with model data.
@@ -158,7 +170,10 @@ final class UIPheonix
 
 
     ///
-    /// I.e. replace
+    /// Sets the models to display for a Collection View or Table View.
+    ///
+    /// - Parameters:
+    ///   - array: An array containing dictionary objects with model data.
     ///
     func setDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
     {
@@ -166,12 +181,21 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Append the models to display for a Collection View or Table View.
+    ///
+    /// - Parameters:
+    ///   - array: An array containing dictionary objects with model data.
+    ///
     func addDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
     {
         mDisplayModels.append(contentsOf:array)
     }
 
 
+    ///
+    /// - Returns: Array containing all current models for display.
+    ///
     func displayModels()
     -> Array<UIPBaseCellModelProtocol>
     {
@@ -180,7 +204,7 @@ final class UIPheonix
 
 
     ///
-    /// The number of display models.
+    /// - Returns: The number of display models.
     ///
     func count()
     -> Int
@@ -189,8 +213,12 @@ final class UIPheonix
     }
 
 
+
     ///
-    /// Get model.
+    /// Get a model at index in the display list.
+    ///
+    /// - Parameter index: The index.
+    /// - Returns: The model.
     ///
     func model(at index:Int)
     -> UIPBaseCellModel?
@@ -207,9 +235,17 @@ final class UIPheonix
     // MARK:- UICollectionView
 
 
+
+
+
     ///
     /// Call this after setting content on the cell to have a fitting layout size returned.
     /// **Note!** The cell's size is determined using Auto Layout & constraints.
+    ///
+    /// - Parameters:
+    ///   - cell: The cell.
+    ///   - preferredWidth: The preferred width of the cell.
+    /// - Returns: A size.
     ///
     class func calculateLayoutSizeForCell(_ cell:UIPPlatformCollectionViewCell, preferredWidth:CGFloat)
     -> CGSize
@@ -246,6 +282,14 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Use the base size and add or subtract another size.
+    ///
+    /// - Parameters:
+    ///   - baseSize: Base size.
+    ///   - addedSize: Added or subtract size.
+    /// - Returns: The new size.
+    ///
     class func viewSize(with baseSize:CGSize, addedSize:UIPCellSize)
     -> CGSize
     {
@@ -279,7 +323,12 @@ final class UIPheonix
 
 
     ///
-    /// Dequeue reusable cell view.
+    /// Dequeue a reusable collection view cell view.
+    ///
+    /// - Parameters:
+    ///   - reuseIdentifier: The cell identifier.
+    ///   - indexPath: Index path of cell.
+    /// - Returns: A collection view cell view.
     ///
     func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
     -> UIPBaseCollectionViewCell?
@@ -304,6 +353,12 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Get a collection view cell view.
+    ///
+    /// - Parameter viewReuseId: The cell identifier.
+    /// - Returns: A collection view cell view.
+    ///
     func view(forReuseIdentifier viewReuseId:String)
     -> UIPBaseCollectionViewCell?
     {
@@ -315,9 +370,12 @@ final class UIPheonix
 
 
     ///
-    /// Dequeue reusable cell view.
+    /// Dequeue a reusable table view cell view.
     ///
-    /// • macOS does not use `indexPath`.
+    /// - Parameters:
+    ///   - reuseIdentifier: The cell identifier.
+    ///   - indexPath: Index path of cell. NOTE! macOS target does not use this `indexPath`.
+    /// - Returns: A table view cell view.
     ///
     func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
     -> UIPBaseTableViewCell?
@@ -342,6 +400,12 @@ final class UIPheonix
     }
 
 
+    ///
+    /// Get a table view cell view.
+    ///
+    /// - Parameter viewReuseId: The cell identifier.
+    /// - Returns: A table view cell view.
+    ///
     func view(forReuseIdentifier viewReuseId:String)
     -> UIPBaseTableViewCell?
     {
@@ -352,7 +416,7 @@ final class UIPheonix
     // MARK:- Private
 
 
-    func getApplicationName()
+    fileprivate func getApplicationName()
     -> String
     {
         let appNameAndClassName:String = NSStringFromClass(UIPheonix.self)                                          // i.e. "<AppName>.<ClassName>" = UIPheonix_iOS.UIPheonix

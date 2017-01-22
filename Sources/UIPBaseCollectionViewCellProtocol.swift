@@ -33,12 +33,28 @@ import Foundation
 import CoreGraphics
 
 
+///
+/// The standard protocol for all collection view cell views.
+///
 protocol UIPBaseCollectionViewCellProtocol:class
 {
-    // we can't use "className" because that belongs to Objective-C NSObject
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
     var nameOfClass:String { get }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get }
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    /// - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath) -> UIPCellSize
 }
 

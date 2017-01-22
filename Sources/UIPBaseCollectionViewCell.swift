@@ -36,18 +36,19 @@
 #endif
 
 
+///
+/// The standard base class for all collection view cell views.
+///
 class UIPBaseCollectionViewCell:UIPPlatformCollectionViewCell, UIPBaseCollectionViewCellProtocol
 {
     // MARK: UIPPlatformCollectionViewCell
 
 
     #if os(tvOS)
-    // MARK: Overriding Member
-    override var canBecomeFocused:Bool
-    {
-        // by default, the cell view should not receive focus – its contents should receive focus instead
-        return false
-    }
+    // MARK: Overriding Members
+
+    /// By default, the cell view should not receive focus, its contents should receive focus instead.
+    override var canBecomeFocused:Bool { return false }
     #endif
 
 
@@ -82,10 +83,22 @@ class UIPBaseCollectionViewCell:UIPPlatformCollectionViewCell, UIPBaseCollection
     // MARK:- UIPBaseCollectionViewCellProtocol
 
 
+    /// Name of this class.
     var nameOfClass:String { get { return "\(type(of:self))" } }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get { return "\(self)" } }
 
 
+    ///
+    /// Update the cell view with a model.
+    ///
+    /// - Parameters:
+    ///   - model: The model to update the cell view with.
+    ///   - delegate: The delegate, if any actions are required to handle.
+    ///   - indexPath: Index path of the cell view.
+    /// - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
+    ///
     func update(with model:Any, delegate:Any, for indexPath:IndexPath)
     -> UIPCellSize
     {

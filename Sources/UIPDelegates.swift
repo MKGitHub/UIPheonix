@@ -32,8 +32,16 @@
 import Foundation
 
 
+///
+/// A simple button delegate for handling button actions.
+///
 protocol UIPButtonDelegate:class
 {
+    ///
+    /// A button action is called.
+    ///
+    /// - Parameter buttonId: The buttons id.
+    ///
     func buttonAction(_ buttonId:Int)
 }
 

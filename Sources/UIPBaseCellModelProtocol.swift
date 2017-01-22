@@ -32,14 +32,26 @@
 import Foundation
 
 
+///
+/// The standard protocol for all cell models.
+///
 protocol UIPBaseCellModelProtocol:class
 {
-    // we can't use "className" because that belongs to Objective-C NSObject
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
     var nameOfClass:String { get }
+
+    /// Name of this class (static context).
     static var nameOfClass:String { get }
 
     init()
 
+    ///
+    /// Set the contents of the model using the dictionary i.e. model mapping.
+    ///
+    /// - Parameter dictionary: Dictionary containing data for the model.
+    ///
     func setContents(with dictionary:Dictionary<String, Any>)
 }
 

@@ -85,6 +85,12 @@ There is no framework/library distibution, I recommend that you add the UIPheoni
 * CocoaPods (not recommended!): `pod 'UIPheonix', '~> 2.0.0'`
 
 
+Documentation
+------
+Go to documentation [index page](https://github.com/MKGitHub/UIPheonix/docs/index.html)
+This nice documentation was generated using the tool Jazzy `jazzy --min-acl internal`.
+
+
 Whats Next?
 ------
 * Add more features.

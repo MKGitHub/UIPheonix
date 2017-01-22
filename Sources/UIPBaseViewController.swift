@@ -36,16 +36,30 @@
 #endif
 
 
+///
+/// The base view controller protocol.
+///
 protocol UIPBaseViewControllerProtocol
 {
+    ///
+    /// Create a new instance of a view controller with provided dictionary to initialize its contents.
+    ///
+    /// - Parameter attributes: Dictionary with attributes.
+    /// - Returns: A new instance of the view controller.
+    ///
     static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>) -> T
 }
 
 
 #if os(iOS) || os(tvOS)
 
+    ///
+    /// The base view controller. Subclass this to gain its features.
+    /// Example code is provided in this file.
+    ///
     class UIPBaseViewController:UIViewController
     {
+        /// The provided dictionary with attributes when the view controller was instanced.
         var mPreparedAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
@@ -70,8 +84,13 @@ protocol UIPBaseViewControllerProtocol
 
 #elseif os(macOS)
 
+    ///
+    /// The base view controller. Subclass this to gain its features.
+    /// Example code is provided in this file.
+    ///
     class UIPBaseViewController:NSViewController
     {
+        /// The provided dictionary with attributes when the view controller was instanced.
         var mPreparedAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
