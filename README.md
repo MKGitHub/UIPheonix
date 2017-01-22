@@ -87,7 +87,7 @@ There is no framework/library distibution, I recommend that you add the UIPheoni
 
 Documentation
 ------
-Go to the documentation [index page](http://htmlpreview.github.io/?https://github.com/MKGitHub/UIPheonix/docs/index.html).
+Go to the documentation [index page](http://htmlpreview.github.io/?https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/docs/index.html).
 This nice documentation was generated using the tool Jazzy `jazzy --min-acl internal`.
 
 
