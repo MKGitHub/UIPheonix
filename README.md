@@ -2,8 +2,9 @@
 [![Status](https://img.shields.io/badge/Status-Active doing well & alive-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Pod](https://img.shields.io/badge/pod-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![SPM](https://img.shields.io/badge/SPM-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Carthage](https://img.shields.io/badge/carthage-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Pod](https://img.shields.io/badge/pod-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Swift](https://img.shields.io/badge/Swift Version-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
