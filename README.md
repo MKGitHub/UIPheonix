@@ -2,7 +2,7 @@
 [![Status](https://img.shields.io/badge/Status-Active doing well & alive-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![SPM](https://img.shields.io/badge/SPM-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![SPM](https://img.shields.io/badge/SPM-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Carthage](https://img.shields.io/badge/carthage-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Pod](https://img.shields.io/badge/pod-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
