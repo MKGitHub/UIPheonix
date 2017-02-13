@@ -11,9 +11,12 @@
 [![RUIC Implementation Version](https://img.shields.io/badge/RUIC Implementation Version-2.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 
+★ Give this repo a star and help its development grow! ★
+
+
 ![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Banner.png)
 
-Inspired by game development UIPheonix is a super easy, flexible, dynamic and highly scalable UI framework + concept for building reusable component/control-driven apps for macOS, iOS and tvOS. The same API apply for cross platform development! Think of it as using Lego blocks, you can use similar ones and move them around easy as pie.
+Inspired by game development UIPheonix is a super easy, flexible, dynamic and highly scalable UI framework + concept for building reusable component/control-driven apps for macOS, iOS and tvOS. The same API apply for cross-platform development! Think of it as using Lego blocks, you can use similar ones and move them around easy as pie.
 
 Does this seem familiar to you?
 
@@ -26,8 +29,9 @@ Well not any more…
 * Build and make changes to your UI quickly in a snap.
 * Make your UI reusable.
 * Focus on creating your app, not fighting layout issues.
-* Minimal setup, minimal impact on your app, no dependencies, no pain but so much gain!
-* Builds on top of collection views & table views, so you can easily mix and match, or revert at any time.
+* Minimal setup, minimal impact on your app, lightweight, no dependencies, no pain but so much gain!
+* Builds on top of collection views & table views, so you can easily mix and match.
+* Does not replace Apple technologies with custom implementations, so you will always be safe and up-to-date, and you can easily revert at any time.
 * Demo apps provided for macOS, iOS and tvOS (Kung Fu!)
 
 ![OSScreenshots](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/OSScreenshots.png)
