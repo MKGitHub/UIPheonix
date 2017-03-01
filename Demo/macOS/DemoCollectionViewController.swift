@@ -97,6 +97,12 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     func collectionView(_ collectionView:NSCollectionView, itemForRepresentedObjectAt indexPath:IndexPath)
     -> NSCollectionViewItem
     {
+
+
+        CFH
+
+
+
         let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
         let cellView:UIPBaseCollectionViewCell = mUIPheonix.dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
 
@@ -126,6 +132,11 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     func collectionView(_ collectionView:NSCollectionView, layout collectionViewLayout:NSCollectionViewLayout, sizeForItemAt indexPath:IndexPath)
     -> CGSize
     {
+
+        CFH
+
+
+
         let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
         let cellView:UIPBaseCollectionViewCell = mUIPheonix.view(forReuseIdentifier:cellModel.nameOfClass)!
 

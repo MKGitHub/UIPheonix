@@ -137,7 +137,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
 
     fileprivate func initUIPheonix()
     {
-        mUIPheonix = UIPheonix(with:ibTableView)
+        mUIPheonix = UIPheonix(with:ibTableView, delegate:self)
     }
 
 

@@ -45,11 +45,10 @@ fileprivate enum UIPDelegateViewType
 }
 
 
-@available(OSX 10.11, iOS 9.0, tvOS 9.0, *)
-
 ///
 /// The core class of UIPheonix.
 ///
+@available(OSX 10.11, iOS 9.0, tvOS 9.0, *)
 final class UIPheonix
 {
     // MARK: Private Members (uninitialized)
@@ -62,6 +61,7 @@ final class UIPheonix
     fileprivate var mDisplayModels:Array<UIPBaseCellModelProtocol> = Array<UIPBaseCellModelProtocol>()
 
     // MARK: Private Weak Reference
+    fileprivate weak var mDelegate:AnyObject?
     fileprivate weak var mDelegateCollectionView:UIPPlatformCollectionView?
     fileprivate weak var mDelegateTableView:UIPPlatformTableView?
 
@@ -75,13 +75,14 @@ final class UIPheonix
     /// - Parameters:
     ///   - collectionView: The collection view.
     ///
-    init(with collectionView:UIPPlatformCollectionView?)
+    init(with collectionView:UIPPlatformCollectionView?, delegate:AnyObject?)
     {
         // init members
         mUIPDelegateViewType = UIPDelegateViewType.collection
         mApplicationNameDot = getApplicationName() + "."
 
         mDelegateCollectionView = collectionView
+        mDelegate = delegate
     }
 
 
@@ -91,13 +92,14 @@ final class UIPheonix
     /// - Parameters:
     ///   - tableView: The table view.
     ///
-    init(with tableView:UIPPlatformTableView?)
+    init(with tableView:UIPPlatformTableView?, delegate:AnyObject?)
     {
         // init members
         mUIPDelegateViewType = UIPDelegateViewType.table
         mApplicationNameDot = getApplicationName() + "."
 
         mDelegateTableView = tableView
+        mDelegate = delegate
     }
 
 
@@ -329,7 +331,7 @@ final class UIPheonix
     -> UIPBaseCollectionViewCell?
     {
         guard (mDelegateCollectionView != nil) else {
-            fatalError("[UIPheonix] `view for reuseIdentifier` failed, `mDelegateCollectionView` is nil!")
+            fatalError("[UIPheonix] `dequeueView` failed, `mDelegateCollectionView` is nil!")
         }
 
         #if os(iOS) || os(tvOS)
@@ -359,6 +361,115 @@ final class UIPheonix
     {
         return mViewReuseIds[viewReuseId] as? UIPBaseCollectionViewCell
     }
+
+
+    #if os(iOS)
+        ///
+        /// Convenience function, use it in your:
+        ///
+        /// func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+        ///
+        func collectionViewCell(for indexPath:IndexPath)
+        -> UICollectionViewCell
+        {
+            guard (mDelegate != nil) else {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `mDelegate` is nil!")
+            }
+
+            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
+
+            let _:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+
+            cellView.layoutIfNeeded()
+
+            return cellView
+        }
+
+        ///
+        /// Convenience function, use it in your:
+        ///
+        /// func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+        ///
+        func collectionViewCellSize(for indexPath:IndexPath, preferredWidth:CGFloat)
+        -> CGSize
+        {
+            guard (mDelegate != nil) else {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `mDelegate` is nil!")
+            }
+
+            guard (mDelegateCollectionView != nil) else {
+                fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegateCollectionView` is nil!")
+            }
+
+            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellView:UIPBaseCollectionViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
+
+            let modelCellSize:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+            let layoutCellSize:CGSize = UIPheonix.calculateLayoutSizeForCell(cellView, preferredWidth:preferredWidth)
+
+            return UIPheonix.viewSize(with:layoutCellSize, addedSize:modelCellSize)
+        }
+    #elseif os(tvOS)
+        ///
+        /// Convenience function, use it in your:
+        ///
+        /// func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+        ///
+        func collectionViewCell(for indexPath:IndexPath)
+        -> UICollectionViewCell
+        {
+            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
+
+            let _:UIPCellSize = cellView.update(with:cellModel, delegate:self, for:indexPath)
+
+            cellView.layoutIfNeeded()
+
+            return cellView
+        }
+    #elseif os(macOS)
+        ///
+        /// Convenience function, use it in your:
+        ///
+        /// func collectionView(_ collectionView:NSCollectionView, itemForRepresentedObjectAt indexPath:IndexPath) -> NSCollectionViewItem
+        ///
+        func collectionViewItem(for indexPath:IndexPath)
+        -> NSCollectionViewItem
+        {
+            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
+
+            let _:UIPCellSize = cellView.update(with:cellModel, delegate:self, for:indexPath)
+
+            return cellView
+        }
+    #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // MARK:- UITableView
