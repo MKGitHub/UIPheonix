@@ -363,7 +363,7 @@ final class UIPheonix
     }
 
 
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
         ///
         /// Convenience function, use it in your:
         ///
@@ -409,24 +409,6 @@ final class UIPheonix
             let layoutCellSize:CGSize = UIPheonix.calculateLayoutSizeForCell(cellView, preferredWidth:preferredWidth)
 
             return UIPheonix.viewSize(with:layoutCellSize, addedSize:modelCellSize)
-        }
-    #elseif os(tvOS)
-        ///
-        /// Convenience function, use it in your:
-        ///
-        /// func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
-        ///
-        func collectionViewCell(for indexPath:IndexPath)
-        -> UICollectionViewCell
-        {
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
-            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
-
-            let _:UIPCellSize = cellView.update(with:cellModel, delegate:self, for:indexPath)
-
-            cellView.layoutIfNeeded()
-
-            return cellView
         }
     #elseif os(macOS)
         ///
