@@ -97,18 +97,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     func collectionView(_ collectionView:NSCollectionView, itemForRepresentedObjectAt indexPath:IndexPath)
     -> NSCollectionViewItem
     {
-
-
-        CFH
-
-
-
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
-        let cellView:UIPBaseCollectionViewCell = mUIPheonix.dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
-
-        let _:UIPCellSize = cellView.update(with:cellModel, delegate:self, for:indexPath)
-
-        return cellView
+        return mUIPheonix.collectionViewItem(for:indexPath)
     }
 
 
@@ -132,21 +121,10 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     func collectionView(_ collectionView:NSCollectionView, layout collectionViewLayout:NSCollectionViewLayout, sizeForItemAt indexPath:IndexPath)
     -> CGSize
     {
-
-        CFH
-
-
-
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
-        let cellView:UIPBaseCollectionViewCell = mUIPheonix.view(forReuseIdentifier:cellModel.nameOfClass)!
-
         // default: full width, no margins
         let defaultCellWidth:CGFloat = collectionView.bounds.size.width - 0 - 0
 
-        let modelCellSize:UIPCellSize = cellView.update(with:cellModel, delegate:self, for:indexPath)
-        let layoutCellSize:CGSize = UIPheonix.calculateLayoutSizeForCell(cellView, preferredWidth:defaultCellWidth)
-
-        return UIPheonix.viewSize(with:layoutCellSize, addedSize:modelCellSize)
+        return mUIPheonix.collectionViewItemSize(for:indexPath, preferredWidth:defaultCellWidth)
     }
 
 
@@ -238,7 +216,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
 
     fileprivate func initUIPheonix()
     {
-        mUIPheonix = UIPheonix(with:ibCollectionView)
+        mUIPheonix = UIPheonix(with:ibCollectionView, delegate:self)
     }
 
 

@@ -395,7 +395,7 @@ final class UIPheonix
         -> CGSize
         {
             guard (mDelegate != nil) else {
-                fatalError("[UIPheonix] `collectionViewCell` failed, `mDelegate` is nil!")
+                fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegate` is nil!")
             }
 
             guard (mDelegateCollectionView != nil) else {
@@ -419,12 +419,45 @@ final class UIPheonix
         func collectionViewItem(for indexPath:IndexPath)
         -> NSCollectionViewItem
         {
+            guard (mDelegate != nil) else {
+                fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegate` is nil!")
+            }
+
+            guard (mDelegateCollectionView != nil) else {
+                fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegateCollectionView` is nil!")
+            }
+
             let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
             let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
 
-            let _:UIPCellSize = cellView.update(with:cellModel, delegate:self, for:indexPath)
+            let _:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
 
             return cellView
+        }
+
+        ///
+        /// Convenience function, use it in your:
+        ///
+        /// func collectionView(_ collectionView:NSCollectionView, layout collectionViewLayout:NSCollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+        ///
+        func collectionViewItemSize(for indexPath:IndexPath, preferredWidth:CGFloat)
+        -> CGSize
+        {
+            guard (mDelegate != nil) else {
+                fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegate` is nil!")
+            }
+
+            guard (mDelegateCollectionView != nil) else {
+                fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegateCollectionView` is nil!")
+            }
+
+            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellView:UIPBaseCollectionViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
+
+            let modelCellSize:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+            let layoutCellSize:CGSize = UIPheonix.calculateLayoutSizeForCell(cellView, preferredWidth:preferredWidth)
+
+            return UIPheonix.viewSize(with:layoutCellSize, addedSize:modelCellSize)
         }
     #endif
 
