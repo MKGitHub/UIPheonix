@@ -38,7 +38,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     }
 
     // MARK: Public IB Outlet
-    @IBOutlet weak var ibCollectionView:UICollectionView!
+    @IBOutlet fileprivate weak var ibCollectionView:UICollectionView!
 
     // MARK: Private Members
     fileprivate var mAppDisplayStateType:AppDisplayStateType!
@@ -283,7 +283,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
 
         for i in 1 ... 20
         {
-            let simpleLabelModel:SimpleLabelModel = SimpleLabelModel(text:"  Label \(i)",
+            let simpleLabelModel:SimpleLabelModel = SimpleLabelModel(text:" Label \(i)",
                                                                      size:(12.0 + CGFloat(i) * 2.0),
                                                                      alignment:SimpleLabelModel.Alignment.left,
                                                                      style:SimpleLabelModel.Style.regular,

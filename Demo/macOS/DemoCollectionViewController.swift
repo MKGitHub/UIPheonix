@@ -207,16 +207,16 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     // MARK:- Private
 
 
+    fileprivate func initUIPheonix()
+    {
+        mUIPheonix = UIPheonix(with:ibCollectionView, delegate:self)
+    }
+
+
     fileprivate func setupCollectionView()
     {
         ibCollectionView.delegate = self
         ibCollectionView.dataSource = self
-    }
-
-
-    fileprivate func initUIPheonix()
-    {
-        mUIPheonix = UIPheonix(with:ibCollectionView, delegate:self)
     }
 
 
