@@ -64,7 +64,7 @@ protocol UIPBaseViewControllerProtocol
 
 
         /*
-            Example code, copy & paste into your concrete class.
+            Example implementation, copy & paste into your concrete class.
 
             ///
             /// Create a new instance of self with nib.
@@ -95,7 +95,7 @@ protocol UIPBaseViewControllerProtocol
 
 
         /*
-            Example code, copy & paste into your concrete class.
+            Example implementation, copy & paste into your concrete class.
 
             ///
             /// Create a new instance of self with nib.
