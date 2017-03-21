@@ -87,14 +87,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
     func tableView(_ tableView:NSTableView, viewFor tableColumn:NSTableColumn?, row:Int)
     -> NSView?
     {
-        let indexPath:IndexPath = IndexPath(item:row, section:0)
-
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:row)!
-        let cellView:UIPBaseTableViewCell = mUIPheonix.dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
-
-        cellView.update(with:cellModel, delegate:self, for:indexPath)
-
-        return cellView
+        return mUIPheonix.tableViewCell(for:row)
     }
 
 
@@ -113,20 +106,14 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
     func tableView(_ tableView:NSTableView, heightOfRow row:Int)
     -> CGFloat
     {
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:row)!
-        let cellView:UIPBaseTableViewCell = mUIPheonix.view(forReuseIdentifier:cellModel.nameOfClass)!
-
-        return cellView.rowHeight
+        return mUIPheonix.tableViewCellHeight(for:row)
     }
 
 
     func tableView(_ tableView:NSTableView, estimatedHeightForRowAt indexPath:IndexPath)
     -> CGFloat
     {
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
-        let cellView:UIPBaseTableViewCell = mUIPheonix.view(forReuseIdentifier:cellModel.nameOfClass)!
-
-        return cellView.estimatedRowHeight
+        return mUIPheonix.tableViewCellEstimatedHeight(for:indexPath)
     }
 
 
