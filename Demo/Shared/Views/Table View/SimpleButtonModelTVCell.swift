@@ -87,19 +87,19 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
             UIView.performWithoutAnimation(
             {
                 [weak self] in
-                self?.ibButton.setTitle(simpleButtonModel.mTitle, for:UIControlState())
+                self?.ibButton.setTitle(simpleButtonModel.pTitle, for:UIControlState())
                 self?.ibButton.layoutIfNeeded()
             })
 
         #elseif os(macOS)
-            ibButton.title = simpleButtonModel.mTitle
+            ibButton.title = simpleButtonModel.pTitle
             ibButton.sizeToFit()
-            alignButton(with:simpleButtonModel.mAlignment)
+            alignButton(with:simpleButtonModel.pAlignment)
         #endif
 
         // view delegate handling
         mDelegate = delegate as? UIPButtonDelegate
-        mButtonId = simpleButtonModel.mId
+        mButtonId = simpleButtonModel.pId
     }
 
 

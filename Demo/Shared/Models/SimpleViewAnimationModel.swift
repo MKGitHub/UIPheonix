@@ -35,7 +35,7 @@ final class SimpleViewAnimationModel:UIPBaseCellModel
     }
 
     // MARK: Public Member
-    public var mAnimationState:Bool = false
+    public var pAnimationState:Bool = false
 
 
     // MARK: UIPBaseCellModelProtocol
@@ -49,7 +49,7 @@ final class SimpleViewAnimationModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mAnimationState = dictionary[Key.animationState] as! Bool
+        pAnimationState = dictionary[Key.animationState] as! Bool
     }
 
 
@@ -60,7 +60,7 @@ final class SimpleViewAnimationModel:UIPBaseCellModel
     {
         super.init()
 
-        mAnimationState = animationState
+        pAnimationState = animationState
     }
 
 
@@ -71,7 +71,7 @@ final class SimpleViewAnimationModel:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.animationState:mAnimationState
+            Key.animationState:pAnimationState
         ]
     }
 }

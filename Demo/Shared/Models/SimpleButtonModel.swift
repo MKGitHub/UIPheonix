@@ -45,15 +45,15 @@ final class SimpleButtonModel:UIPBaseCellModel
     }
 
     // MARK: Public Members
-    public var mId:Int!
-    public var mTitle:String!
+    public var pId:Int!
+    public var pTitle:String!
 
     #if os(macOS)
-        public var mAlignment:String!
+        public var pAlignment:String!
     #endif
 
     #if os(tvOS)
-        public var mFocus:Bool = false
+        public var pFocus:Bool = false
     #endif
 
 
@@ -68,15 +68,15 @@ final class SimpleButtonModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mId = dictionary[Key.id] as! Int
-        mTitle = dictionary[Key.title] as! String
+        pId = dictionary[Key.id] as! Int
+        pTitle = dictionary[Key.title] as! String
 
         #if os(macOS)
-            mAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.center    // fallback to default value
+            pAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.center    // fallback to default value
         #endif
 
         #if os(tvOS)
-            mFocus = (dictionary[Key.focus] as? Bool) ?? false    // fallback to default value
+            pFocus = (dictionary[Key.focus] as? Bool) ?? false    // fallback to default value
         #endif
     }
 
@@ -89,28 +89,28 @@ final class SimpleButtonModel:UIPBaseCellModel
         {
             super.init()
 
-            mId = id
-            mTitle = title
+            pId = id
+            pTitle = title
         }
     #elseif os(tvOS)
         init(id:Int, title:String, focus:Bool)
         {
             super.init()
 
-            mId = id
-            mTitle = title
+            pId = id
+            pTitle = title
 
-            mFocus = focus
+            pFocus = focus
         }
     #elseif os(macOS)
         init(id:Int, title:String, alignment:String)
         {
             super.init()
 
-            mId = id
-            mTitle = title
+            pId = id
+            pTitle = title
 
-            mAlignment = alignment
+            pAlignment = alignment
         }
     #endif
 
@@ -123,8 +123,8 @@ final class SimpleButtonModel:UIPBaseCellModel
     {
         var dict:Dictionary<String, Any> = Dictionary<String, Any>(minimumCapacity:2)
 
-        dict[Key.id] = mId
-        dict[Key.title] = mTitle
+        dict[Key.id] = pId
+        dict[Key.title] = pTitle
 
         #if os(macOS)
             dict[Key.alignment] = mAlignment

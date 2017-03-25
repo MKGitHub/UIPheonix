@@ -44,8 +44,8 @@ final class SimpleUserProfileModel:UIPBaseCellModel
     }
 
     // MARK: Public Members
-    public var mTitle:String!
-    public var mDescription:String!
+    public var pTitle:String!
+    public var pDescription:String!
 
 
     // MARK:- UIPBaseCellModelProtocol
@@ -59,8 +59,8 @@ final class SimpleUserProfileModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mTitle = dictionary[Key.title] as! String
-        mDescription = dictionary[Key.description] as! String
+        pTitle = dictionary[Key.title] as! String
+        pDescription = dictionary[Key.description] as! String
     }
 
 
@@ -71,8 +71,8 @@ final class SimpleUserProfileModel:UIPBaseCellModel
     {
         super.init()
 
-        mTitle = title
-        mDescription = description
+        pTitle = title
+        pDescription = description
     }
 
 
@@ -83,8 +83,8 @@ final class SimpleUserProfileModel:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.title:mTitle,
-            Key.description:mDescription
+            Key.title:pTitle,
+            Key.description:pDescription
         ]
     }
 }

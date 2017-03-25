@@ -51,7 +51,7 @@ final class SimpleVerticalSpaceModelCVCell:UIPBaseCollectionViewCell
 
         // return view size
         return UIPCellSize(absoluteWidth:false, width:0,
-                           absoluteHeight:true, height:simpleVerticalSpaceModel.mSize)
+                           absoluteHeight:true, height:simpleVerticalSpaceModel.pSize)
     }
 }
 

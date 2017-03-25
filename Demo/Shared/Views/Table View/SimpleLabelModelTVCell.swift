@@ -59,15 +59,15 @@ final class SimpleLabelModelTVCell:UIPBaseTableViewCell
         let simpleLabelModel2:SimpleLabelModel2 = model as! SimpleLabelModel2
 
         #if os(iOS) || os(tvOS)
-            self.textLabel?.text = simpleLabelModel2.mText
+            self.textLabel?.text = simpleLabelModel2.pText
         #elseif os(macOS)
-            self.textField?.stringValue = simpleLabelModel2.mText
+            self.textField?.stringValue = simpleLabelModel2.pText
         #endif
 
         #if os(iOS) || os(tvOS)
-            self.backgroundColor = UIPPlatformColor(hue:simpleLabelModel2.mBackgroundColorHue, saturation:0.5, brightness:1, alpha:1)
+            self.backgroundColor = UIPPlatformColor(hue:simpleLabelModel2.pBackgroundColorHue, saturation:0.5, brightness:1, alpha:1)
         #elseif os(macOS)
-            self.layer?.backgroundColor = UIPPlatformColor(hue:simpleLabelModel2.mBackgroundColorHue, saturation:0.5, brightness:1, alpha:1).cgColor
+            self.layer?.backgroundColor = UIPPlatformColor(hue:simpleLabelModel2.pBackgroundColorHue, saturation:0.5, brightness:1, alpha:1).cgColor
         #endif
     }
 }

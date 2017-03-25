@@ -38,7 +38,7 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
     @IBOutlet fileprivate weak var ibLeftSpaceConstraint:NSLayoutConstraint!
 
     // MARK: Private Member
-    public var mSimpleViewAnimationModel:SimpleViewAnimationModel!
+    public var pSimpleViewAnimationModel:SimpleViewAnimationModel!
 
 
     // MARK:- UICollectionViewCell
@@ -57,7 +57,7 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
     -> UIPCellSize
     {
         // save model for later
-        mSimpleViewAnimationModel = model as! SimpleViewAnimationModel
+        pSimpleViewAnimationModel = model as! SimpleViewAnimationModel
 
         animateUI()
 
@@ -80,7 +80,7 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
 
                 if let strongSelf = self
                 {
-                    strongSelf.mSimpleViewAnimationModel.mAnimationState = !strongSelf.mSimpleViewAnimationModel.mAnimationState
+                    strongSelf.pSimpleViewAnimationModel.pAnimationState = !strongSelf.pSimpleViewAnimationModel.pAnimationState
                     strongSelf.animateUI()
 
                     strongSelf.layoutIfNeeded()    // #2. Layout again to update the frames/constraints.
@@ -97,7 +97,7 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
 
                 if let strongSelf = self
                 {
-                    strongSelf.mSimpleViewAnimationModel.mAnimationState = !strongSelf.mSimpleViewAnimationModel.mAnimationState
+                    strongSelf.pSimpleViewAnimationModel.pAnimationState = !strongSelf.pSimpleViewAnimationModel.pAnimationState
                     strongSelf.animateUI()
 
                     strongSelf.view.layoutSubtreeIfNeeded()    // #2. Layout again to update the frames/constraints.
@@ -114,11 +114,11 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
     fileprivate func animateUI()
     {
         #if os(iOS)
-            self.ibLeftSpaceConstraint?.constant = (mSimpleViewAnimationModel.mAnimationState) ? (self.bounds.width - 70 - 8) : 8
+            self.ibLeftSpaceConstraint?.constant = (pSimpleViewAnimationModel.pAnimationState) ? (self.bounds.width - 70 - 8) : 8
         #elseif os(tvOS)
-            self.ibLeftSpaceConstraint?.constant = (mSimpleViewAnimationModel.mAnimationState) ? (self.bounds.width - 150 - 16) : 16
+            self.ibLeftSpaceConstraint?.constant = (pSimpleViewAnimationModel.pAnimationState) ? (self.bounds.width - 150 - 16) : 16
         #elseif os(macOS)
-            self.ibLeftSpaceConstraint?.animator().constant = (mSimpleViewAnimationModel.mAnimationState) ? (self.view.bounds.width - 70 - 8) : 8
+            self.ibLeftSpaceConstraint?.animator().constant = (pSimpleViewAnimationModel.pAnimationState) ? (self.view.bounds.width - 70 - 8) : 8
         #endif
     }
 }

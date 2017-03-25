@@ -476,7 +476,7 @@ final class UIPheonix
         ///
         /// Convenience function, use it in your:
         ///
-        /// func tableView(_ tableView:NSTableView, viewFor tableColumn:NSTableColumn?, row:Int) -> NSView?
+        /// func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell
         ///
         @inline(__always)
         func tableViewCell(for indexPath:IndexPath)
@@ -497,7 +497,7 @@ final class UIPheonix
         ///
         /// Convenience function, use it in your:
         ///
-        /// func tableView(_ tableView:NSTableView, heightOfRow row:Int) -> CGFloat
+        /// func tableView(_ tableView:UITableView, heightForRowAt indexPath:IndexPath) -> CGFloat
         ///
         @inline(__always)
         func tableViewCellHeight(for indexPath:IndexPath)
@@ -516,7 +516,7 @@ final class UIPheonix
         ///
         /// Convenience function, use it in your:
         ///
-        /// func tableView(_ tableView:NSTableView, estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat
+        /// func tableView(_ tableView:UITableView, estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat
         ///
         @inline(__always)
         func tableViewCellEstimatedHeight(for indexPath:IndexPath)
@@ -592,22 +592,6 @@ final class UIPheonix
             return cellView.estimatedRowHeight
         }
     #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     ///

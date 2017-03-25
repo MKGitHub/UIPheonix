@@ -36,8 +36,8 @@ final class SimpleCounterModel:UIPBaseCellModel
     }
 
     // MARK: Public Members
-    public var mValue:Int!
-    public var mNotificationId:String!
+    public var pValue:Int!
+    public var pNotificationId:String!
 
 
     // MARK:- UIPBaseCellModelProtocol
@@ -51,9 +51,9 @@ final class SimpleCounterModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mValue = dictionary[Key.value] as! Int
+        pValue = dictionary[Key.value] as! Int
 
-        mNotificationId = (dictionary[Key.notificationId] as? String) ?? nil    // fallback to default value
+        pNotificationId = (dictionary[Key.notificationId] as? String) ?? nil    // fallback to default value
     }
 
 
@@ -64,8 +64,8 @@ final class SimpleCounterModel:UIPBaseCellModel
     {
         super.init()
 
-        mValue = value
-        mNotificationId = notificationId
+        pValue = value
+        pNotificationId = notificationId
     }
 
 
@@ -76,8 +76,8 @@ final class SimpleCounterModel:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.value:mValue,
-            Key.notificationId:mNotificationId
+            Key.value:pValue,
+            Key.notificationId:pNotificationId
         ]
     }
 }

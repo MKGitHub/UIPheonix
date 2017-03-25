@@ -60,9 +60,9 @@ final class SimpleTextFieldModelCVCell:UIPBaseCollectionViewCell
         let simpleTextFieldModel:SimpleTextFieldModel = model as! SimpleTextFieldModel
 
         #if os(iOS) || os(tvOS)
-            ibTextField.text = simpleTextFieldModel.mText
+            ibTextField.text = simpleTextFieldModel.pText
         #elseif os(macOS)
-            ibTextField.stringValue = simpleTextFieldModel.mText
+            ibTextField.stringValue = simpleTextFieldModel.pText
         #endif
 
         // keep a reference to the model
@@ -80,9 +80,9 @@ final class SimpleTextFieldModelCVCell:UIPBaseCollectionViewCell
     {
         // update reference model
         #if os(iOS) || os(tvOS)
-            mSimpleTextFieldModelReference?.mText = sender.text
+            mSimpleTextFieldModelReference?.pText = sender.text
         #elseif os(macOS)
-            mSimpleTextFieldModelReference?.mText = sender.stringValue
+            mSimpleTextFieldModelReference?.pText = sender.stringValue
         #endif
     }
 }

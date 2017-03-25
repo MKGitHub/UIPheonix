@@ -82,12 +82,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath)
     -> UITableViewCell
     {
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
-        let cellView:UIPBaseTableViewCell = mUIPheonix.dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
-
-        cellView.update(with:cellModel, delegate:self, for:indexPath)
-
-        return cellView
+        return mUIPheonix.tableViewCell(for:indexPath)
     }
 
 
@@ -97,20 +92,14 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
     func tableView(_ tableView:UITableView, heightForRowAt indexPath:IndexPath)
     -> CGFloat
     {
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
-        let cellView:UIPBaseTableViewCell = mUIPheonix.view(forReuseIdentifier:cellModel.nameOfClass)!
-
-        return cellView.rowHeight
+        return mUIPheonix.tableViewCellHeight(for:indexPath)
     }
 
 
     func tableView(_ tableView:UITableView, estimatedHeightForRowAt indexPath:IndexPath)
     -> CGFloat
     {
-        let cellModel:UIPBaseCellModel = mUIPheonix.model(at:indexPath.item)!
-        let cellView:UIPBaseTableViewCell = mUIPheonix.view(forReuseIdentifier:cellModel.nameOfClass)!
-
-        return cellView.estimatedRowHeight
+        return mUIPheonix.tableViewCellEstimatedHeight(for:indexPath)
     }
 
 
@@ -178,8 +167,8 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
         ibTableView.dataSource = self
 
         ///
-        /// In our demo, we are using custom table view cell types.
-        /// But if we were only using the built-in table cell types – this would be enough, because they all have a fixed height of 66 points.
+        /// In our demo, we are using mixed custom table view cell types.
+        /// But if we were only using the standard built-in table cell types – this would be enough, because they all have a fixed height of 44 points.
         ///
 
         // From Apple documentation:
@@ -188,12 +177,14 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
         // Note that if you create a self-sizing cell in Interface Builder, the default row height is changed to the value
         // set in Interface Builder. To get the expected self-sizing behavior for a cell that you create in Interface Builder,
         // you must explicitly set rowHeight equal to UITableViewAutomaticDimension in your code.
-        ////ibTableView.rowHeight = UITableViewAutomaticDimension
+
+        //// I.e. enable this code: ibTableView.rowHeight = UITableViewAutomaticDimension
 
         // From Apple documentation:
         // When you create a self-sizing table view cell, you need to set this property and use constraints to define the cell’s size.
         // in this case we set the default height set in IB
-        ////ibTableView.estimatedRowHeight = 216
+
+        //// I.e. enable this code: ibTableView.estimatedRowHeight = <some size e.g. 216>
     }
 }
 

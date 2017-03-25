@@ -53,8 +53,8 @@ final class SimpleCounterModelCVCell:UIPBaseCollectionViewCell
         let simpleCounterModel:SimpleCounterModel = model as! SimpleCounterModel
 
         // store for later
-        mCounterValue = Double(simpleCounterModel.mValue)
-        mNotificationId = simpleCounterModel.mNotificationId
+        mCounterValue = Double(simpleCounterModel.pValue)
+        mNotificationId = simpleCounterModel.pNotificationId
 
         // return view size
         return UIPCellSizeUnmodified

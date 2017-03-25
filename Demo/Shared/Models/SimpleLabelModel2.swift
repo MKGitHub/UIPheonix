@@ -44,8 +44,8 @@ final class SimpleLabelModel2:UIPBaseCellModel
     }
 
     // MARK: Public Members
-    public var mText:String!
-    public var mBackgroundColorHue:CGFloat!
+    public var pText:String!
+    public var pBackgroundColorHue:CGFloat!
 
 
     // MARK:- UIPBaseCellModelProtocol
@@ -59,8 +59,8 @@ final class SimpleLabelModel2:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mText = dictionary[Key.text] as! String
-        mBackgroundColorHue = dictionary[Key.backgroundColorHue] as! CGFloat
+        pText = dictionary[Key.text] as! String
+        pBackgroundColorHue = dictionary[Key.backgroundColorHue] as! CGFloat
     }
 
 
@@ -71,8 +71,8 @@ final class SimpleLabelModel2:UIPBaseCellModel
     {
         super.init()
 
-        mText = text
-        mBackgroundColorHue = backgroundColorHue
+        pText = text
+        pBackgroundColorHue = backgroundColorHue
     }
 
 
@@ -83,8 +83,8 @@ final class SimpleLabelModel2:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.text:mText,
-            Key.backgroundColorHue:CGFloat(mBackgroundColorHue)
+            Key.text:pText,
+            Key.backgroundColorHue:CGFloat(pBackgroundColorHue)
         ]
     }
 }

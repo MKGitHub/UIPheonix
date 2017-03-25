@@ -61,12 +61,12 @@ final class SimpleLabelModel:UIPBaseCellModel
     }
 
     // MARK: Public Members
-    public var mText:String!
-    public var mSize:CGFloat!
-    public var mAlignment:String!
-    public var mStyle:String!
-    public var mBackgroundColorHue:CGFloat!
-    public var mNotificationId:String!
+    public var pText:String!
+    public var pSize:CGFloat!
+    public var pAlignment:String!
+    public var pStyle:String!
+    public var pBackgroundColorHue:CGFloat!
+    public var pNotificationId:String!
 
 
     // MARK:- UIPBaseCellModelProtocol
@@ -80,7 +80,7 @@ final class SimpleLabelModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mText = dictionary[Key.text] as! String
+        pText = dictionary[Key.text] as! String
 
         #if os(iOS)
             let crossPlatformFontSize:CGFloat = UIPPlatformFont.systemFontSize
@@ -89,14 +89,14 @@ final class SimpleLabelModel:UIPBaseCellModel
         #elseif os(macOS)
             let crossPlatformFontSize:CGFloat = 12
         #endif
-        mSize = (dictionary[Key.size] as? CGFloat) ?? crossPlatformFontSize    // fallback to default value
+        pSize = (dictionary[Key.size] as? CGFloat) ?? crossPlatformFontSize    // fallback to default value
 
-        mAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.left          // fallback to default value
-        mStyle = (dictionary[Key.style] as? String) ?? Style.regular               // fallback to default value
+        pAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.left          // fallback to default value
+        pStyle = (dictionary[Key.style] as? String) ?? Style.regular               // fallback to default value
 
-        mBackgroundColorHue = dictionary[Key.backgroundColorHue] as! CGFloat
+        pBackgroundColorHue = dictionary[Key.backgroundColorHue] as! CGFloat
 
-        mNotificationId = (dictionary[Key.notificationId] as? String) ?? nil   // fallback to default value
+        pNotificationId = (dictionary[Key.notificationId] as? String) ?? nil   // fallback to default value
     }
 
 
@@ -107,12 +107,12 @@ final class SimpleLabelModel:UIPBaseCellModel
     {
         super.init()
 
-        mText = text
-        mSize = size
-        mAlignment = alignment
-        mStyle = style
-        mBackgroundColorHue = backgroundColorHue
-        mNotificationId = notificationId
+        pText = text
+        pSize = size
+        pAlignment = alignment
+        pStyle = style
+        pBackgroundColorHue = backgroundColorHue
+        pNotificationId = notificationId
     }
 
 
@@ -123,11 +123,11 @@ final class SimpleLabelModel:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.text:mText,
-            Key.size:mSize,
-            Key.alignment:mAlignment,
-            Key.backgroundColorHue:CGFloat(mBackgroundColorHue),
-            Key.notificationId:mNotificationId
+            Key.text:pText,
+            Key.size:pSize,
+            Key.alignment:pAlignment,
+            Key.backgroundColorHue:CGFloat(pBackgroundColorHue),
+            Key.notificationId:pNotificationId
         ]
     }
 }

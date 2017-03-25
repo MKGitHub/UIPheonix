@@ -60,11 +60,11 @@ final class SimpleUserProfileModelTVCell:UIPBaseTableViewCell
         let simpleUserProfileModel:SimpleUserProfileModel = model as! SimpleUserProfileModel
 
         #if os(iOS) || os(tvOS)
-            ibTitleLabel.text = simpleUserProfileModel.mTitle
-            ibDescriptionLabel.text = simpleUserProfileModel.mDescription
+            ibTitleLabel.text = simpleUserProfileModel.pTitle
+            ibDescriptionLabel.text = simpleUserProfileModel.pDescription
         #elseif os(macOS)
-            ibTitleLabel.stringValue = simpleUserProfileModel.mTitle
-            ibDescriptionLabel.stringValue = simpleUserProfileModel.mDescription
+            ibTitleLabel.stringValue = simpleUserProfileModel.pTitle
+            ibDescriptionLabel.stringValue = simpleUserProfileModel.pDescription
 
             // for now I'll just leave this here, maybe there will be a good way in the future to handle self-sizing table view cells…
             //let s:NSSize = ibDescriptionLabel.sizeThatFits(NSSize(width:ibDescriptionLabel.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))

@@ -35,7 +35,7 @@ final class SimpleTextFieldModel:UIPBaseCellModel
     }
 
     // MARK: Public Member
-    public var mText:String!
+    public var pText:String!
 
 
     // MARK: UIPBaseCellModelProtocol
@@ -49,7 +49,7 @@ final class SimpleTextFieldModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mText = dictionary[Key.text] as! String
+        pText = dictionary[Key.text] as! String
     }
 
 
@@ -60,7 +60,7 @@ final class SimpleTextFieldModel:UIPBaseCellModel
     {
         super.init()
 
-        mText = text
+        pText = text
     }
 
 
@@ -71,7 +71,7 @@ final class SimpleTextFieldModel:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.text:mText
+            Key.text:pText
         ]
     }
 }

@@ -64,26 +64,26 @@ final class SimpleLabelModelCVCell:UIPBaseCollectionViewCell
         let simpleLabelModel:SimpleLabelModel = model as! SimpleLabelModel
 
         #if os(iOS) || os(tvOS)
-            ibLabel.text = simpleLabelModel.mText
-            ibLabel.textAlignment = textAligment(with:simpleLabelModel.mAlignment)
+            ibLabel.text = simpleLabelModel.pText
+            ibLabel.textAlignment = textAligment(with:simpleLabelModel.pAlignment)
         #elseif os(macOS)
-            ibLabel.stringValue = simpleLabelModel.mText
-            ibLabel.alignment = textAligment(with:simpleLabelModel.mAlignment)
+            ibLabel.stringValue = simpleLabelModel.pText
+            ibLabel.alignment = textAligment(with:simpleLabelModel.pAlignment)
         #endif
 
-        ibLabel.font = fontStyle(with:simpleLabelModel.mStyle, size:simpleLabelModel.mSize)
+        ibLabel.font = fontStyle(with:simpleLabelModel.pStyle, size:simpleLabelModel.pSize)
 
         #if os(iOS) || os(tvOS)
-            self.backgroundColor = UIPPlatformColor(hue:simpleLabelModel.mBackgroundColorHue, saturation:0.5, brightness:1, alpha:1)
+            self.backgroundColor = UIPPlatformColor(hue:simpleLabelModel.pBackgroundColorHue, saturation:0.5, brightness:1, alpha:1)
         #elseif os(macOS)
-            self.view.layer?.backgroundColor = UIPPlatformColor(hue:simpleLabelModel.mBackgroundColorHue, saturation:0.5, brightness:1, alpha:1).cgColor
+            self.view.layer?.backgroundColor = UIPPlatformColor(hue:simpleLabelModel.pBackgroundColorHue, saturation:0.5, brightness:1, alpha:1).cgColor
         #endif
 
         // install notification
-        if (simpleLabelModel.mNotificationId != nil)
+        if (simpleLabelModel.pNotificationId != nil)
         {
             // store notification id for later
-            mNotificationId = simpleLabelModel.mNotificationId
+            mNotificationId = simpleLabelModel.pNotificationId
 
             toggleNotification(state:true)
         }

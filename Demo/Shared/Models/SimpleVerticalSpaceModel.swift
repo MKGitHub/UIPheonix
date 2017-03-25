@@ -37,7 +37,7 @@ final class SimpleVerticalSpaceModel:UIPBaseCellModel
     }
 
     // MARK: Public Members
-    public var mSize:CGFloat!
+    public var pSize:CGFloat!
 
 
     // MARK: UIPBaseCellModelProtocol
@@ -51,7 +51,7 @@ final class SimpleVerticalSpaceModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        mSize = dictionary[Key.size] as! CGFloat
+        pSize = dictionary[Key.size] as! CGFloat
     }
 
 
@@ -62,7 +62,7 @@ final class SimpleVerticalSpaceModel:UIPBaseCellModel
     {
         super.init()
 
-        mSize = size
+        pSize = size
     }
 
 
@@ -73,7 +73,7 @@ final class SimpleVerticalSpaceModel:UIPBaseCellModel
     -> Dictionary<String, Any>
     {
         return [
-            Key.size:mSize
+            Key.size:pSize
         ]
     }
 }

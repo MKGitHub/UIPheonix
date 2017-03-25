@@ -182,8 +182,8 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
         ibTableView.gridColor = NSColor.lightGray
 
         ///
-        /// In our demo, we are using custom table view cell types.
-        /// But if we were only using the built-in table cell types – this would be enough, because they all have a fixed height of 17 points.
+        /// In our demo, we are using mixed custom table view cell types.
+        /// But if we were only using the standard built-in table cell types – this would be enough, because they all have a fixed height of 44 points.
         ///
 
         // From Apple documentation:
@@ -194,7 +194,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
         // The actual -rectOfRow: is equal to the -rowHeight plus the intercellSpacing.height.
         // The default value is 17.0 for applications linked on 10.5 and higher (the height acceptable for [NSFont systemFontSize]).
         // The default value is 16.0 for 10.4 and lower.
-        //ibTableView.rowHeight = 17
+        //// I.e. enable this code: ibTableView.rowHeight = <some size e.g. 17>
     }
 }
 
