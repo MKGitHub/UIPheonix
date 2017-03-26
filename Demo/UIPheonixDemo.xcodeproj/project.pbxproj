@@ -39,36 +39,36 @@
 		4D279AE71DFDF3DE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D279ACD1DFDEEBE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift */; };
 		4D279AE81DFDF3DE006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D279ACE1DFDEEBE006EDC1E /* SimpleViewAnimationModelCVCell.swift */; };
 		4D279AE91DFDF3DE006EDC1E /* SimpleLabelModelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D279AD01DFDEEBE006EDC1E /* SimpleLabelModelTVCell.swift */; };
-		4D3814781E33A4F20098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
-		4D3814791E33A4F20098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
-		4D38147A1E33A4F20098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
-		4D38147B1E33A4F20098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
-		4D38147C1E33A4F20098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
-		4D38147D1E33A4F20098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
-		4D38147E1E33A4F20098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
-		4D38147F1E33A4F20098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
-		4D3814801E33A4F20098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
-		4D3814811E33A4F20098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
-		4D3814821E33A4F30098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
-		4D3814831E33A4F30098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
-		4D3814841E33A4F30098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
-		4D3814851E33A4F30098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
-		4D3814861E33A4F30098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
-		4D3814871E33A4F30098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
-		4D3814881E33A4F30098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
-		4D3814891E33A4F30098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
-		4D38148A1E33A4F30098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
-		4D38148B1E33A4F30098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
-		4D38148C1E33A4F30098A0F2 /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
-		4D38148D1E33A4F30098A0F2 /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
-		4D38148E1E33A4F30098A0F2 /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
-		4D38148F1E33A4F30098A0F2 /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
-		4D3814901E33A4F30098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
-		4D3814911E33A4F30098A0F2 /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
-		4D3814921E33A4F30098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
-		4D3814931E33A4F30098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
-		4D3814941E33A4F30098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
-		4D3814951E33A4F30098A0F2 /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
+		4D33E9681E87469600C1A42D /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
+		4D33E9691E87469600C1A42D /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
+		4D33E96A1E87469600C1A42D /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
+		4D33E96B1E87469600C1A42D /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
+		4D33E96C1E87469600C1A42D /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
+		4D33E96D1E87469600C1A42D /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
+		4D33E96E1E87469600C1A42D /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
+		4D33E96F1E87469600C1A42D /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
+		4D33E9701E87469600C1A42D /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
+		4D33E9711E87469600C1A42D /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
+		4D33E9721E87469600C1A42D /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
+		4D33E9731E87469600C1A42D /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
+		4D33E9741E87469600C1A42D /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
+		4D33E9751E87469600C1A42D /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
+		4D33E9761E87469600C1A42D /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
+		4D33E9771E87469600C1A42D /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
+		4D33E9781E87469600C1A42D /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
+		4D33E9791E87469600C1A42D /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
+		4D33E97A1E87469600C1A42D /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
+		4D33E97B1E87469600C1A42D /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
+		4D33E97C1E87469600C1A42D /* UIPheonix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814531E339D610098A0F2 /* UIPheonix.swift */; };
+		4D33E97D1E87469600C1A42D /* UIPMisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814541E339D610098A0F2 /* UIPMisc.swift */; };
+		4D33E97E1E87469600C1A42D /* UIPDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814521E339D610098A0F2 /* UIPDelegates.swift */; };
+		4D33E97F1E87469600C1A42D /* UIPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */; };
+		4D33E9801E87469600C1A42D /* UIPBaseCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */; };
+		4D33E9811E87469600C1A42D /* UIPBaseCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */; };
+		4D33E9821E87469600C1A42D /* UIPBaseCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */; };
+		4D33E9831E87469600C1A42D /* UIPBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */; };
+		4D33E9841E87469600C1A42D /* UIPBaseTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */; };
+		4D33E9851E87469600C1A42D /* UIPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */; };
 		4D3C7A7A1D5BF79A0006C7AE /* SimpleButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAF7181D379D7C00A4B1FC /* SimpleButtonModel.swift */; };
 		4D3DEFFB1E06F1FB000D8B70 /* DemoCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DEFF01E06F1FB000D8B70 /* DemoCollectionViewController.xib */; };
 		4D3DEFFC1E06F1FB000D8B70 /* SimpleButtonModelCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DEFF11E06F1FB000D8B70 /* SimpleButtonModelCVCell.xib */; };
@@ -191,6 +191,7 @@
 		4D279ACD1DFDEEBE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleVerticalSpaceModelCVCell.swift; sourceTree = "<group>"; };
 		4D279ACE1DFDEEBE006EDC1E /* SimpleViewAnimationModelCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleViewAnimationModelCVCell.swift; sourceTree = "<group>"; };
 		4D279AD01DFDEEBE006EDC1E /* SimpleLabelModelTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLabelModelTVCell.swift; sourceTree = "<group>"; };
+		4D33E9641E8743D400C1A42D /* UIPheonix_2_0_1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPheonix_2_0_1.swift; sourceTree = "<group>"; };
 		4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCellModel.swift; sourceTree = "<group>"; };
 		4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCellModelProtocol.swift; sourceTree = "<group>"; };
 		4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPBaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		4D3814521E339D610098A0F2 /* UIPDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPDelegates.swift; sourceTree = "<group>"; };
 		4D3814531E339D610098A0F2 /* UIPheonix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPheonix.swift; sourceTree = "<group>"; };
 		4D3814541E339D610098A0F2 /* UIPMisc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPMisc.swift; sourceTree = "<group>"; };
-		4D3814741E33A42B0098A0F2 /* UIPheonix_2_0_0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPheonix_2_0_0.swift; sourceTree = "<group>"; };
 		4D3DEFF01E06F1FB000D8B70 /* DemoCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewController.xib; sourceTree = "<group>"; };
 		4D3DEFF11E06F1FB000D8B70 /* SimpleButtonModelCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleButtonModelCVCell.xib; sourceTree = "<group>"; };
 		4D3DEFF21E06F1FB000D8B70 /* SimpleCounterModelCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleCounterModelCVCell.xib; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 		4D3814731E33A42B0098A0F2 /* SingleFileSource */ = {
 			isa = PBXGroup;
 			children = (
-				4D3814741E33A42B0098A0F2 /* UIPheonix_2_0_0.swift */,
+				4D33E9641E8743D400C1A42D /* UIPheonix_2_0_1.swift */,
 			);
 			name = SingleFileSource;
 			path = ../SingleFileSource;
@@ -821,24 +821,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DC4A46A1E195C0C00FEC973 /* SimpleButtonModelTVCell.swift in Sources */,
-				4D3814861E33A4F30098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
-				4D38148B1E33A4F30098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
+				4D33E9761E87469600C1A42D /* UIPBaseCellModelProtocol.swift in Sources */,
+				4D33E97B1E87469600C1A42D /* UIPBaseTableViewCell.swift in Sources */,
 				66AAF7321D379D7C00A4B1FC /* ViewController.swift in Sources */,
 				66AAF7261D379D7C00A4B1FC /* AppDelegate.swift in Sources */,
 				4D279AE01DFDF3DD006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */,
 				4D279AE21DFDF3DD006EDC1E /* SimpleLabelModelTVCell.swift in Sources */,
-				4D3814881E33A4F30098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
-				4D38148A1E33A4F30098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
+				4D33E9781E87469600C1A42D /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
+				4D33E97A1E87469600C1A42D /* UIPBaseTableViewCellProtocol.swift in Sources */,
 				4D43BF021E06336B00E71655 /* SimpleUserProfileModel.swift in Sources */,
 				66AAF73B1D379D7C00A4B1FC /* SimpleLabelModel.swift in Sources */,
 				4D43BEFD1E062D9300E71655 /* SimpleLabelModel2.swift in Sources */,
-				4D3814891E33A4F30098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
+				4D33E9791E87469600C1A42D /* UIPBaseCollectionViewCell.swift in Sources */,
 				4D279ADD1DFDF3DD006EDC1E /* SimpleCounterModelCVCell.swift in Sources */,
 				66AAF72A1D379D7C00A4B1FC /* DemoCollectionViewController.swift in Sources */,
 				66AAF73A1D379D7C00A4B1FC /* SimpleButtonModel.swift in Sources */,
-				4D3814841E33A4F30098A0F2 /* UIPDelegates.swift in Sources */,
-				4D3814831E33A4F30098A0F2 /* UIPMisc.swift in Sources */,
-				4D3814821E33A4F30098A0F2 /* UIPheonix.swift in Sources */,
+				4D33E9741E87469600C1A42D /* UIPDelegates.swift in Sources */,
+				4D33E9731E87469600C1A42D /* UIPMisc.swift in Sources */,
+				4D33E9721E87469600C1A42D /* UIPheonix.swift in Sources */,
 				4D279ADE1DFDF3DD006EDC1E /* SimpleLabelModelCVCell.swift in Sources */,
 				66AAF73E1D379D7C00A4B1FC /* SimpleVerticalSpaceModel.swift in Sources */,
 				4D279AE11DFDF3DD006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */,
@@ -851,8 +851,8 @@
 				66AAF7491D37DA6700A4B1FC /* SimpleCounterModel.swift in Sources */,
 				66AAF73C1D379D7C00A4B1FC /* SimpleTextFieldModel.swift in Sources */,
 				66AAF73D1D379D7C00A4B1FC /* SimpleViewAnimationModel.swift in Sources */,
-				4D3814851E33A4F30098A0F2 /* UIPBaseViewController.swift in Sources */,
-				4D3814871E33A4F30098A0F2 /* UIPBaseCellModel.swift in Sources */,
+				4D33E9751E87469600C1A42D /* UIPBaseViewController.swift in Sources */,
+				4D33E9771E87469600C1A42D /* UIPBaseCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,17 +861,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D279AD11DFDEEBE006EDC1E /* SimpleButtonModelCVCell.swift in Sources */,
-				4D38147C1E33A4F20098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
+				4D33E96C1E87469600C1A42D /* UIPBaseCellModelProtocol.swift in Sources */,
 				4DC4A46B1E195C0D00FEC973 /* SimpleButtonModelTVCell.swift in Sources */,
-				4D3814791E33A4F20098A0F2 /* UIPMisc.swift in Sources */,
+				4D33E9691E87469600C1A42D /* UIPMisc.swift in Sources */,
 				4D6FADFD1D53E9B500A31C8F /* ViewController.swift in Sources */,
-				4D38147E1E33A4F20098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
+				4D33E96E1E87469600C1A42D /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
 				4D74B2E61D53F23F00682A02 /* Types.swift in Sources */,
-				4D38147A1E33A4F20098A0F2 /* UIPDelegates.swift in Sources */,
-				4D38147B1E33A4F20098A0F2 /* UIPBaseViewController.swift in Sources */,
-				4D3814811E33A4F20098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
+				4D33E96A1E87469600C1A42D /* UIPDelegates.swift in Sources */,
+				4D33E96B1E87469600C1A42D /* UIPBaseViewController.swift in Sources */,
+				4D33E9711E87469600C1A42D /* UIPBaseTableViewCell.swift in Sources */,
 				4D74B2E91D53F24300682A02 /* SimpleLabelModel.swift in Sources */,
-				4D38147F1E33A4F20098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
+				4D33E96F1E87469600C1A42D /* UIPBaseCollectionViewCell.swift in Sources */,
 				4DAB68FA1D5E871D00BFF15A /* SimpleCounterModel.swift in Sources */,
 				4DA5F8951D57D31B0049956B /* CustomViewControllerPresentationAnimator.swift in Sources */,
 				4D43BEFC1E062CF200E71655 /* SimpleLabelModel2.swift in Sources */,
@@ -884,14 +884,14 @@
 				4D279AD61DFDEEBE006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */,
 				4D279AD71DFDEEBE006EDC1E /* SimpleLabelModelTVCell.swift in Sources */,
 				4D279AD21DFDEEBE006EDC1E /* SimpleCounterModelCVCell.swift in Sources */,
-				4D38147D1E33A4F20098A0F2 /* UIPBaseCellModel.swift in Sources */,
-				4D3814781E33A4F20098A0F2 /* UIPheonix.swift in Sources */,
+				4D33E96D1E87469600C1A42D /* UIPBaseCellModel.swift in Sources */,
+				4D33E9681E87469600C1A42D /* UIPheonix.swift in Sources */,
 				4DA8FFA01DF47D4A00DC0B18 /* DataProvider.swift in Sources */,
 				4D279AD51DFDEEBE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */,
 				4DD1C8DF1E188C0D00257178 /* SimpleUserProfileModelTVCell.swift in Sources */,
 				4DAB68F21D5E6E3300BFF15A /* SimpleVerticalSpaceModel.swift in Sources */,
 				4D1F11781E1AF9470091D9FD /* DemoCollectionViewController.swift in Sources */,
-				4D3814801E33A4F20098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
+				4D33E9701E87469600C1A42D /* UIPBaseTableViewCellProtocol.swift in Sources */,
 				4DBE5A7D1D626C92001ED6F5 /* SimpleViewAnimationModel.swift in Sources */,
 				4D279AD31DFDEEBE006EDC1E /* SimpleLabelModelCVCell.swift in Sources */,
 			);
@@ -902,24 +902,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DC4A4691E195BF700FEC973 /* SimpleButtonModelTVCell.swift in Sources */,
-				4D3814901E33A4F30098A0F2 /* UIPBaseCellModelProtocol.swift in Sources */,
-				4D3814951E33A4F30098A0F2 /* UIPBaseTableViewCell.swift in Sources */,
+				4D33E9801E87469600C1A42D /* UIPBaseCellModelProtocol.swift in Sources */,
+				4D33E9851E87469600C1A42D /* UIPBaseTableViewCell.swift in Sources */,
 				66847F741D3FAF5900A0427A /* SimpleTextFieldModel.swift in Sources */,
 				4D279AE71DFDF3DE006EDC1E /* SimpleVerticalSpaceModelCVCell.swift in Sources */,
 				4D279AE91DFDF3DE006EDC1E /* SimpleLabelModelTVCell.swift in Sources */,
 				66847F751D3FAF5900A0427A /* SimpleViewAnimationModel.swift in Sources */,
-				4D3814921E33A4F30098A0F2 /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
-				4D3814941E33A4F30098A0F2 /* UIPBaseTableViewCellProtocol.swift in Sources */,
+				4D33E9821E87469600C1A42D /* UIPBaseCollectionViewCellProtocol.swift in Sources */,
+				4D33E9841E87469600C1A42D /* UIPBaseTableViewCellProtocol.swift in Sources */,
 				66847F591D3FAC9D00A0427A /* ViewController.swift in Sources */,
 				4D279AE41DFDF3DE006EDC1E /* SimpleCounterModelCVCell.swift in Sources */,
 				66847F691D3FAF4E00A0427A /* Types.swift in Sources */,
-				4D3814931E33A4F30098A0F2 /* UIPBaseCollectionViewCell.swift in Sources */,
+				4D33E9831E87469600C1A42D /* UIPBaseCollectionViewCell.swift in Sources */,
 				4D279AE51DFDF3DE006EDC1E /* SimpleLabelModelCVCell.swift in Sources */,
 				4D43BEFE1E062D9300E71655 /* SimpleLabelModel2.swift in Sources */,
 				4DD1C8DD1E188BFA00257178 /* SimpleUserProfileModel.swift in Sources */,
-				4D38148E1E33A4F30098A0F2 /* UIPDelegates.swift in Sources */,
-				4D38148D1E33A4F30098A0F2 /* UIPMisc.swift in Sources */,
-				4D38148C1E33A4F30098A0F2 /* UIPheonix.swift in Sources */,
+				4D33E97E1E87469600C1A42D /* UIPDelegates.swift in Sources */,
+				4D33E97D1E87469600C1A42D /* UIPMisc.swift in Sources */,
+				4D33E97C1E87469600C1A42D /* UIPheonix.swift in Sources */,
 				66847F731D3FAF5900A0427A /* SimpleLabelModel.swift in Sources */,
 				4D279AE81DFDF3DE006EDC1E /* SimpleViewAnimationModelCVCell.swift in Sources */,
 				4D279AE31DFDF3DE006EDC1E /* SimpleButtonModelCVCell.swift in Sources */,
@@ -932,8 +932,8 @@
 				66847F711D3FAF5900A0427A /* SimpleButtonModel.swift in Sources */,
 				66847F721D3FAF5900A0427A /* SimpleCounterModel.swift in Sources */,
 				66847F571D3FAC9D00A0427A /* AppDelegate.swift in Sources */,
-				4D38148F1E33A4F30098A0F2 /* UIPBaseViewController.swift in Sources */,
-				4D3814911E33A4F30098A0F2 /* UIPBaseCellModel.swift in Sources */,
+				4D33E97F1E87469600C1A42D /* UIPBaseViewController.swift in Sources */,
+				4D33E9811E87469600C1A42D /* UIPBaseCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
