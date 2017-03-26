@@ -115,7 +115,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
             let buttonModel:SimpleButtonModel = cellModel as! SimpleButtonModel
 
             // wants focus
-            if (buttonModel.mFocus)
+            if (buttonModel.pFocus)
             {
                 let cellView:UIPBaseCollectionViewCell = mUIPheonix.dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
 
@@ -318,7 +318,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
 
         var models:[UIPBaseCellModel] = [UIPBaseCellModel]()
 
-        for i in 1 ... 20
+        for i in 1 ... 8
         {
             let simpleLabelModel:SimpleLabelModel = SimpleLabelModel(text:" Label \(i)",
                                                                      size:(24.0 + CGFloat(i) * 4.0),

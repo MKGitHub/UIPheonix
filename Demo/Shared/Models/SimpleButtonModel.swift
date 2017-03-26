@@ -127,11 +127,11 @@ final class SimpleButtonModel:UIPBaseCellModel
         dict[Key.title] = pTitle
 
         #if os(macOS)
-            dict[Key.alignment] = mAlignment
+            dict[Key.alignment] = pAlignment
         #endif
 
         #if os(tvOS)
-            dict[Key.focus] = mFocus
+            dict[Key.focus] = pFocus
         #endif
 
         return dict
