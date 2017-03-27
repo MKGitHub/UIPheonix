@@ -1,14 +1,14 @@
-[![MadeInSweden](https://img.shields.io/badge/Made In-Stockholm, Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
-[![Status](https://img.shields.io/badge/Status-Active doing well & alive-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm,_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
+[![Status](https://img.shields.io/badge/Status-Active-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Version](https://img.shields.io/badge/Version-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Carthage](https://img.shields.io/badge/carthage-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![SPM](https://img.shields.io/badge/SPM-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Pod](https://img.shields.io/badge/pod-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
-[![Platform](https://img.shields.io/badge/Platforms-macOS + iOS + tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Swift](https://img.shields.io/badge/Swift Version-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![RUIC Implementation Version](https://img.shields.io/badge/RUIC Implementation Version-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Platform](https://img.shields.io/badge/Platforms-macOS+iOS+tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Swift](https://img.shields.io/badge/Swift_Version-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![RUIC Implementation Version](https://img.shields.io/badge/RUIC_Implementation_Version-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 
 ★ Give this repo a star and help its development grow! ★
