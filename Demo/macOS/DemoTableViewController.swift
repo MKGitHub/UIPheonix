@@ -52,7 +52,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
         }
 
         // init member
-        vc.mPreparedAttributes = attributes
+        vc.mNewInstanceAttributes = attributes
 
         return vc as! T
     }

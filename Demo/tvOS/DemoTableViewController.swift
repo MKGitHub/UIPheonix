@@ -50,7 +50,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
         let vc:DemoTableViewController = DemoTableViewController.init(nibName:"\(self)", bundle:nil)
 
         // init member
-        vc.mPreparedAttributes = attributes
+        vc.mNewInstanceAttributes = attributes
 
         return vc as! T
     }

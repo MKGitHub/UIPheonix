@@ -38,22 +38,6 @@ import CoreGraphics
 #endif
 
 
-// MARK: Compiler Warning Generators
-
-
-@available(*, deprecated:0.0.1, message:"THIS IS A FIXME, SEE COMMENT!")
-func FIXME()
-{
-    // If you see this warning then the code needs to be fixed!
-}
-
-@available(*, deprecated:0.0.1, message:"THIS IS A NOTE, SEE COMMENT!")
-func NOTE()
-{
-    // If you see this warning then the code needs attention!
-}
-
-
 // MARK:- Constants
 
 

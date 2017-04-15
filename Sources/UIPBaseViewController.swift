@@ -60,7 +60,7 @@ protocol UIPBaseViewControllerProtocol
     class UIPBaseViewController:UIViewController
     {
         /// The provided dictionary with attributes when the view controller was instanced.
-        var mPreparedAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
+        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
         /*
@@ -75,7 +75,7 @@ protocol UIPBaseViewControllerProtocol
                 let vc:FooBarViewController = FooBarViewController.init(nibName:"\(self)", bundle:nil)
 
                 // init member
-                vc.mPreparedAttributes = attributes
+                vc.mNewInstanceAttributes = attributes
 
                 return vc as! T
             }
@@ -91,7 +91,7 @@ protocol UIPBaseViewControllerProtocol
     class UIPBaseViewController:NSViewController
     {
         /// The provided dictionary with attributes when the view controller was instanced.
-        var mPreparedAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
+        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
         /*
@@ -106,7 +106,7 @@ protocol UIPBaseViewControllerProtocol
                 let vc:FooBarViewController = FooBarViewController.init(nibName:"\(self)", bundle:nil)
 
                 // init member
-                vc.mPreparedAttributes = attributes
+                vc.mNewInstanceAttributes = attributes
 
                 return vc as! T
             }

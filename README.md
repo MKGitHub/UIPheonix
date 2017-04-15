@@ -1,14 +1,14 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm,_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
 [![Status](https://img.shields.io/badge/Status-Active-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
-[![Version](https://img.shields.io/badge/Version-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Carthage](https://img.shields.io/badge/carthage-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![SPM](https://img.shields.io/badge/SPM-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Pod](https://img.shields.io/badge/pod-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Version](https://img.shields.io/badge/Version-2.0.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Carthage](https://img.shields.io/badge/carthage-2.0.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![SPM](https://img.shields.io/badge/SPM-2.0.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Pod](https://img.shields.io/badge/pod-2.0.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS+iOS+tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![Swift](https://img.shields.io/badge/Swift_Version-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![RUIC Implementation Version](https://img.shields.io/badge/RUIC_Implementation_Version-2.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![RUIC Implementation Version](https://img.shields.io/badge/RUIC_Implementation_Version-2.0.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 
 ★ Give this repo a star and help its development grow! ★
@@ -84,10 +84,10 @@ There is no framework/library distibution, I recommend that you add the UIPheoni
 * Git: run `git clone https://github.com/MKGitHub/UIPheonix.git` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
 * Manual: `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
 * Single File Install: All the UIPheonix source files have been merged into one single file for easy install, `Drag & Drop the SingleFileSource/UIPheonix_*_*_*.swift file into your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.1` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
+* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.0.2` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
 ![Manual Install](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/ManualInstall.png)
 * Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
-* CocoaPods (not recommended!): `pod 'UIPheonix', '~> 2.0.1'`
+* CocoaPods (not recommended!): `pod 'UIPheonix', '~> 2.0.2'`
 
 
 Documentation

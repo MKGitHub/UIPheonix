@@ -62,7 +62,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
         }
 
         // init member
-        vc.mPreparedAttributes = attributes
+        vc.mNewInstanceAttributes = attributes
 
         return vc as! T
     }
@@ -76,7 +76,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
         super.viewDidLoad()
 
         // init member
-        mAppDisplayStateType = (mPreparedAttributes[AttributeKeyName.appDisplayState] as! AppDisplayState).typeValue
+        mAppDisplayStateType = (mNewInstanceAttributes[AttributeKeyName.appDisplayState] as! AppDisplayState).typeValue
 
         initUIPheonix()
         setupCollectionView()
