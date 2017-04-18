@@ -28,7 +28,7 @@
 import UIKit
 
 
-final class DemoTableViewController:UIPBaseViewController, UIPBaseViewControllerProtocol, UIPButtonDelegate,
+final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
                                     UITableViewDataSource, UITableViewDelegate
 {
     // MARK: Public IB Outlet
@@ -38,13 +38,13 @@ final class DemoTableViewController:UIPBaseViewController, UIPBaseViewController
     fileprivate var mUIPheonix:UIPheonix!
 
 
-    // MARK:- UIPBaseViewController/UIPBaseViewControllerProtocol
+    // MARK:- UIPBaseViewController
 
 
     ///
     /// Create a new instance of self with nib.
     ///
-    static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>)
+    override class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
     -> T
     {
         let vc:DemoTableViewController = DemoTableViewController.init(nibName:"\(self)", bundle:nil)

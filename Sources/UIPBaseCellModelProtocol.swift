@@ -33,7 +33,7 @@ import Foundation
 
 
 ///
-/// The standard protocol for all cell models.
+/// The base cell model protocol.
 ///
 protocol UIPBaseCellModelProtocol:class
 {

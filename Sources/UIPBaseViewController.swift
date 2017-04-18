@@ -39,15 +39,23 @@
 ///
 /// The base view controller protocol.
 ///
-protocol UIPBaseViewControllerProtocol
+protocol UIPBaseViewControllerProtocol:class
 {
+    // We can't use "className" because that belongs to Objective-C NSObject. //
+
+    /// Name of this class.
+    var nameOfClass:String { get }
+
+    /// Name of this class (static context).
+    static var nameOfClass:String { get }
+
     ///
     /// Create a new instance of a view controller with provided dictionary to initialize its contents.
     ///
     /// - Parameter attributes: Dictionary with attributes.
     /// - Returns: A new instance of the view controller.
     ///
-    static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>) -> T
+    //static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>) -> T
 }
 
 
@@ -57,29 +65,40 @@ protocol UIPBaseViewControllerProtocol
     /// The base view controller. Subclass this to gain its features.
     /// Example code is provided in this file.
     ///
-    class UIPBaseViewController:UIViewController
+    class UIPBaseViewController:UIViewController, UIPBaseViewControllerProtocol
     {
-        /// The provided dictionary with attributes when the view controller was instanced.
-        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
+        // MARK: UIPBaseViewControllerProtocol
 
 
-        /*
-            Example implementation, copy & paste into your concrete class.
+        /// Name of this class.
+        var nameOfClass:String { get { return "\(type(of:self))" } }
 
-            ///
-            /// Create a new instance of self with nib.
-            ///
-            static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>)
-            -> T
-            {
-                let vc:FooBarViewController = FooBarViewController.init(nibName:"\(self)", bundle:nil)
+        /// Name of this class (static context).
+        static var nameOfClass:String { get { return "\(self)" } }
 
-                // init member
-                vc.mNewInstanceAttributes = attributes
 
-                return vc as! T
-            }
-        */
+        // MARK: Private Members
+        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()    /// The provided dictionary with attributes when the view controller was instanced.
+
+
+        // MARK: Life Cycle
+
+
+        ///
+        /// Example implementation, copy & paste into your concrete class.
+        ///
+        /// Create a new instance of self with nib.
+        ///
+        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
+        -> T
+        {
+            let vc:UIPBaseViewController = UIPBaseViewController.init(nibName:"\(self)", bundle:nil)
+
+            // init member
+            vc.mNewInstanceAttributes = attributes
+
+            return vc as! T
+        }
     }
 
 #elseif os(macOS)
@@ -88,29 +107,43 @@ protocol UIPBaseViewControllerProtocol
     /// The base view controller. Subclass this to gain its features.
     /// Example code is provided in this file.
     ///
-    class UIPBaseViewController:NSViewController
+    class UIPBaseViewController:NSViewController, UIPBaseViewControllerProtocol
     {
-        /// The provided dictionary with attributes when the view controller was instanced.
-        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
+        // MARK: UIPBaseViewControllerProtocol
 
 
-        /*
-            Example implementation, copy & paste into your concrete class.
+        /// Name of this class.
+        var nameOfClass:String { get { return "\(type(of:self))" } }
 
-            ///
-            /// Create a new instance of self with nib.
-            ///
-            static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>)
-            -> T
+        /// Name of this class (static context).
+        static var nameOfClass:String { get { return "\(self)" } }
+
+
+        // MARK: Private Members
+        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()    /// The provided dictionary with attributes when the view controller was instanced.
+
+
+        // MARK: Life Cycle
+
+
+        ///
+        /// Example implementation, copy & paste into your concrete class.
+        ///
+        /// Create a new instance of self with nib.
+        ///
+        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
+        -> T
+        {
+            guard let vc:UIPBaseViewController = UIPBaseViewController.init(nibName:"\(self)", bundle:nil) else
             {
-                let vc:FooBarViewController = FooBarViewController.init(nibName:"\(self)", bundle:nil)
-
-                // init member
-                vc.mNewInstanceAttributes = attributes
-
-                return vc as! T
+                fatalError("[UIPheonix] `newInstance` failed, could not create new instance of \"\(self)\" from nib!")
             }
-        */
+
+            // init member
+            vc.mNewInstanceAttributes = attributes
+
+            return vc as! T
+        }
     }
 
 #endif

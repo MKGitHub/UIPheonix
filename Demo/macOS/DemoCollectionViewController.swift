@@ -28,7 +28,7 @@
 import Cocoa
 
 
-final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewControllerProtocol, UIPButtonDelegate,
+final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegate,
                                          NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout
 
 {
@@ -48,13 +48,13 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPBaseViewContr
     fileprivate var mPersistentDisplayModels:Array<UIPBaseCellModelProtocol>?
 
 
-    // MARK:- UIPBaseViewController/UIPBaseViewControllerProtocol
+    // MARK:- UIPBaseViewController
 
 
     ///
     /// Create a new instance of self with nib.
     ///
-    static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>)
+    override class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
     -> T
     {
         guard let vc:DemoCollectionViewController = DemoCollectionViewController.init(nibName:"\(self)", bundle:nil) else {
