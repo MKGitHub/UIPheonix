@@ -559,6 +559,24 @@ protocol UIPBaseViewControllerProtocol:class
     ///
     class UIPBaseViewController:UIViewController, UIPBaseViewControllerProtocol
     {
+        ///
+        /// We have to implement this because we use `self` in the `newInstance` function.
+        ///
+        override required public init(nibName nibNameOrNil:String?, bundle nibBundleOrNil:Bundle?)
+        {
+            super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
+        }
+
+
+        ///
+        /// We have to implement this because we use `self` in the `newInstance` function.
+        ///
+        required public init?(coder aDecoder:NSCoder)
+        {
+            super.init(coder:aDecoder)
+        }
+
+
         // MARK: UIPBaseViewControllerProtocol
 
 
@@ -568,9 +586,11 @@ protocol UIPBaseViewControllerProtocol:class
         /// Name of this class (static context).
         static var nameOfClass:String { get { return "\(self)" } }
 
+        // MARK: Public Members
+        var pNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
-        // MARK: Private Members
-        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()    /// The provided dictionary with attributes when the view controller was instanced.
+        // MARK: Public Weak References
+        weak var pParentViewController:UIPBaseViewController?
 
 
         // MARK: Life Cycle
@@ -579,17 +599,64 @@ protocol UIPBaseViewControllerProtocol:class
         ///
         /// Example implementation, copy & paste into your concrete class.
         ///
-        /// Create a new instance of self with nib.
+        /// Create a new instance of this view controller
+        /// with attributes
+        /// and a parent view controller for sending attributes back.
         ///
-        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
+        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>, parentVC:UIPBaseViewController?)
         -> T
         {
-            let vc:UIPBaseViewController = UIPBaseViewController.init(nibName:"\(self)", bundle:nil)
+            // with nib
+            guard let vc:T = self.init(nibName:"\(self)", bundle:nil) as? T else
+            {
+                fatalError("[UIPheonix] New instance of type '\(self)' failed to init!")
+            }
 
-            // init member
-            vc.mNewInstanceAttributes = attributes
+            // init members
+            vc.pNewInstanceAttributes = attributes
+            vc.pParentViewController = parentVC
 
-            return vc as! T
+            return vc 
+        }
+
+
+        ///
+        /// This view controller is about to be dismissed.
+        /// The child view controller should implement this to send data back to its parent view controller.
+        ///
+        /// - Returns: A dictionary for our parent view controller, default nil.
+        ///
+        func dismissInstance() -> Dictionary<String, Any>?
+        {
+            // by default we return nil
+            return nil
+        }
+
+
+        override func willMove(toParentViewController parent:UIViewController?)
+        {
+            super.willMove(toParentViewController:parent)
+
+            // `self` view controller is being removed
+            // i.e. we are moving to our parent
+            if (parent == nil)
+            {
+                if let parentVC = pParentViewController,
+                   let dict:Dictionary<String, Any> = dismissInstance()
+                {
+                    parentVC.childViewController(self, willDismissWithAttributes:dict)
+                }
+            }
+        }
+
+
+        ///
+        /// Assuming that this view controller is a parent, then its child is about to be dismissed.
+        /// The parent view controller should implement this to receive data back from its child view controller.
+        ///
+        func childViewController(_ childVC:UIPBaseViewController, willDismissWithAttributes attributes:Dictionary<String, Any>)
+        {
+            fatalError("[UIPheonix] You must override \(#function) in your subclass!")
         }
     }
 
@@ -601,6 +668,24 @@ protocol UIPBaseViewControllerProtocol:class
     ///
     class UIPBaseViewController:NSViewController, UIPBaseViewControllerProtocol
     {
+        ///
+        /// We have to implement this because we use `self` in the `newInstance` function.
+        ///
+        override required public init?(nibName nibNameOrNil:String?, bundle nibBundleOrNil:Bundle?)
+        {
+            super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
+        }
+
+
+        ///
+        /// We have to implement this because we use `self` in the `newInstance` function.
+        ///
+        required public init?(coder aDecoder:NSCoder)
+        {
+            super.init(coder:aDecoder)
+        }
+
+
         // MARK: UIPBaseViewControllerProtocol
 
 
@@ -610,9 +695,8 @@ protocol UIPBaseViewControllerProtocol:class
         /// Name of this class (static context).
         static var nameOfClass:String { get { return "\(self)" } }
 
-
-        // MARK: Private Members
-        var mNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()    /// The provided dictionary with attributes when the view controller was instanced.
+        // MARK: Public Members
+        var pNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
         // MARK: Life Cycle
@@ -621,20 +705,23 @@ protocol UIPBaseViewControllerProtocol:class
         ///
         /// Example implementation, copy & paste into your concrete class.
         ///
-        /// Create a new instance of self with nib.
+        /// Create a new instance of this view controller
+        /// with attributes
+        /// and a parent view controller for sending attributes back.
         ///
-        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
+        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>, parentVC:UIPBaseViewController?)
         -> T
         {
-            guard let vc:UIPBaseViewController = UIPBaseViewController.init(nibName:"\(self)", bundle:nil) else
+            // with nib
+            guard let vc:T = self.init(nibName:"\(self)", bundle:nil) as? T else
             {
-                fatalError("[UIPheonix] `newInstance` failed, could not create new instance of \"\(self)\" from nib!")
+                fatalError("[UIPheonix] New instance of type '\(self)' failed to init!")
             }
 
-            // init member
-            vc.mNewInstanceAttributes = attributes
+            // init members
+            vc.pNewInstanceAttributes = attributes
 
-            return vc as! T
+            return vc
         }
     }
 

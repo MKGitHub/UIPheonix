@@ -43,14 +43,16 @@ class ViewController:NSViewController
         // create a nice/delayed launch screen effect like in iOS
         DispatchQueue.main.asyncAfter(deadline:(.now() + .seconds(1)), execute:
         {
+            let attr:Dictionary<String, Any> = [DemoCollectionViewController.AttributeKeyName.appDisplayState:AppDisplayState.startUp]
+
             // start the UIPheonix macOS demo
             // create & present a new instance of the demo VC
-            let demoViewController:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:[DemoCollectionViewController.AttributeKeyName.appDisplayState:AppDisplayState.startUp])
-            // or:
-            //let demoViewController:DemoTableViewController = DemoTableViewController.newInstance(with:[:])
+            let demoVC:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:attr, parentVC:nil)
+            // or
+            //let demoVC:DemoTableViewController = DemoTableViewController.newInstance(with:[:], parentVC:nil)
 
             // present using a custom view controller presentation animator
-            self.presentViewController(demoViewController, animator:CustomViewControllerPresentationAnimator())
+            self.presentViewController(demoVC, animator:CustomViewControllerPresentationAnimator())
         })
     }
 

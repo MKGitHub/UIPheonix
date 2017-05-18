@@ -47,24 +47,6 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
     fileprivate var mPersistentDisplayModels:Array<UIPBaseCellModelProtocol>?
 
 
-    // MARK:- UIPBaseViewController
-
-
-    ///
-    /// Create a new instance of self with nib.
-    ///
-    override class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
-    -> T
-    {
-        let vc:DemoCollectionViewController = DemoCollectionViewController.init(nibName:"\(self)", bundle:nil)
-
-        // init member
-        vc.mNewInstanceAttributes = attributes
-
-        return vc as! T
-    }
-
-
     // MARK:- Life Cycle
 
 
@@ -73,7 +55,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
         super.viewDidLoad()
 
         // init member
-        mAppDisplayStateType = (mNewInstanceAttributes[AttributeKeyName.appDisplayState] as! AppDisplayState).typeValue
+        mAppDisplayStateType = (pNewInstanceAttributes[AttributeKeyName.appDisplayState] as! AppDisplayState).typeValue
 
         initUIPheonix()
         setupCollectionView()

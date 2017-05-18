@@ -38,26 +38,6 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
     fileprivate var mUIPheonix:UIPheonix!
 
 
-    // MARK:- UIPBaseViewController
-
-
-    ///
-    /// Create a new instance of self with nib.
-    ///
-    override class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>)
-    -> T
-    {
-        guard let vc:DemoTableViewController = DemoTableViewController.init(nibName:"\(self)", bundle:nil) else {
-            fatalError("DemoCollectionViewController newInstance: Could not create new instance of `DemoCollectionViewController` from nib!")
-        }
-
-        // init member
-        vc.mNewInstanceAttributes = attributes
-
-        return vc as! T
-    }
-
-
     // MARK:- Life Cycle
 
 

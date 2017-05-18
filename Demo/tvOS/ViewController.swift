@@ -34,21 +34,15 @@ class ViewController:UIViewController
     {
         super.viewDidAppear(animated)
 
+        let attr:Dictionary<String, Any> = [DemoCollectionViewController.AttributeKeyName.appDisplayState:AppDisplayState.startUp]
+
         // start the UIPheonix tvOS demo
         // create & present a new instance of the demo VC
-        let demoViewController:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:[DemoCollectionViewController.AttributeKeyName.appDisplayState:AppDisplayState.startUp])
-        // or:
-        //let demoViewController:DemoTableViewController = DemoTableViewController.newInstance(with:[:])
+        let demoVC:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:attr, parentVC:nil)
+        // or
+        //let demoVC:DemoTableViewController = DemoTableViewController.newInstance(with:[:], parentVC:nil)
 
-        // use custom view transition
-        let transition:CATransition = CATransition()
-        transition.duration = 0.5
-        transition.type = kCATransitionFade
-        self.navigationController!.view.layer.add(transition, forKey:nil)
-
-        self.navigationController!.setViewControllers([demoViewController], animated:false)
-        // or:
-        //self.navigationController!.pushViewController(demoViewController, animated:false)
+        self.navigationController!.setViewControllers([demoVC], animated:false)
     }
 }
 
