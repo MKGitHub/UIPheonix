@@ -1,54 +1,54 @@
 {
   "warnings": [
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPBaseCellModel.swift",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPBaseCellModel.swift",
       "line": 48,
       "symbol": "UIPBaseCellModel.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPBaseCellModelProtocol.swift",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPBaseCellModelProtocol.swift",
       "line": 48,
       "symbol": "UIPBaseCellModelProtocol.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPBaseViewController.swift",
-      "line": 123,
-      "symbol": "UIPBaseViewController.mNewInstanceAttributes",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPBaseViewController.swift",
+      "line": 199,
+      "symbol": "UIPBaseViewController.newInstanceAttributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPMisc.swift",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPMisc.swift",
       "line": 49,
       "symbol": "UIPConstants.modelType",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPMisc.swift",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPMisc.swift",
       "line": 51,
       "symbol": "UIPConstants.Collection",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPMisc.swift",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPMisc.swift",
       "line": 53,
       "symbol": "UIPConstants.Collection.modelViewRelationships",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qweqwe/Sources/UIPMisc.swift",
+      "file": "/Users/mk/Desktop/xxxx/Sources/UIPMisc.swift",
       "line": 54,
       "symbol": "UIPConstants.Collection.cellModels",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/mk/Desktop/qweqwe"
+  "source_directory": "/Users/mk/Desktop/xxxx"
 }
