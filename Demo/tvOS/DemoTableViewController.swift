@@ -57,14 +57,14 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int)
     -> Int
     {
-        return mUIPheonix.count()
+        return mUIPheonix.displayModelsCount(forSection:0)
     }
 
 
     func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath)
     -> UITableViewCell
     {
-        return mUIPheonix.tableViewCell(for:indexPath)
+        return mUIPheonix.tableViewCell(forIndexPath:indexPath, delegate:self)
     }
 
 
@@ -74,14 +74,14 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
     func tableView(_ tableView:UITableView, heightForRowAt indexPath:IndexPath)
     -> CGFloat
     {
-        return mUIPheonix.tableViewCellHeight(for:indexPath)
+        return mUIPheonix.tableViewCellHeight(forIndexPath:indexPath)
     }
 
 
     func tableView(_ tableView:UITableView, estimatedHeightForRowAt indexPath:IndexPath)
     -> CGFloat
     {
-        return mUIPheonix.tableViewCellEstimatedHeight(for:indexPath)
+        return mUIPheonix.tableViewCellEstimatedHeight(forIndexPath:indexPath)
     }
 
 
@@ -139,7 +139,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
 
         models.append(SimpleButtonModel(id:ButtonId.helloWorld.rawValue, title:"Good Bye World!", focus:false))
 
-        mUIPheonix.setDisplayModels(models)
+        mUIPheonix.setDisplayModels(models, forSection:0)
     }
 
 

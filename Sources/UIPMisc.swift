@@ -42,7 +42,7 @@ import CoreGraphics
 
 
 ///
-/// Internal constants.
+/// Internal framework constants.
 ///
 struct UIPConstants
 {

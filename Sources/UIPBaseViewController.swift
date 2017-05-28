@@ -48,14 +48,6 @@ protocol UIPBaseViewControllerProtocol:class
 
     /// Name of this class (static context).
     static var nameOfClass:String { get }
-
-    ///
-    /// Create a new instance of a view controller with provided dictionary to initialize its contents.
-    ///
-    /// - Parameter attributes: Dictionary with attributes.
-    /// - Returns: A new instance of the view controller.
-    ///
-    //static func newInstance<T:UIPBaseViewControllerProtocol>(with attributes:Dictionary<String, Any>) -> T
 }
 
 
@@ -95,10 +87,10 @@ protocol UIPBaseViewControllerProtocol:class
         static var nameOfClass:String { get { return "\(self)" } }
 
         // MARK: Public Members
-        var pNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
+        var newInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
         // MARK: Public Weak References
-        weak var pParentViewController:UIPBaseViewController?
+        weak var parentVC:UIPBaseViewController?
 
 
         // MARK: Life Cycle
@@ -111,7 +103,7 @@ protocol UIPBaseViewControllerProtocol:class
         /// with attributes
         /// and a parent view controller for sending attributes back.
         ///
-        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>, parentVC:UIPBaseViewController?)
+        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>, parentViewController:UIPBaseViewController?)
         -> T
         {
             // with nib
@@ -121,8 +113,8 @@ protocol UIPBaseViewControllerProtocol:class
             }
 
             // init members
-            vc.pNewInstanceAttributes = attributes
-            vc.pParentViewController = parentVC
+            vc.newInstanceAttributes = attributes
+            vc.parentVC = parentViewController
 
             return vc 
         }
@@ -149,7 +141,7 @@ protocol UIPBaseViewControllerProtocol:class
             // i.e. we are moving to our parent
             if (parent == nil)
             {
-                if let parentVC = pParentViewController,
+                if let parentVC = parentVC,
                    let dict:Dictionary<String, Any> = dismissInstance()
                 {
                     parentVC.childViewController(self, willDismissWithAttributes:dict)
@@ -162,7 +154,7 @@ protocol UIPBaseViewControllerProtocol:class
         /// Assuming that this view controller is a parent, then its child is about to be dismissed.
         /// The parent view controller should implement this to receive data back from its child view controller.
         ///
-        func childViewController(_ childVC:UIPBaseViewController, willDismissWithAttributes attributes:Dictionary<String, Any>)
+        func childViewController(_ childViewController:UIPBaseViewController, willDismissWithAttributes attributes:Dictionary<String, Any>)
         {
             fatalError("[UIPheonix] You must override \(#function) in your subclass!")
         }
@@ -204,7 +196,7 @@ protocol UIPBaseViewControllerProtocol:class
         static var nameOfClass:String { get { return "\(self)" } }
 
         // MARK: Public Members
-        var pNewInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
+        var newInstanceAttributes:Dictionary<String, Any> = Dictionary<String, Any>()
 
 
         // MARK: Life Cycle
@@ -217,7 +209,7 @@ protocol UIPBaseViewControllerProtocol:class
         /// with attributes
         /// and a parent view controller for sending attributes back.
         ///
-        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>, parentVC:UIPBaseViewController?)
+        class func newInstance<T:UIPBaseViewController>(with attributes:Dictionary<String, Any>, parentViewController:UIPBaseViewController?)
         -> T
         {
             // with nib
@@ -227,7 +219,7 @@ protocol UIPBaseViewControllerProtocol:class
             }
 
             // init members
-            vc.pNewInstanceAttributes = attributes
+            vc.newInstanceAttributes = attributes
 
             return vc
         }

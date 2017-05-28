@@ -57,7 +57,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
     func numberOfRows(in tableView:NSTableView)
     -> Int
     {
-        return mUIPheonix.count()
+        return mUIPheonix.displayModelsCount(forSection:0)
     }
 
 
@@ -67,7 +67,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
     func tableView(_ tableView:NSTableView, viewFor tableColumn:NSTableColumn?, row:Int)
     -> NSView?
     {
-        return mUIPheonix.tableViewCell(for:row)
+        return mUIPheonix.tableViewCell(forRow:row)
     }
 
 
@@ -86,14 +86,14 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
     func tableView(_ tableView:NSTableView, heightOfRow row:Int)
     -> CGFloat
     {
-        return mUIPheonix.tableViewCellHeight(for:row)
+        return mUIPheonix.tableViewCellHeight(forRow:row)
     }
 
 
     func tableView(_ tableView:NSTableView, estimatedHeightForRowAt indexPath:IndexPath)
     -> CGFloat
     {
-        return mUIPheonix.tableViewCellEstimatedHeight(for:indexPath)
+        return mUIPheonix.tableViewCellEstimatedHeight(forIndexPath:indexPath)
     }
 
 
@@ -151,7 +151,7 @@ final class DemoTableViewController:UIPBaseViewController, UIPButtonDelegate,
         let simpleUserProfileModel2:SimpleUserProfileModel = SimpleUserProfileModel(title:"#2 The quick, brown fox jumps over a lazy dog.", description:"Tilde coloring book health goth echo park, gentrify semiotics vinyl cardigan quinoa meh master cleanse cray four dollar toast scenester hammock. Butcher truffaut flannel, unicorn fanny pack skateboard pug four loko.")
         models.append(simpleUserProfileModel2)
 
-        mUIPheonix.setDisplayModels(models)
+        mUIPheonix.setDisplayModels(models, forSection:0)
     }
 
 

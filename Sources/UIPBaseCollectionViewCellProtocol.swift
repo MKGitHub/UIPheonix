@@ -55,6 +55,6 @@ protocol UIPBaseCollectionViewCellProtocol:class
     ///   - indexPath: Index path of the cell view.
     /// - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
     ///
-    func update(with model:Any, delegate:Any, for indexPath:IndexPath) -> UIPCellSize
+    func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
 }
 

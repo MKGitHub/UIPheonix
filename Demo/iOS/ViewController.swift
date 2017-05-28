@@ -38,9 +38,9 @@ final class ViewController:UIViewController
 
         // start the UIPheonix iOS demo
         // create & present a new instance of the demo VC
-        let demoVC:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:attr, parentVC:nil)
+        let demoVC:DemoCollectionViewController = DemoCollectionViewController.newInstance(with:attr, parentViewController:nil)
         // or
-        //let demoVC:DemoTableViewController = DemoTableViewController.newInstance(with:[:], parentVC:nil)
+        //let demoVC:DemoTableViewController = DemoTableViewController.newInstance(with:[:], parentViewController:nil)
 
         self.navigationController!.setViewControllers([demoVC], animated:false)
     }

@@ -58,7 +58,7 @@ final class UIPheonix
     // (initialized as empty for convenience)
     fileprivate var mModelViewRelationships:Dictionary<String, String> = Dictionary<String, String>()
     fileprivate var mViewReuseIds:Dictionary<String, Any> = Dictionary<String, Any>()
-    fileprivate var mDisplayModels:Array<UIPBaseCellModelProtocol> = Array<UIPBaseCellModelProtocol>()
+    fileprivate var mDisplayModels:Dictionary<Int, Array<UIPBaseCellModelProtocol>> = Dictionary<Int, Array<UIPBaseCellModelProtocol>>()
 
     // MARK: Private Weak Reference
     fileprivate weak var mDelegate:AnyObject?
@@ -107,7 +107,7 @@ final class UIPheonix
 
 
     ///
-    /// Creates relationships between each model and its view.
+    /// Creates relationships between models and views.
     ///
     /// - Parameter dictionary: A dictionary with model-name:view-name relationship.
     ///
@@ -131,24 +131,31 @@ final class UIPheonix
     ///
     /// - Parameters:
     ///   - rawModelsArray: An array containing dictionary objects with model data.
+    ///   - section: The section in which the models you want to set.
     ///   - append: Append to, or replace, the current model list.
     ///
-    func setDisplayModels(_ rawModelDataArray:Array<Any>, append:Bool)
+    func setDisplayModels(_ dictionaryObjectsArray:Array<Any>, forSection section:Int, append:Bool)
     {
-        guard (rawModelDataArray.count != 0) else {
+        guard (dictionaryObjectsArray.count != 0) else {
             fatalError("[UIPheonix] Raw model data array is empty!")
+        }
+
+        guard (section >= 0) else {
+            fatalError("[UIPheonix] Section is out of range!")
         }
 
         // don't append, but replace
         if (!append)
         {
             // prepare a new empty display models list
-            mDisplayModels.removeAll(keepingCapacity:false)
+            mDisplayModels[section] = Array<UIPBaseCellModelProtocol>()
         }
 
         // instantiate model classes with their data in the display dictionary
         // add the models to the display list
-        for aModelType:Any in rawModelDataArray
+        var groupModels:Array<UIPBaseCellModelProtocol> = Array<UIPBaseCellModelProtocol>()
+
+        for aModelType:Any in dictionaryObjectsArray
         {
             let modelDict:Dictionary<String, Any> = aModelType as! Dictionary<String, Any>
             let modelTypeName:String? = modelDict[UIPConstants.modelType] as? String
@@ -158,15 +165,18 @@ final class UIPheonix
                 fatalError("[UIPheonix] The key `type` was not found for the model `\(aModelType)`!")
             }
 
-            // create & add models
+            // create models
             if let modelClassType:UIPBaseCellModelProtocol.Type = NSClassFromString(mApplicationNameDot + modelTypeName!) as? UIPBaseCellModelProtocol.Type
             {
                 let aModelObj:UIPBaseCellModelProtocol = modelClassType.init()
                 aModelObj.setContents(with:modelDict)
 
-                mDisplayModels.append(aModelObj)
+                groupModels.append(aModelObj)
             }
         }
+
+        // add models to group
+        mDisplayModels[section] = groupModels
     }
 
 
@@ -175,10 +185,11 @@ final class UIPheonix
     ///
     /// - Parameters:
     ///   - array: An array containing dictionary objects with model data.
+    ///   - section: The section in which the models you want to set.
     ///
-    func setDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
+    func setDisplayModels(_ array:Array<UIPBaseCellModelProtocol>, forSection section:Int)
     {
-        mDisplayModels = array
+        mDisplayModels[section] = array
     }
 
 
@@ -187,48 +198,77 @@ final class UIPheonix
     ///
     /// - Parameters:
     ///   - array: An array containing dictionary objects with model data.
+    ///   - section: The section in which the models you want to add.
     ///
-    func addDisplayModels(_ array:Array<UIPBaseCellModelProtocol>)
+    func addDisplayModels(_ array:Array<UIPBaseCellModelProtocol>, forSection section:Int)
     {
-        mDisplayModels.append(contentsOf:array)
+        if var currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
+        {
+            currentGroupModels.append(contentsOf:array)
+
+            mDisplayModels[section] = currentGroupModels
+        }
+        else
+        {
+            fatalError("[UIPheonix] Section '\(section)' does not exist!")
+        }
     }
 
 
     ///
-    /// - Returns: Array containing all current models for display.
+    /// - Parameters:
+    ///   - section: The section for which the models you want to get.
+    ///
+    /// - Returns: Array containing models.
     ///
     @inline(__always)
-    func displayModels()
-    -> Array<UIPBaseCellModelProtocol>
+    func displayModels(forSection section:Int) -> Array<UIPBaseCellModelProtocol>
     {
-        return mDisplayModels
+        if let currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
+        {
+            return currentGroupModels
+        }
+        else
+        {
+            fatalError("[UIPheonix] Section '\(section)' does not exist!")
+        }
     }
 
 
     ///
-    /// - Returns: The number of display models.
+    /// - Parameters:
+    ///   - section: The section for which the models you want to count.
+    ///
+    /// - Returns: The number of models.
     ///
     @inline(__always)
-    func count()
-    -> Int
+    func displayModelsCount(forSection section:Int) -> Int
     {
-        return mDisplayModels.count
+        if let currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
+        {
+            return currentGroupModels.count
+        }
+
+        return 0
     }
 
 
     ///
-    /// Get a model at index in the display list.
+    /// - Parameters:
+    ///   - section: The section in which a specific model you want to get.
+    ///   - index: The index of the model.
     ///
-    /// - Parameter index: The index.
     /// - Returns: The model.
     ///
     @inline(__always)
-    func model(at index:Int)
-    -> UIPBaseCellModel?
+    func displayModel(forSection section:Int, atIndex index:Int) -> UIPBaseCellModel?
     {
-        if let cellModel:UIPBaseCellModel = mDisplayModels[index] as? UIPBaseCellModel
+        if let currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
         {
-            return cellModel
+            if let cellModel:UIPBaseCellModel = currentGroupModels[index] as? UIPBaseCellModel
+            {
+                return cellModel
+            }
         }
 
         return nil
@@ -292,7 +332,7 @@ final class UIPheonix
     /// - Returns: The new size.
     ///
     @inline(__always)
-    class func viewSize(with baseSize:CGSize, addedSize:UIPCellSize)
+    class func viewSize(usingBaseSize baseSize:CGSize, addedSize:UIPCellSize)
     -> CGSize
     {
         // by default, we use the cells layout size
@@ -333,7 +373,7 @@ final class UIPheonix
     /// - Returns: A collection view cell view.
     ///
     @inline(__always)
-    func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
+    func dequeueView(withReuseIdentifier reuseIdentifier:String, forIndexPath indexPath:IndexPath)
     -> UIPBaseCollectionViewCell?
     {
         guard (mDelegateCollectionView != nil) else {
@@ -377,16 +417,20 @@ final class UIPheonix
         /// func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
         ///
         @inline(__always)
-        func collectionViewCell(for indexPath:IndexPath)
+        func collectionViewCell(forIndexPath indexPath:IndexPath)
         -> UICollectionViewCell
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `collectionViewCell` failed, `mDelegate` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
-            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
-            let _:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+            guard let cellModel:UIPBaseCellModel = displayModel(forSection:indexPath.section, atIndex:indexPath.item) else
+            {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `model` is nil!")
+            }
+
+            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, forIndexPath:indexPath)!
+            let _:UIPCellSize = cellView.update(withModel:cellModel, delegate:mDelegate!, forIndexPath:indexPath)
 
             cellView.layoutIfNeeded()
 
@@ -399,7 +443,7 @@ final class UIPheonix
         /// func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
         ///
         @inline(__always)
-        func collectionViewCellSize(for indexPath:IndexPath, preferredWidth:CGFloat)
+        func collectionViewCellSize(forIndexPath indexPath:IndexPath, preferredWidth:CGFloat)
         -> CGSize
         {
             guard (mDelegate != nil) else {
@@ -410,12 +454,16 @@ final class UIPheonix
                 fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegateCollectionView` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            guard let cellModel:UIPBaseCellModel = displayModel(forSection:indexPath.section, atIndex:indexPath.item) else
+            {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `model` is nil!")
+            }
+
             let cellView:UIPBaseCollectionViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
-            let modelCellSize:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+            let modelCellSize:UIPCellSize = cellView.update(withModel:cellModel, delegate:mDelegate!, forIndexPath:indexPath)
             let layoutCellSize:CGSize = UIPheonix.calculateLayoutSizeForCell(cellView, preferredWidth:preferredWidth)
 
-            return UIPheonix.viewSize(with:layoutCellSize, addedSize:modelCellSize)
+            return UIPheonix.viewSize(usingBaseSize:layoutCellSize, addedSize:modelCellSize)
         }
     #elseif os(macOS)
         ///
@@ -424,7 +472,7 @@ final class UIPheonix
         /// func collectionView(_ collectionView:NSCollectionView, itemForRepresentedObjectAt indexPath:IndexPath) -> NSCollectionViewItem
         ///
         @inline(__always)
-        func collectionViewItem(for indexPath:IndexPath)
+        func collectionViewItem(forIndexPath indexPath:IndexPath)
         -> NSCollectionViewItem
         {
             guard (mDelegate != nil) else {
@@ -435,9 +483,9 @@ final class UIPheonix
                 fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegateCollectionView` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
-            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
-            let _:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+            let cellModel:UIPBaseCellModel = displayModel(forSection:0, atIndex:indexPath.item)!
+            let cellView:UIPBaseCollectionViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, forIndexPath:indexPath)!
+            let _:UIPCellSize = cellView.update(withModel:cellModel, delegate:mDelegate!, forIndexPath:indexPath)
 
             return cellView
         }
@@ -448,7 +496,7 @@ final class UIPheonix
         /// func collectionView(_ collectionView:NSCollectionView, layout collectionViewLayout:NSCollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
         ///
         @inline(__always)
-        func collectionViewItemSize(for indexPath:IndexPath, preferredWidth:CGFloat)
+        func collectionViewItemSize(forIndexPath indexPath:IndexPath, preferredWidth:CGFloat)
         -> CGSize
         {
             guard (mDelegate != nil) else {
@@ -459,12 +507,12 @@ final class UIPheonix
                 fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegateCollectionView` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellModel:UIPBaseCellModel = displayModel(forSection:0, atIndex:indexPath.item)!
             let cellView:UIPBaseCollectionViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
-            let modelCellSize:UIPCellSize = cellView.update(with:cellModel, delegate:mDelegate!, for:indexPath)
+            let modelCellSize:UIPCellSize = cellView.update(withModel:cellModel, delegate:mDelegate!, forIndexPath:indexPath)
             let layoutCellSize:CGSize = UIPheonix.calculateLayoutSizeForCell(cellView, preferredWidth:preferredWidth)
 
-            return UIPheonix.viewSize(with:layoutCellSize, addedSize:modelCellSize)
+            return UIPheonix.viewSize(usingBaseSize:layoutCellSize, addedSize:modelCellSize)
         }
     #endif
 
@@ -479,17 +527,21 @@ final class UIPheonix
         /// func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell
         ///
         @inline(__always)
-        func tableViewCell(for indexPath:IndexPath)
+        func tableViewCell(forIndexPath indexPath:IndexPath, delegate:Any)
         -> UITableViewCell
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCell` failed, `mDelegate` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
-            let cellView:UIPBaseTableViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
+            guard let cellModel:UIPBaseCellModel = displayModel(forSection:indexPath.section, atIndex:indexPath.item) else
+            {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `model` is nil!")
+            }
 
-            cellView.update(with:cellModel, delegate:self, for:indexPath)
+            let cellView:UIPBaseTableViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, forIndexPath:indexPath)!
+
+            cellView.update(with:cellModel, delegate:delegate, for:indexPath)
 
             return cellView
         }
@@ -500,14 +552,17 @@ final class UIPheonix
         /// func tableView(_ tableView:UITableView, heightForRowAt indexPath:IndexPath) -> CGFloat
         ///
         @inline(__always)
-        func tableViewCellHeight(for indexPath:IndexPath)
-        -> CGFloat
+        func tableViewCellHeight(forIndexPath indexPath:IndexPath) -> CGFloat
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCellHeight` failed, `mDelegate` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            guard let cellModel:UIPBaseCellModel = displayModel(forSection:indexPath.section, atIndex:indexPath.item) else
+            {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `model` is nil!")
+            }
+
             let cellView:UIPBaseTableViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
 
             return cellView.rowHeight
@@ -519,14 +574,17 @@ final class UIPheonix
         /// func tableView(_ tableView:UITableView, estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat
         ///
         @inline(__always)
-        func tableViewCellEstimatedHeight(for indexPath:IndexPath)
-        -> CGFloat
+        func tableViewCellEstimatedHeight(forIndexPath indexPath:IndexPath) -> CGFloat
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCellEstimatedHeight` failed, `mDelegate` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            guard let cellModel:UIPBaseCellModel = displayModel(forSection:indexPath.section, atIndex:indexPath.item) else
+            {
+                fatalError("[UIPheonix] `collectionViewCell` failed, `model` is nil!")
+            }
+
             let cellView:UIPBaseTableViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
 
             return cellView.estimatedRowHeight
@@ -538,16 +596,15 @@ final class UIPheonix
         /// func tableView(_ tableView:NSTableView, viewFor tableColumn:NSTableColumn?, row:Int) -> NSView?
         ///
         @inline(__always)
-        func tableViewCell(for row:Int)
-        -> NSView
+        func tableViewCell(forRow row:Int) -> NSView
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCell` failed, `mDelegate` is nil!")
             }
 
             let indexPath:IndexPath = IndexPath(item:row, section:0)
-            let cellModel:UIPBaseCellModel = model(at:row)!
-            let cellView:UIPBaseTableViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, for:indexPath)!
+            let cellModel:UIPBaseCellModel = displayModel(forSection:0, atIndex:row)!
+            let cellView:UIPBaseTableViewCell = dequeueView(withReuseIdentifier:cellModel.nameOfClass, forIndexPath:indexPath)!
 
             cellView.update(with:cellModel, delegate:self, for:indexPath)
 
@@ -560,14 +617,14 @@ final class UIPheonix
         /// func tableView(_ tableView:NSTableView, heightOfRow row:Int) -> CGFloat
         ///
         @inline(__always)
-        func tableViewCellHeight(for row:Int)
+        func tableViewCellHeight(forRow row:Int)
         -> CGFloat
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCellHeight` failed, `mDelegate` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:row)!
+            let cellModel:UIPBaseCellModel = displayModel(forSection:0, atIndex:row)!
             let cellView:UIPBaseTableViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
 
             return cellView.rowHeight
@@ -579,14 +636,14 @@ final class UIPheonix
         /// func tableView(_ tableView:NSTableView, estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat
         ///
         @inline(__always)
-        func tableViewCellEstimatedHeight(for indexPath:IndexPath)
+        func tableViewCellEstimatedHeight(forIndexPath indexPath:IndexPath)
         -> CGFloat
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCellEstimatedHeight` failed, `mDelegate` is nil!")
             }
 
-            let cellModel:UIPBaseCellModel = model(at:indexPath.item)!
+            let cellModel:UIPBaseCellModel = displayModel(forSection:0, atIndex:indexPath.item)!
             let cellView:UIPBaseTableViewCell = view(forReuseIdentifier:cellModel.nameOfClass)!
 
             return cellView.estimatedRowHeight
@@ -603,7 +660,7 @@ final class UIPheonix
     /// - Returns: A table view cell view.
     ///
     @inline(__always)
-    func dequeueView(withReuseIdentifier reuseIdentifier:String, for indexPath:IndexPath)
+    func dequeueView(withReuseIdentifier reuseIdentifier:String, forIndexPath indexPath:IndexPath)
     -> UIPBaseTableViewCell?
     {
         guard (mDelegateTableView != nil) else {
@@ -633,8 +690,7 @@ final class UIPheonix
     /// - Returns: A table view cell view.
     ///
     @inline(__always)
-    func view(forReuseIdentifier viewReuseId:String)
-    -> UIPBaseTableViewCell?
+    func view(forReuseIdentifier viewReuseId:String) -> UIPBaseTableViewCell?
     {
         return mViewReuseIds[viewReuseId] as? UIPBaseTableViewCell
     }
@@ -643,8 +699,7 @@ final class UIPheonix
     // MARK:- Private
 
 
-    fileprivate func getApplicationName()
-    -> String
+    fileprivate func getApplicationName() -> String
     {
         let appNameAndClassName:String = NSStringFromClass(UIPheonix.self)                                          // i.e. "<AppName>.<ClassName>" = UIPheonix_iOS.UIPheonix
         let appNameAndClassNameArray:[String] = appNameAndClassName.characters.split{$0 == "."}.map(String.init)    // = ["UIPheonix_iOS", "UIPheonix"]

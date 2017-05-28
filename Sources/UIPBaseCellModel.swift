@@ -71,8 +71,7 @@ class UIPBaseCellModel:UIPBaseCellModelProtocol
     ///
     /// - Returns: Models properties returned as a dictionary.
     ///
-    func toDictionary()
-    -> Dictionary<String, Any>
+    func toDictionary() -> Dictionary<String, Any>
     {
         fatalError("[UIPheonix] You must override \(#function) in your subclass!")
     }

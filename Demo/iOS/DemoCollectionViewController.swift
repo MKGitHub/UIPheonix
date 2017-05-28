@@ -55,7 +55,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
         super.viewDidLoad()
 
         // init member
-        mAppDisplayStateType = (pNewInstanceAttributes[AttributeKeyName.appDisplayState] as! AppDisplayState).typeValue
+        mAppDisplayStateType = (newInstanceAttributes[AttributeKeyName.appDisplayState] as! AppDisplayState).typeValue
 
         initUIPheonix()
         setupCollectionView()
@@ -69,14 +69,14 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int)
     -> Int
     {
-        return mUIPheonix.count()
+        return mUIPheonix.displayModelsCount(forSection:0)
     }
 
 
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath)
     -> UICollectionViewCell
     {
-        return mUIPheonix.collectionViewCell(for:indexPath)
+        return mUIPheonix.collectionViewCell(forIndexPath:indexPath)
     }
 
 
@@ -116,7 +116,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
         // default: full width, no margins
         let defaultCellWidth:CGFloat = collectionView.bounds.size.width - 0 - 0
 
-        return mUIPheonix.collectionViewCellSize(for:indexPath, preferredWidth:defaultCellWidth)
+        return mUIPheonix.collectionViewCellSize(forIndexPath:indexPath, preferredWidth:defaultCellWidth)
     }
 
 
@@ -158,7 +158,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
                     mAppDisplayStateType = AppDisplayState.startUp.typeValue
                     // when we leave the state, store the current display models for later reuse
                     // so that when we re-enter the state, we can just use them as they were
-                    mPersistentDisplayModels = mUIPheonix.displayModels()
+                    mPersistentDisplayModels = mUIPheonix.displayModels(forSection:0)
                 break
 
             case ButtonId.specific.rawValue: mAppDisplayStateType = AppDisplayState.specific.typeValue; break
@@ -243,7 +243,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
         if let jsonDictionary:Dictionary<String, Any> = DataProvider.loadJSON(inFilePath:mAppDisplayStateType.jsonFileName.rawValue)
         {
             mUIPheonix.setModelViewRelationships(jsonDictionary[UIPConstants.Collection.modelViewRelationships] as! Dictionary<String, String>)
-            mUIPheonix.setDisplayModels(jsonDictionary[UIPConstants.Collection.cellModels] as! Array<Any>, append:false)
+            mUIPheonix.setDisplayModels(jsonDictionary[UIPConstants.Collection.cellModels] as! Array<Any>, forSection:0, append:false)
         }
         else
         {
@@ -277,7 +277,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
         let simpleButtonModel:SimpleButtonModel = SimpleButtonModel(id:ButtonId.startUp.rawValue, title:"Enough with the RAINBOW!")
         models.append(simpleButtonModel)
 
-        mUIPheonix.setDisplayModels(models)
+        mUIPheonix.setDisplayModels(models, forSection:0)
     }
 
 
@@ -286,7 +286,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
         if (isTheAppendModelsDemo)
         {
             // append the current display models list to itself
-            mUIPheonix.addDisplayModels(mUIPheonix.displayModels())
+            mUIPheonix.addDisplayModels(mUIPheonix.displayModels(forSection:0), forSection:0)
         }
         else if (isThePersistentDemo)
         {
@@ -296,7 +296,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
             else
             {
                 // set the persistent display models
-                mUIPheonix!.setDisplayModels(mPersistentDisplayModels!)
+                mUIPheonix!.setDisplayModels(mPersistentDisplayModels!, forSection:0)
             }
         }
         else if (isTheCustomMadeModelsDemo)

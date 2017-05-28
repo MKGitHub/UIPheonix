@@ -33,7 +33,7 @@ import Foundation
 
 
 ///
-/// A simple button delegate for handling button actions.
+/// A simple/example button delegate for handling button actions.
 ///
 protocol UIPButtonDelegate:class
 {
