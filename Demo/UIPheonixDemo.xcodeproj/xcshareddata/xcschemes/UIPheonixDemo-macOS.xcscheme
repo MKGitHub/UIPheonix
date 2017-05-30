@@ -58,8 +58,7 @@
       debugDocumentVersioning = "YES"
       enableAddressSanitizer = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "NO"
-      consoleMode = "1">
+      allowLocationSimulation = "NO">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
