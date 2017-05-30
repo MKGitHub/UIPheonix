@@ -1,9 +1,9 @@
 //
 // Debug
 //
-//   Last Update: 5 Mar 2017, version 10
-// Xcode Version: 8.2.1 (8C1002)
-// Swift Version: 3.0.x
+//   Last Update: 30 May 2017, version 11
+// Xcode Version: 8.2.1 (8C1002) -> 8.3.2 (8E2002)
+// Swift Version: 3.0.x -> 3.1
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
 //
