@@ -221,7 +221,6 @@ final class UIPheonix
     ///
     /// - Returns: Array containing models.
     ///
-    @inline(__always)
     func displayModels(forSection section:Int) -> Array<UIPBaseCellModelProtocol>
     {
         if let currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
@@ -241,7 +240,6 @@ final class UIPheonix
     ///
     /// - Returns: The number of models.
     ///
-    @inline(__always)
     func displayModelsCount(forSection section:Int) -> Int
     {
         if let currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
@@ -260,7 +258,6 @@ final class UIPheonix
     ///
     /// - Returns: The model.
     ///
-    @inline(__always)
     func displayModel(forSection section:Int, atIndex index:Int) -> UIPBaseCellModel?
     {
         if let currentGroupModels:Array<UIPBaseCellModelProtocol> = mDisplayModels[section]
@@ -372,7 +369,6 @@ final class UIPheonix
     ///   - indexPath: Index path of cell.
     /// - Returns: A collection view cell view.
     ///
-    @inline(__always)
     func dequeueView(withReuseIdentifier reuseIdentifier:String, forIndexPath indexPath:IndexPath)
     -> UIPBaseCollectionViewCell?
     {
@@ -402,9 +398,7 @@ final class UIPheonix
     /// - Parameter viewReuseId: The cell identifier.
     /// - Returns: A collection view cell view.
     ///
-    @inline(__always)
-    func view(forReuseIdentifier viewReuseId:String)
-    -> UIPBaseCollectionViewCell?
+    func view(forReuseIdentifier viewReuseId:String) -> UIPBaseCollectionViewCell?
     {
         return mViewReuseIds[viewReuseId] as? UIPBaseCollectionViewCell
     }
@@ -416,9 +410,7 @@ final class UIPheonix
         ///
         /// func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
         ///
-        @inline(__always)
-        func collectionViewCell(forIndexPath indexPath:IndexPath)
-        -> UICollectionViewCell
+        func collectionViewCell(forIndexPath indexPath:IndexPath) -> UICollectionViewCell
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `collectionViewCell` failed, `mDelegate` is nil!")
@@ -442,7 +434,6 @@ final class UIPheonix
         ///
         /// func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
         ///
-        @inline(__always)
         func collectionViewCellSize(forIndexPath indexPath:IndexPath, preferredWidth:CGFloat)
         -> CGSize
         {
@@ -471,9 +462,7 @@ final class UIPheonix
         ///
         /// func collectionView(_ collectionView:NSCollectionView, itemForRepresentedObjectAt indexPath:IndexPath) -> NSCollectionViewItem
         ///
-        @inline(__always)
-        func collectionViewItem(forIndexPath indexPath:IndexPath)
-        -> NSCollectionViewItem
+        func collectionViewItem(forIndexPath indexPath:IndexPath) -> NSCollectionViewItem
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `collectionViewCellSize` failed, `mDelegate` is nil!")
@@ -495,7 +484,6 @@ final class UIPheonix
         ///
         /// func collectionView(_ collectionView:NSCollectionView, layout collectionViewLayout:NSCollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
         ///
-        @inline(__always)
         func collectionViewItemSize(forIndexPath indexPath:IndexPath, preferredWidth:CGFloat)
         -> CGSize
         {
@@ -526,9 +514,7 @@ final class UIPheonix
         ///
         /// func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath) -> UITableViewCell
         ///
-        @inline(__always)
-        func tableViewCell(forIndexPath indexPath:IndexPath, delegate:Any)
-        -> UITableViewCell
+        func tableViewCell(forIndexPath indexPath:IndexPath, delegate:Any) -> UITableViewCell
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCell` failed, `mDelegate` is nil!")
@@ -551,7 +537,6 @@ final class UIPheonix
         ///
         /// func tableView(_ tableView:UITableView, heightForRowAt indexPath:IndexPath) -> CGFloat
         ///
-        @inline(__always)
         func tableViewCellHeight(forIndexPath indexPath:IndexPath) -> CGFloat
         {
             guard (mDelegate != nil) else {
@@ -573,7 +558,6 @@ final class UIPheonix
         ///
         /// func tableView(_ tableView:UITableView, estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat
         ///
-        @inline(__always)
         func tableViewCellEstimatedHeight(forIndexPath indexPath:IndexPath) -> CGFloat
         {
             guard (mDelegate != nil) else {
@@ -595,7 +579,6 @@ final class UIPheonix
         ///
         /// func tableView(_ tableView:NSTableView, viewFor tableColumn:NSTableColumn?, row:Int) -> NSView?
         ///
-        @inline(__always)
         func tableViewCell(forRow row:Int) -> NSView
         {
             guard (mDelegate != nil) else {
@@ -616,9 +599,7 @@ final class UIPheonix
         ///
         /// func tableView(_ tableView:NSTableView, heightOfRow row:Int) -> CGFloat
         ///
-        @inline(__always)
-        func tableViewCellHeight(forRow row:Int)
-        -> CGFloat
+        func tableViewCellHeight(forRow row:Int) -> CGFloat
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCellHeight` failed, `mDelegate` is nil!")
@@ -635,9 +616,7 @@ final class UIPheonix
         ///
         /// func tableView(_ tableView:NSTableView, estimatedHeightForRowAt indexPath:IndexPath) -> CGFloat
         ///
-        @inline(__always)
-        func tableViewCellEstimatedHeight(forIndexPath indexPath:IndexPath)
-        -> CGFloat
+        func tableViewCellEstimatedHeight(forIndexPath indexPath:IndexPath) -> CGFloat
         {
             guard (mDelegate != nil) else {
                 fatalError("[UIPheonix] `tableViewCellEstimatedHeight` failed, `mDelegate` is nil!")
@@ -659,7 +638,6 @@ final class UIPheonix
     ///   - indexPath: Index path of cell. NOTE! macOS target does not use this `indexPath`.
     /// - Returns: A table view cell view.
     ///
-    @inline(__always)
     func dequeueView(withReuseIdentifier reuseIdentifier:String, forIndexPath indexPath:IndexPath)
     -> UIPBaseTableViewCell?
     {
@@ -689,7 +667,6 @@ final class UIPheonix
     /// - Parameter viewReuseId: The cell identifier.
     /// - Returns: A table view cell view.
     ///
-    @inline(__always)
     func view(forReuseIdentifier viewReuseId:String) -> UIPBaseTableViewCell?
     {
         return mViewReuseIds[viewReuseId] as? UIPBaseTableViewCell
