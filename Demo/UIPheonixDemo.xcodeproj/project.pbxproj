@@ -50,8 +50,6 @@
 		4D3DF0031E06F1FB000D8B70 /* DemoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DEFF91E06F1FB000D8B70 /* DemoTableViewController.xib */; };
 		4D3DF0041E06F1FB000D8B70 /* SimpleLabelModelTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DEFFA1E06F1FB000D8B70 /* SimpleLabelModelTVCell.xib */; };
 		4D3DF0061E06F238000D8B70 /* SimpleUserProfileModelTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3DF0051E06F238000D8B70 /* SimpleUserProfileModelTVCell.xib */; };
-		4D3E212E1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E212C1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig */; };
-		4D3E212F1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4D3E212D1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig */; };
 		4D43BEF91E0620F400E71655 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43BEF31E061FF000E71655 /* DemoTableViewController.swift */; };
 		4D43BEFC1E062CF200E71655 /* SimpleLabelModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43BEFB1E062CF200E71655 /* SimpleLabelModel2.swift */; };
 		4D43BEFD1E062D9300E71655 /* SimpleLabelModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D43BEFB1E062CF200E71655 /* SimpleLabelModel2.swift */; };
@@ -778,8 +776,6 @@
 				4D1F11871E1AF9560091D9FD /* SimpleTextFieldModelCVCell.xib in Resources */,
 				4D1F118E1E1B28FF0091D9FD /* SimpleLabelModelTVCell.xib in Resources */,
 				4DE1AC5A1E1DC260009EF1CD /* SimpleUserProfileModelTVCell.xib in Resources */,
-				4D3E212F1D6E3A91009F8E2B /* UIPheonix_DEBUG.xcconfig in Resources */,
-				4D3E212E1D6E3A91009F8E2B /* UIPheonix_RELEASE.xcconfig in Resources */,
 				4D81ABAC1E1C78AA008F46A5 /* SimpleButtonModelTVCell.xib in Resources */,
 				4DC567031D593B98005A3F70 /* DisplayState-Appending.json in Resources */,
 				4D1F118C1E1B21750091D9FD /* DemoTableViewController.xib in Resources */,
