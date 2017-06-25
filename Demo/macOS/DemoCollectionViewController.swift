@@ -85,9 +85,9 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
 
 
     func collectionView(_ collectionView:NSCollectionView, layout collectionViewLayout:NSCollectionViewLayout, insetForSectionAt section:Int)
-    -> EdgeInsets
+    -> NSEdgeInsets
     {
-        return EdgeInsets(top:10, left:0, bottom:0, right:0)
+        return NSEdgeInsets(top:10, left:0, bottom:0, right:0)
     }
 
 

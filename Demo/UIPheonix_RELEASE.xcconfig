@@ -1,9 +1,9 @@
 //
 // Release
 //
-//   Last Update: 30 May 2017, version 11
-// Xcode Version: 8.2.1 (8C1002) -> 8.3.2 (8E2002)
-// Swift Version: 3.0.x -> 3.1
+//   Last Update: 23 jun 2017, version 13
+// Xcode Version: 9.0 beta 2 (9M137d)
+// Swift Version: 4.0.0
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
 //
@@ -16,8 +16,10 @@
 //
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE
 SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
-SWIFT_VERSION = 3.0
+SWIFT_VERSION = 4.0
 OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies //-warn-long-function-bodies=100
+SWIFT_PRECOMPILE_BRIDGING_HEADER = YES
+SWIFT_SWIFT3_OBJC_INFERENCE = Default
 
 //
 // Build, Compile, Architecture
@@ -27,6 +29,7 @@ ONLY_ACTIVE_ARCH = NO
 RUN_CLANG_STATIC_ANALYZER = NO
 WARNING_CFLAGS = -Wall -Weverything -Wextra
 LD_NO_PIE = NO
+VALIDATE_PRODUCT = YES
 
 //
 // Debug
@@ -58,6 +61,16 @@ CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR
 CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES
 CLANG_WARN_SUSPICIOUS_MOVE = YES
 CLANG_WARN_UNREACHABLE_CODE = YES
+// Swift 4
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES    // Warn about block captures of implicitly autoreleasing parameters.
+CLANG_WARN_COMMA = YES    // Warn about suspicious uses of the comma operator.
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES    // Warn about non-literal expressions that evaluate to zero being treated as a null pointer.
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES    // Warn about implicit conversions from Objective-C literals to values of incompatible type.
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES    // Warn about ranged-based for loops.
+CLANG_WARN_STRICT_PROTOTYPES = YES    // Warn about non-prototype declarations.
+CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES
+CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES
+CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
 
 //
 // GCC
@@ -77,7 +90,8 @@ GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES
 GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR
 GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES
 GCC_WARN_MISSING_PARENTHESES = YES
-GCC_WARN_SIGN_COMPARE = NO
+GCC_WARN_SHADOW = YES
+GCC_WARN_SIGN_COMPARE = YES
 GCC_WARN_UNDECLARED_SELECTOR = YES
 GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE
 GCC_WARN_UNKNOWN_PRAGMAS = YES
@@ -105,8 +119,11 @@ DEAD_CODE_STRIPPING = YES
 DEPLOYMENT_POSTPROCESSING = YES
 GCC_GENERATE_DEBUGGING_SYMBOLS = NO
 GENERATE_MASTER_OBJECT_FILE = YES
-SEPARATE_STRIP = YES
+//SEPARATE_STRIP = YES    // Xcode 9, The build setting “Separate Strip” (SEPARATE_STRIP) is no longer displayed in the build settings editor, and it is no longer supported. Xcode always strips binaries in a separate task and no longer instructs the linker to perform the strip. (31584192)
 STRIP_INSTALLED_PRODUCT = YES
 STRIP_STYLE = all
 STRIPFLAGS = -x
+// Swift 4
+STRIP_SWIFT_SYMBOLS = YES
+
 

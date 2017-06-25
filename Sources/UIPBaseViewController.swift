@@ -171,7 +171,7 @@ protocol UIPBaseViewControllerProtocol:class
         ///
         /// We have to implement this because we use `self` in the `newInstance` function.
         ///
-        override required public init?(nibName nibNameOrNil:String?, bundle nibBundleOrNil:Bundle?)
+        override required public init(nibName nibNameOrNil:NSNib.Name?, bundle nibBundleOrNil:Bundle?)
         {
             super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
         }
@@ -213,7 +213,7 @@ protocol UIPBaseViewControllerProtocol:class
         -> T
         {
             // with nib
-            guard let vc:T = self.init(nibName:"\(self)", bundle:nil) as? T else
+            guard let vc:T = self.init(nibName:NSNib.Name(rawValue:"\(self)"), bundle:nil) as? T else
             {
                 fatalError("[UIPheonix] New instance of type '\(self)' failed to init!")
             }

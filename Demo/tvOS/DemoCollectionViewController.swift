@@ -47,15 +47,14 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
     // (for demo purpose only)
     fileprivate var mPersistentDisplayModels:Array<UIPBaseCellModelProtocol>?
 
-    // MARK: Overriding Member
-    override weak var preferredFocusedView:UIView?
+    override var preferredFocusEnvironments:[UIFocusEnvironment]
     {
         // the cell view to focus
         if (mViewToFocus != nil) {
-            return mViewToFocus
+            return [mViewToFocus ?? self]
         }
         else {
-            return super.preferredFocusedView
+            return super.preferredFocusEnvironments
         }
     }
 

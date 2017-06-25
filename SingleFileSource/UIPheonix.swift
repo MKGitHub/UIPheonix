@@ -1,4 +1,4 @@
-// UIPheonix 2.1.1
+// UIPheonix 2.2.0
 
 //----------------------------------------------------------------------------------------------------
 // MARK:- UIPBaseCellModel.swift
@@ -661,7 +661,7 @@ protocol UIPBaseViewControllerProtocol:class
         ///
         /// We have to implement this because we use `self` in the `newInstance` function.
         ///
-        override required public init?(nibName nibNameOrNil:String?, bundle nibBundleOrNil:Bundle?)
+        override required public init(nibName nibNameOrNil:NSNib.Name?, bundle nibBundleOrNil:Bundle?)
         {
             super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
         }
@@ -703,7 +703,7 @@ protocol UIPBaseViewControllerProtocol:class
         -> T
         {
             // with nib
-            guard let vc:T = self.init(nibName:"\(self)", bundle:nil) as? T else
+            guard let vc:T = self.init(nibName:NSNib.Name(rawValue:"\(self)"), bundle:nil) as? T else
             {
                 fatalError("[UIPheonix] New instance of type '\(self)' failed to init!")
             }
@@ -1291,7 +1291,7 @@ final class UIPheonix
                 return cellView
             }
         #elseif os(macOS)
-            if let cellView:UIPBaseCollectionViewCell = mDelegateCollectionView!.makeItem(withIdentifier:reuseIdentifier, for:indexPath) as? UIPBaseCollectionViewCell
+            if let cellView:UIPBaseCollectionViewCell = mDelegateCollectionView!.makeItem(withIdentifier:NSUserInterfaceItemIdentifier(rawValue:reuseIdentifier), for:indexPath) as? UIPBaseCollectionViewCell
             {
                 return cellView
             }
@@ -1560,7 +1560,7 @@ final class UIPheonix
                 return cellView
             }
         #elseif os(macOS)
-            if let cellView:UIPBaseTableViewCell = mDelegateTableView!.make(withIdentifier:reuseIdentifier, owner:nil) as? UIPBaseTableViewCell
+            if let cellView:UIPBaseTableViewCell = mDelegateTableView!.makeView(withIdentifier:NSUserInterfaceItemIdentifier(rawValue:reuseIdentifier), owner:nil) as? UIPBaseTableViewCell
             {
                 return cellView
             }
@@ -1645,22 +1645,36 @@ final class UIPheonix
             {
                 #if os(iOS) || os(tvOS)
                     let nibContents:[Any]? = Bundle.main.loadNibNamed(nibName, owner:nil, options:nil)
-                #elseif os(macOS)
-                    var nibContents:NSArray? = NSArray()
 
-                    let isNibLoaded:Bool = Bundle.main.loadNibNamed(nibName, owner:nil, topLevelObjects:&nibContents!)
+                    guard let elementsArray:[Any] = nibContents else {
+                        fatalError("[UIPheonix] Nib could not be loaded #1: \(nibName)")
+                    }
+                #elseif os(macOS)
+                    var array:NSArray? = NSArray()
+                    let nibContents:AutoreleasingUnsafeMutablePointer<NSArray?>? = AutoreleasingUnsafeMutablePointer<NSArray?>?(&array)
+
+                    let isNibLoaded:Bool = Bundle.main.loadNibNamed(NSNib.Name(rawValue:nibName), owner:nil, topLevelObjects:nibContents)
+
                     guard (isNibLoaded) else {
-                        fatalError("[UIPheonix] Nib could not be loaded: \(nibName)")
+                        fatalError("[UIPheonix] Nib could not be loaded #1: \(nibName)")
+                    }
+
+                    guard let nibElements:AutoreleasingUnsafeMutablePointer<NSArray?> = nibContents else {
+                        fatalError("[UIPheonix] Nib could not be loaded #2: \(nibName)")
+                    }
+
+                    guard let elementsArray:NSArray = nibElements.pointee else {
+                        fatalError("[UIPheonix] Nib could not be loaded #3: \(nibName)")
                     }
                 #endif
 
-                guard ((nibContents != nil) && (nibContents!.count > 0)) else {
+                guard (elementsArray.count > 0) else {
                     fatalError("[UIPheonix] Nib is empty: \(nibName)")
                 }
 
 
                 // find the element we are looking for, since the xib contents order is not guaranteed
-                let filteredNibContents:[Any] = nibContents!.filter(
+                let filteredNibContents:[Any] = elementsArray.filter(
                 {
                     (element:Any) -> Bool in
                     return (String(describing:type(of:element)) == nibName)
@@ -1691,7 +1705,7 @@ final class UIPheonix
                         mDelegateTableView!.register(nib, forCellReuseIdentifier:modelName)
                     }
                 #elseif os(macOS)
-                    let nib:NSNib? = NSNib(nibNamed:nibName, bundle:nil)
+                    let nib:NSNib? = NSNib(nibNamed:NSNib.Name(rawValue:nibName), bundle:nil)
 
                     guard (nib != nil) else {
                         fatalError("[UIPheonix] Nib could not be instantiated: \(nibName)")
@@ -1699,11 +1713,11 @@ final class UIPheonix
 
                     if (mUIPDelegateViewType == UIPDelegateViewType.collection)
                     {
-                        mDelegateCollectionView!.register(nib, forItemWithIdentifier:modelName)
+                        mDelegateCollectionView!.register(nib, forItemWithIdentifier:NSUserInterfaceItemIdentifier(rawValue:modelName))
                     }
                     else if (mUIPDelegateViewType == UIPDelegateViewType.table)
                     {
-                        mDelegateTableView!.register(nib, forIdentifier:modelName)
+                        mDelegateTableView!.register(nib, forIdentifier:NSUserInterfaceItemIdentifier(rawValue:modelName))
                     }
                 #endif
             }
