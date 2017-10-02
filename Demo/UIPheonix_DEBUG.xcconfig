@@ -1,8 +1,8 @@
 //
 // Debug
 //
-//   Last Update: 23 jun 2017, version 13
-// Xcode Version: 9.0 beta 2 (9M137d)
+//   Last Update: 30 sep 2017, version 15
+// Xcode Version 9.1 beta (9B37)
 // Swift Version: 4.0.0
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
@@ -17,7 +17,7 @@
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 SWIFT_VERSION = 4.0
-OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies //-warn-long-function-bodies=100
+OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100
 SWIFT_PRECOMPILE_BRIDGING_HEADER = YES
 SWIFT_SWIFT3_OBJC_INFERENCE = Default
 
@@ -106,12 +106,18 @@ GCC_WARN_UNUSED_VARIABLE = YES
 // Unsorted
 //
 ASSETCATALOG_COMPILER_OPTIMIZATION = time
-COMBINE_HIDPI_IMAGES = YES
 EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO
 ENABLE_NS_ASSERTIONS = YES
 ENABLE_STRICT_OBJC_MSGSEND = YES
 ENABLE_TESTABILITY = YES
 GENERATE_PROFILING_CODE = YES
+COMPRESS_PNG_FILES = NO
+STRIP_PNG_TEXT = NO
+
+//
+// macOS
+//
+COMBINE_HIDPI_IMAGES[sdk=macos*] = YES
 
 //
 // Security: No Strip
@@ -127,5 +133,4 @@ STRIP_STYLE = all
 STRIPFLAGS =
 // Swift 4
 STRIP_SWIFT_SYMBOLS = YES
-
 

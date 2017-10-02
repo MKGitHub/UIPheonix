@@ -678,8 +678,8 @@ final class UIPheonix
 
     fileprivate func getApplicationName() -> String
     {
-        let appNameAndClassName:String = NSStringFromClass(UIPheonix.self)                                          // i.e. "<AppName>.<ClassName>" = UIPheonix_iOS.UIPheonix
-        let appNameAndClassNameArray:[String] = appNameAndClassName.characters.split{$0 == "."}.map(String.init)    // = ["UIPheonix_iOS", "UIPheonix"]
+        let appNameAndClassName:String = NSStringFromClass(UIPheonix.self)                               // i.e. "<AppName>.<ClassName>" = UIPheonix_iOS.UIPheonix
+        let appNameAndClassNameArray:[String] = appNameAndClassName.split{$0 == "."}.map(String.init)    // = ["UIPheonix_iOS", "UIPheonix"]
 
         //print(appNameAndClassName)
         //print(appNameAndClassNameArray)

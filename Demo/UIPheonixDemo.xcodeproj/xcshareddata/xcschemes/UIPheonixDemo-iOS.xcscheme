@@ -69,6 +69,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       stopOnEveryUBSanitizerIssue = "YES"
+      stopOnEveryMainThreadCheckerIssue = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "NO">
       <BuildableProductRunnable

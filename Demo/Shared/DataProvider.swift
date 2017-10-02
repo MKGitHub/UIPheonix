@@ -33,8 +33,7 @@ final class DataProvider
     ///
     /// Load JSON file.
     ///
-    class func loadJSON(inFilePath filePath:String)
-    -> Dictionary<String, Any>?
+    class func loadJSON(inFilePath filePath:String) -> Dictionary<String, Any>?
     {
         if let jsonFilePath:String = Bundle.main.path(forResource:filePath, ofType:"json")
         {
