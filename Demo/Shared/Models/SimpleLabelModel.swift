@@ -1,29 +1,24 @@
-//
-//  UIPheonix
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
-//
+/**
+    UIPheonix
+    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 
-//
-//  https://github.com/MKGitHub/UIPheonix
-//  http://www.xybernic.com
-//  http://www.khanofsweden.com
-//
+    https://github.com/MKGitHub/UIPheonix
+    http://www.xybernic.com
 
-//
-//  Copyright 2016/2017 Mohsan Khan
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+    Copyright 2016/2017/2018 Mohsan Khan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 
 import CoreGraphics
 
@@ -39,25 +34,25 @@ final class SimpleLabelModel:UIPBaseCellModel
     // MARK: Public Constants
     struct Key
     {
-        static let text:String = "text"
-        static let size:String = "size"
-        static let alignment:String = "alignment"
-        static let style:String = "style"
-        static let backgroundColorHue:String = "backgroundColorHue"
-        static let notificationId:String = "notificationId"
+        static let text = "text"
+        static let size = "size"
+        static let alignment = "alignment"
+        static let style = "style"
+        static let backgroundColorHue = "backgroundColorHue"
+        static let notificationId = "notificationId"
     }
 
     struct Alignment
     {
-        static let left:String = "left"
-        static let center:String = "center"
-        static let right:String = "right"
+        static let left = "left"
+        static let center = "center"
+        static let right = "right"
     }
 
     struct Style
     {
-        static let regular:String = "regular"
-        static let bold:String = "bold"
+        static let regular = "regular"
+        static let bold = "bold"
     }
 
     // MARK: Public Members
@@ -80,7 +75,7 @@ final class SimpleLabelModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        pText = dictionary[Key.text] as! String
+        pText = dictionary[Key.text] as? String
 
         #if os(iOS)
             let crossPlatformFontSize:CGFloat = UIPPlatformFont.systemFontSize
@@ -94,7 +89,7 @@ final class SimpleLabelModel:UIPBaseCellModel
         pAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.left          // fallback to default value
         pStyle = (dictionary[Key.style] as? String) ?? Style.regular               // fallback to default value
 
-        pBackgroundColorHue = dictionary[Key.backgroundColorHue] as! CGFloat
+        pBackgroundColorHue = dictionary[Key.backgroundColorHue] as? CGFloat
 
         pNotificationId = (dictionary[Key.notificationId] as? String) ?? nil   // fallback to default value
     }
@@ -119,8 +114,7 @@ final class SimpleLabelModel:UIPBaseCellModel
     // MARK:- UIPBaseCellModel
 
 
-    override func toDictionary()
-    -> Dictionary<String, Any>
+    override func toDictionary() -> Dictionary<String, Any>
     {
         return [
             Key.text:pText,

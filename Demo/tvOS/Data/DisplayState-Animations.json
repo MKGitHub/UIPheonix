@@ -8,19 +8,19 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleViewAnimationModel",
+            "appearance":"SimpleViewAnimationModel",
             "animationState":false
         },
         {
-            "type":"SimpleViewAnimationModel",
+            "appearance":"SimpleViewAnimationModel",
             "animationState":true
         },
         {
-            "type":"SimpleViewAnimationModel",
+            "appearance":"SimpleViewAnimationModel",
             "animationState":false
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":0,
             "title":"Go back…",
             "focus":true

@@ -7,12 +7,12 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":1031,
             "title":"Append this display state to itself 😱🙀👇"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":0,
             "title":"Go back…",
             "focus":true

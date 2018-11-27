@@ -4,6 +4,10 @@
       "idiom" : "tv",
       "filename" : "AppleTV-TopShelf-Wide-2320x720.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {

@@ -1,29 +1,24 @@
-//
-//  UIPheonix
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
-//
+/**
+    UIPheonix
+    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 
-//
-//  https://github.com/MKGitHub/UIPheonix
-//  http://www.xybernic.com
-//  http://www.khanofsweden.com
-//
+    https://github.com/MKGitHub/UIPheonix
+    http://www.xybernic.com
 
-//
-//  Copyright 2016/2017 Mohsan Khan
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+    Copyright 2016/2017/2018 Mohsan Khan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 
 #if os(iOS) || os(tvOS)
     import UIKit
@@ -35,7 +30,7 @@
 final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
 {
     // MARK: Private IB Outlet
-    @IBOutlet fileprivate weak var ibLeftSpaceConstraint:NSLayoutConstraint!
+    @IBOutlet private weak var ibLeftSpaceConstraint:NSLayoutConstraint!
 
     // MARK: Private Member
     public var pSimpleViewAnimationModel:SimpleViewAnimationModel!
@@ -53,11 +48,10 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
     // MARK:- UIPBaseCollectionViewCell/UIPBaseCollectionViewCellProtocol
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
-    -> UIPCellSize
+    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
     {
         // save model for later
-        pSimpleViewAnimationModel = model as! SimpleViewAnimationModel
+        pSimpleViewAnimationModel = model as? SimpleViewAnimationModel
 
         animateUI()
 
@@ -78,12 +72,12 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
             {
                 [weak self] in
 
-                if let strongSelf = self
+                if let self = self
                 {
-                    strongSelf.pSimpleViewAnimationModel.pAnimationState = !strongSelf.pSimpleViewAnimationModel.pAnimationState
-                    strongSelf.animateUI()
+                    self.pSimpleViewAnimationModel.pAnimationState = !self.pSimpleViewAnimationModel.pAnimationState
+                    self.animateUI()
 
-                    strongSelf.layoutIfNeeded()    // #2. Layout again to update the frames/constraints.
+                    self.layoutIfNeeded()    // #2. Layout again to update the frames/constraints.
                 }
             }
         #elseif os(macOS)
@@ -95,12 +89,12 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
 
                 context.duration = 1.0
 
-                if let strongSelf = self
+                if let self = self
                 {
-                    strongSelf.pSimpleViewAnimationModel.pAnimationState = !strongSelf.pSimpleViewAnimationModel.pAnimationState
-                    strongSelf.animateUI()
+                    self.pSimpleViewAnimationModel.pAnimationState = !self.pSimpleViewAnimationModel.pAnimationState
+                    self.animateUI()
 
-                    strongSelf.view.layoutSubtreeIfNeeded()    // #2. Layout again to update the frames/constraints.
+                    self.view.layoutSubtreeIfNeeded()    // #2. Layout again to update the frames/constraints.
                 }
             },
             completionHandler:nil)
@@ -111,7 +105,7 @@ final class SimpleViewAnimationModelCVCell:UIPBaseCollectionViewCell
     // MARK:- Private
 
 
-    fileprivate func animateUI()
+    private func animateUI()
     {
         #if os(iOS)
             self.ibLeftSpaceConstraint?.constant = (pSimpleViewAnimationModel.pAnimationState) ? (self.bounds.width - 70 - 8) : 8

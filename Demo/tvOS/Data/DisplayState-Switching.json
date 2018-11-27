@@ -8,14 +8,14 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"\nActually, this example is already happening!\nEach time you switch to a different example, the display state is changed.\n😁🤔🤑\n",
             "size":30,
             "alignment":"center",
             "backgroundColorHue":0.15
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":0,
             "title":"Go back…",
             "focus":true

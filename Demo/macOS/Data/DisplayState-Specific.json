@@ -9,7 +9,7 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"In this example we ”connect” two RUICs together, and the great thing is that we are practising good decoupling.\nI.e. there is no boilerplate, no glue-code, no KVO, no unnecessary complexity etc.\nWe simply use notifications – easy as pie!\n😍😘🍲🍰",
             "size":13,
             "alignment":"center",
@@ -17,43 +17,43 @@
             "backgroundColorHue":0.25
         },
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"The counter value is: ?",
             "alignment":"center",
             "backgroundColorHue":0.15,
             "notificationId":"Counter_1"
         },
         {
-            "type":"SimpleCounterModel",
+            "appearance":"SimpleCounterModel",
             "value":-5,
             "notificationId":"Counter_1"
         },
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"The counter value is: ?",
             "alignment":"center",
             "backgroundColorHue":0.45,
             "notificationId":"Counter_2"
         },
         {
-            "type":"SimpleCounterModel",
+            "appearance":"SimpleCounterModel",
             "value":0,
             "notificationId":"Counter_2"
         },
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"The counter value is: ?",
             "alignment":"center",
             "backgroundColorHue":0.65,
             "notificationId":"Counter_3"
         },
         {
-            "type":"SimpleCounterModel",
+            "appearance":"SimpleCounterModel",
             "value":5,
             "notificationId":"Counter_3"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":0,
             "title":"Go back…",
             "alignment":"right"

@@ -1,25 +1,41 @@
 //
 // Release
 //
-//   Last Update: 30 sep 2017, version 15
-// Xcode Version 9.1 beta (9B37)
-// Swift Version: 4.0.0
+// Last Update: 22 nov 2018, version 23
+//
+// Xcode Version 10.1 (10B61)
+//
+// Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)
+// Target: x86_64-apple-darwin17.7.0
 //
 // https://developer.apple.com/library/mac/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html
 //
 // https://pewpewthespells.com/blog/buildsettings.html
 //
+// https://pewpewthespells.com/blog/xcconfig_guide.html
+//
 
+
+//
+// Custom
+//
+_MK_RUNTIME_ENV =
+_MK_RUNTIME_ENV[sdk=mac*] = $(inherited) MAC_DESKTOP_RUNTIME_ENV
+_MK_RUNTIME_ENV[sdk=*simulator*] = $(inherited) IOS_SIMULAOR_RUNTIME_ENV
+_MK_RUNTIME_ENV[sdk=iphoneos*] = $(inherited) IOS_iphoneos_RUNTIME_ENV
 
 //
 // Swift
 //
-SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE $(_MK_RUNTIME_ENV)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[sdk=iphonesimulator*] = $(inherited) TARGET_OS_SIMULATOR
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[sdk=embeddedsimulator*] = $(inherited) TARGET_OS_SIMULATOR
 SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
-SWIFT_VERSION = 4.0
-OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100
+SWIFT_VERSION = 4.2
+OTHER_SWIFT_FLAGS = -Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=300
 SWIFT_PRECOMPILE_BRIDGING_HEADER = YES
 SWIFT_SWIFT3_OBJC_INFERENCE = Default
+SWIFT_COMPILATION_MODE = wholemodule
 
 //
 // Build, Compile, Architecture
@@ -35,7 +51,15 @@ VALIDATE_PRODUCT = YES
 // Debug
 //
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+DEBUG_INFORMATION_FORMAT[sdk=iphoneos*] = dwarf-with-dsym
+DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*] = dwarf
+DEBUG_INFORMATION_FORMAT[sdk=embeddedsimulator*] = dwarf
+
+//
+// Metal
+//
 MTL_ENABLE_DEBUG_INFO = NO
+MTL_FAST_MATH = YES
 
 //
 // Clang
@@ -60,7 +84,7 @@ CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES
 CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR
 CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES
 CLANG_WARN_SUSPICIOUS_MOVE = YES
-CLANG_WARN_UNREACHABLE_CODE = YES
+CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE
 // Swift 4
 CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES    // Warn about block captures of implicitly autoreleasing parameters.
 CLANG_WARN_COMMA = YES    // Warn about suspicious uses of the comma operator.
@@ -71,6 +95,13 @@ CLANG_WARN_STRICT_PROTOTYPES = YES    // Warn about non-prototype declarations.
 CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES
 CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES
 CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES
+// Swift 4.1 • Xcode 9.3
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES
+CLANG_ENABLE_OBJC_WEAK = YES
+// Swift 4.2 • Xcode 10
+CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE
+
 
 //
 // GCC
@@ -109,8 +140,9 @@ ENABLE_NS_ASSERTIONS = NO
 ENABLE_STRICT_OBJC_MSGSEND = YES
 ENABLE_TESTABILITY = NO
 GENERATE_PROFILING_CODE = NO
-COMPRESS_PNG_FILES = NO
+COMPRESS_PNG_FILES = NO    // disable Xcode's conversion
 STRIP_PNG_TEXT = NO
+//CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES    // on by default
 
 //
 // macOS

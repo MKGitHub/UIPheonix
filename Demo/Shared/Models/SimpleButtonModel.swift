@@ -1,29 +1,24 @@
-//
-//  UIPheonix
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
-//
+/**
+    UIPheonix
+    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 
-//
-//  https://github.com/MKGitHub/UIPheonix
-//  http://www.xybernic.com
-//  http://www.khanofsweden.com
-//
+    https://github.com/MKGitHub/UIPheonix
+    http://www.xybernic.com
 
-//
-//  Copyright 2016/2017 Mohsan Khan
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+    Copyright 2016/2017/2018 Mohsan Khan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 
 
 final class SimpleButtonModel:UIPBaseCellModel
@@ -31,17 +26,17 @@ final class SimpleButtonModel:UIPBaseCellModel
     // MARK: Public Constants
     struct Key
     {
-        static let id:String = "id"
-        static let title:String = "title"
-        static let alignment:String = "alignment"
-        static let focus:String = "focus"
+        static let id = "id"
+        static let title = "title"
+        static let alignment = "alignment"
+        static let focus = "focus"
     }
 
     struct Alignment
     {
-        static let left:String = "left"
-        static let center:String = "center"
-        static let right:String = "right"
+        static let left = "left"
+        static let center = "center"
+        static let right = "right"
     }
 
     // MARK: Public Members
@@ -53,7 +48,7 @@ final class SimpleButtonModel:UIPBaseCellModel
     #endif
 
     #if os(tvOS)
-        public var pFocus:Bool = false
+        public var pFocus = false
     #endif
 
 
@@ -68,8 +63,8 @@ final class SimpleButtonModel:UIPBaseCellModel
 
     override func setContents(with dictionary:Dictionary<String, Any>)
     {
-        pId = dictionary[Key.id] as! Int
-        pTitle = dictionary[Key.title] as! String
+        pId = dictionary[Key.id] as? Int
+        pTitle = dictionary[Key.title] as? String
 
         #if os(macOS)
             pAlignment = (dictionary[Key.alignment] as? String) ?? Alignment.center    // fallback to default value
@@ -118,23 +113,22 @@ final class SimpleButtonModel:UIPBaseCellModel
     // MARK:- UIPBaseCellModel
 
 
-    override func toDictionary()
-    -> Dictionary<String, Any>
+    override func toDictionary() -> Dictionary<String, Any>
     {
-        var dict:Dictionary<String, Any> = Dictionary<String, Any>(minimumCapacity:2)
+        var dictionary = Dictionary<String, Any>(minimumCapacity:2)
 
-        dict[Key.id] = pId
-        dict[Key.title] = pTitle
+        dictionary[Key.id] = pId
+        dictionary[Key.title] = pTitle
 
         #if os(macOS)
-            dict[Key.alignment] = pAlignment
+            dictionary[Key.alignment] = pAlignment
         #endif
 
         #if os(tvOS)
-            dict[Key.focus] = pFocus
+            dictionary[Key.focus] = pFocus
         #endif
 
-        return dict
+        return dictionary
     }
 }
 

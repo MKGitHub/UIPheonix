@@ -1,29 +1,24 @@
-//
-//  UIPheonix
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
-//
+/**
+    UIPheonix
+    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 
-//
-//  https://github.com/MKGitHub/UIPheonix
-//  http://www.xybernic.com
-//  http://www.khanofsweden.com
-//
+    https://github.com/MKGitHub/UIPheonix
+    http://www.xybernic.com
 
-//
-//  Copyright 2016/2017 Mohsan Khan
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+    Copyright 2016/2017/2018 Mohsan Khan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 
 #if os(iOS) || os(tvOS)
     import UIKit
@@ -35,15 +30,15 @@
 final class SimpleButtonModelTVCell:UIPBaseTableViewCell
 {
     // MARK: Private IB Outlet
-    @IBOutlet fileprivate weak var ibButton:UIPPlatformButton!
+    @IBOutlet private weak var ibButton:UIPPlatformButton!
 
     #if os(macOS)
-        @IBOutlet fileprivate weak var ibCenterConstraint:NSLayoutConstraint!
+        @IBOutlet private weak var ibCenterConstraint:NSLayoutConstraint!
     #endif
 
     // MARK: Private Members
-    fileprivate weak var mDelegate:UIPButtonDelegate?
-    fileprivate var mButtonId:Int!
+    private weak var mDelegate:UIPButtonDelegate?
+    private var mButtonId:Int!
 
 
     // MARK:- UITableViewCell
@@ -67,10 +62,10 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
 
 
     #if os(iOS)
-        override var rowHeight:CGFloat { get { return UITableViewAutomaticDimension } }
+        override var rowHeight:CGFloat { get { return UITableView.automaticDimension } }
         override var estimatedRowHeight:CGFloat { get { return 44 } }    // return default IB design height
     #elseif os(tvOS)
-        override var rowHeight:CGFloat { get { return UITableViewAutomaticDimension } }
+        override var rowHeight:CGFloat { get { return UITableView.automaticDimension } }
         override var estimatedRowHeight:CGFloat { get { return 110 } }    // return default IB design height
     #elseif os(macOS)
         override var rowHeight:CGFloat { get { return 41 } }
@@ -78,7 +73,7 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
     #endif
 
 
-    override func update(with model:Any, delegate:Any, for indexPath:IndexPath)
+    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
     {
         // apply model to view
         let simpleButtonModel:SimpleButtonModel = model as! SimpleButtonModel
@@ -87,7 +82,7 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
             UIView.performWithoutAnimation(
             {
                 [weak self] in
-                self?.ibButton.setTitle(simpleButtonModel.pTitle, for:UIControlState())
+                self?.ibButton.setTitle(simpleButtonModel.pTitle, for:UIControl.State())
                 self?.ibButton.layoutIfNeeded()
             })
 
@@ -108,7 +103,7 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
 
     @IBAction func buttonAction(_ sender:AnyObject)
     {
-        mDelegate?.buttonAction(mButtonId)
+        mDelegate?.handleAction(forButtonId:mButtonId)
     }
 
 
@@ -116,7 +111,7 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
 
 
     #if os(macOS)
-        fileprivate func alignButton(with aligment:String)
+        private func alignButton(with aligment:String)
         {
             let buttonWidth:CGFloat = ibButton.bounds.size.width
             let cellViewHalfWidth:CGFloat = (self.bounds.size.width / 2)

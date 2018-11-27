@@ -1,17 +1,16 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
 [![Status](https://img.shields.io/badge/Status-Active_and_in_development-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
-[![Version](https://img.shields.io/badge/Version-2.2.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Carthage](https://img.shields.io/badge/carthage-2.2.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![SPM](https://img.shields.io/badge/SPM-2.2.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![CocoaPods](https://img.shields.io/badge/CocoaPods-removed-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Version](https://img.shields.io/badge/Version-2.3-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Carthage](https://img.shields.io/badge/carthage-2.3-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![SPM](https://img.shields.io/badge/SPM-2.3-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![CocoaPods](https://img.shields.io/badge/CocoaPods-🤬-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Swift](https://img.shields.io/badge/Swift_Version-4.0.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![RUIC Implementation Version](https://img.shields.io/badge/RUIC_Implementation_Version-2.1.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Swift](https://img.shields.io/badge/Swift_Version-4.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 
-★ Give this repo a star and help its development grow! ★
+🌟 Give this repo a star and help its development grow! 🌟
 
 
 ![UIPheonix Logo](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Banner.png)
@@ -54,6 +53,8 @@ You may find alternative solutions, and your milage may vary :-)
 
 * Model-View Relationships (dictionary) – A dictionary defining the relationship between model+view.
 
+<br/>
+
 
 Example RUICs
 ------
@@ -62,34 +63,32 @@ Making a RUIC is pretty simple as making a model+view.
 ![ExampleRUIC1](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Example1.png)
 ![ExampleRUIC1](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/Example2.png)
 
+<br/>
+
 
 What’s New?
 ------
-* Version 2 adds support for table view as well as many refactorings to make UIPheonix even easier to use.
-* Please run & read the simple code in the demo apps.
-* Version 2.2.0 adds support for Swift 4 and Xcode 9.
+* Version 2.3 updates for Swift 4.2.
 * Version 2.2.1 adds support for Swift 4 and Xcode 9.
+* Version 2.2.0 adds support for Swift 4 and Xcode 9.
+* Version 2 adds support for table view as well as many refactorings to make UIPheonix even easier to use.
 
 
 Requirements
 ------
-* Swift Version 4
-* Xcode 9
-* macOS 10.12 and later
-* iOS 10.0 and later
-* tvOS 10.0 and later
+* Swift Version 4.2
+* Xcode 10
 
 
 How to Install
 ------
-There is no framework/library distibution, I recommend that you add the UIPheonix/Sources|SingleFileSource to your project. As this will allow you to easily find & read the UIPheonix API, it will also allow UIPheonix to compile using your apps build settings. 
-* Git: run `git clone https://github.com/MKGitHub/UIPheonix.git` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
-* Manual: `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
-* Single File Install: All the UIPheonix source files have been merged into one single file for easy install, `Drag & Drop the SingleFileSource/UIPheonix_*_*_*.swift file into your Xcode project.`
-* Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.2.1` then `carthage update --no-build` then `Drag & Drop the UIPheonix/Sources|SingleFileSource into your Xcode project.`
-![Manual Install](https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/Images/ManualInstall.png)
-* Swift Package Manager (still quite meaningless): run `swift build` or `swift package generate-xcodeproj`
-* CocoaPods support has been removed! 🙌🙏🎉
+There is no framework/library distibution, I recommend that you simply add the `UIPheonix.swift` to your project. As this will allow you to easily find & read the UIPheonix API, and it will also allow UIPheonix to compile using your apps build settings. 
+
+* Using Git: `git clone https://github.com/MKGitHub/UIPheonix.git` then add `UIPheonix.swift` to your Xcode project.
+* Manual Way: Add `UIPheonix.swift` to your Xcode project.
+* Using Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.3` then `carthage update --no-build` then add `UIPheonix.swift` to your Xcode project.
+* Using Swift Package Manager: swift-tools-version:4.2
+* CocoaPods support has been removed! 🙌🙏🎉 Never use CocoaPods! 💀
 
 
 Documentation
@@ -97,18 +96,12 @@ Documentation
 Go to the documentation [index page](http://htmlpreview.github.io/?https://raw.githubusercontent.com/MKGitHub/UIPheonix/master/docs/index.html).
 
 
-Whats Next?
-------
-* Add more features.
-* Try to make everything even simpler.
-
-
 Used In Apps
 ------
-UIPheonix is used in production in the following apps/games (known to me), these apps are together used by many millions of users every day. Please let me know if you use UIPheonix.
+UIPheonix is used in production in the following apps/games (that I'm aware of), these apps are together used by millions of users. Please let me know if you use UIPheonix.
 
-* Hoppa
-* McDonald's: Sweden, Switzerland and more
+* McDonald's apps
+* Lånekoll
 
 
 Contributing
@@ -123,13 +116,11 @@ As UIPheonix may progress and evolve the "RUIC Implementation Version" will incr
 
 Notes
 ------
-   https://github.com/MKGitHub/UIPheonix
+https://github.com/MKGitHub/UIPheonix
+    
+http://www.xybernic.com
 
-   http://www.xybernic.com
+Copyright 2016/2017/2018 Mohsan Khan
 
-   http://www.khanofsweden.com
-
-   Copyright 2016/2017 Mohsan Khan
-
-   Licensed under the Apache License, Version 2.0.
+Licensed under the Apache License, Version 2.0
 

@@ -1,29 +1,24 @@
-//
-//  UIPheonix
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
-//
+/**
+    UIPheonix
+    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 
-//
-//  https://github.com/MKGitHub/UIPheonix
-//  http://www.xybernic.com
-//  http://www.khanofsweden.com
-//
+    https://github.com/MKGitHub/UIPheonix
+    http://www.xybernic.com
 
-//
-//  Copyright 2016/2017 Mohsan Khan
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+    Copyright 2016/2017/2018 Mohsan Khan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 
 #if os(iOS) || os(tvOS)
     import UIKit
@@ -35,12 +30,12 @@
 final class SimpleButtonModelCVCell:UIPBaseCollectionViewCell
 {
     // MARK: Private IB Outlet
-    @IBOutlet fileprivate weak var ibButton:UIPPlatformButton!
-    @IBOutlet fileprivate weak var ibCenterConstraint:NSLayoutConstraint!
+    @IBOutlet private weak var ibButton:UIPPlatformButton!
+    @IBOutlet private weak var ibCenterConstraint:NSLayoutConstraint!
 
     // MARK: Private Members
-    fileprivate weak var mDelegate:UIPButtonDelegate?
-    fileprivate var mButtonId:Int!
+    private weak var mDelegate:UIPButtonDelegate?
+    private var mButtonId:Int!
 
 
     // MARK:- UICollectionViewCell
@@ -63,8 +58,7 @@ final class SimpleButtonModelCVCell:UIPBaseCollectionViewCell
     // MARK:- UIPBaseCollectionViewCell/UIPBaseCollectionViewCellProtocol
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
-    -> UIPCellSize
+    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleButtonModel:SimpleButtonModel = model as! SimpleButtonModel
@@ -73,7 +67,7 @@ final class SimpleButtonModelCVCell:UIPBaseCollectionViewCell
             UIView.performWithoutAnimation(
             {
                 [weak self] in
-                self?.ibButton.setTitle(simpleButtonModel.pTitle, for:UIControlState())
+                self?.ibButton.setTitle(simpleButtonModel.pTitle, for:UIControl.State())
                 self?.ibButton.layoutIfNeeded()
             })
         #elseif os(macOS)
@@ -103,7 +97,7 @@ final class SimpleButtonModelCVCell:UIPBaseCollectionViewCell
 
     @IBAction func buttonAction(_ sender:AnyObject)
     {
-        mDelegate?.buttonAction(mButtonId)
+        mDelegate?.handleAction(forButtonId:mButtonId)
     }
 
 
@@ -111,7 +105,7 @@ final class SimpleButtonModelCVCell:UIPBaseCollectionViewCell
 
 
     #if os(macOS)
-        fileprivate func alignButton(with aligment:String)
+        private func alignButton(with aligment:String)
         {
             let buttonWidth:CGFloat = ibButton.bounds.size.width
             let cellViewHalfWidth:CGFloat = (self.view.bounds.size.width / 2)

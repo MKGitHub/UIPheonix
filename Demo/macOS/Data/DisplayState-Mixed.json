@@ -9,7 +9,7 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"  Just a label.",
             "--size--":0,
             "--alignment--":"",
@@ -17,7 +17,7 @@
             "backgroundColorHue":0.25
         },
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"Just a 🤗\nmultiline label, right aligned, small font 😏",
             "size":11,
             "alignment":"right",
@@ -25,11 +25,11 @@
             "backgroundColorHue":0.50
         },
         {
-            "type":"SimpleVerticalSpaceModel",
+            "appearance":"SimpleVerticalSpaceModel",
             "size":10
         },
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"I'm so centered & bold!\nAnd I have vertical space above & below me.",
             "--size--":0,
             "alignment":"center",
@@ -37,11 +37,11 @@
             "backgroundColorHue":0.80
         },
         {
-            "type":"SimpleVerticalSpaceModel",
+            "appearance":"SimpleVerticalSpaceModel",
             "size":10
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":0,
             "title":"Go back…",
             "alignment":"right"

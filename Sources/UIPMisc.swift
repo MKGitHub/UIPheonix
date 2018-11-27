@@ -1,33 +1,24 @@
-//----------------------------------------------------------------------------------------------------
-// MARK:- UIPMisc.swift
-// MARK:-
-//----------------------------------------------------------------------------------------------------
-//
-//  UIPheonix
-//  Copyright © 2016/2017 Mohsan Khan. All rights reserved.
-//
+/**
+    UIPheonix
+    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
 
-//
-//  https://github.com/MKGitHub/UIPheonix
-//  http://www.xybernic.com
-//  http://www.khanofsweden.com
-//
+    https://github.com/MKGitHub/UIPheonix
+    http://www.xybernic.com
 
-//
-//  Copyright 2016/2017 Mohsan Khan
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
-//
+    Copyright 2016/2017/2018 Mohsan Khan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 
 import CoreGraphics
 
@@ -38,47 +29,43 @@ import CoreGraphics
 #endif
 
 
-// MARK:- Constants
+// MARK: - Constants
 
 
-///
-/// Internal framework constants.
-///
+/**
+    Internal framework constants.
+*/
 struct UIPConstants
 {
-    static let modelType:String = "type"
+    static let modelAppearance = "appearance"
 
     struct Collection
     {
-        static let modelViewRelationships:String = "UIPCVModelViewRelationships"
-        static let cellModels:String = "UIPCVCellModels"
+        static let modelViewRelationships = "UIPCVModelViewRelationships"
+        static let cellModels = "UIPCVCellModels"
     }
 }
 
 
-// MARK:- Return Types
+// MARK: - Return Types
 
 
-///
-/// `absoluteWidth` & `absoluteHeight`:
-/// - true = use the size as it is provided
-/// - false = the size is relative and should be added/subtracted to the original size
-///
+/**
+    `absoluteWidth` & `absoluteHeight`:
+    - true = use the size as it is provided
+    - false = the size is relative and should be added/subtracted to the original size
+*/
 typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool, height:CGFloat)
 
-///
-/// Convenient variable for providing an unmodified cell size.
-///
+/**
+    Convenient variable for providing an unmodified cell size.
+*/
 var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHeight:false, height:0)
 
 
-// MARK:- Cross Platform Types
+// MARK: - Cross Platform Types
 
 
-///
-/// Because Apple fails to keep it consistent!
-/// UXKit any time soon?
-///
 #if os(iOS) || os(tvOS)
     typealias UIPPlatformFloat = Float
     typealias UIPPlatformRect = CGRect
@@ -114,22 +101,22 @@ var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHe
 #endif
 
 
-// MARK:- Cross Platform
+// MARK: - Cross Platform
 
 
 extension CGFloat
 {
-    ///
-    /// Convenient function to handle values cross platform.
-    ///
-    /// - Parameters:
-    ///   - mac: The macOS value.
-    ///   - mobile: The iOS iPhone/iPod/iPad value.
-    ///   - tv: The tvOS value.
-    /// - Returns: The value which matches the current running platform.
-    ///
-    static func valueForPlatform(mac:CGFloat, mobile:CGFloat, tv:CGFloat)
-    -> CGFloat
+    /**
+        Convenient function to handle values cross platform.
+
+        - Parameters:
+            - mac: The macOS value.
+            - mobile: The iOS iPhone/iPod/iPad value.
+            - tv: The tvOS value.
+
+        - Returns: The value which matches the current running platform.
+    */
+    static func valueForPlatform(mac:CGFloat, mobile:CGFloat, tv:CGFloat) -> CGFloat
     {
         #if os(iOS)
             return mobile

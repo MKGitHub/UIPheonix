@@ -8,7 +8,7 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleLabelModel",
+            "appearance":"SimpleLabelModel",
             "text":"EXAMPLES",
             "size":50,
             "alignment":"center",
@@ -16,38 +16,38 @@
             "backgroundColorHue":0.25
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":100,
             "title":"Mixed models/views in a display state",
             "focus":true
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":101,
             "title":"Animation example"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":102,
             "title":"Switching between different display states"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":1030,
             "title":"Appending models/views to same display state"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":1040,
             "title":"Persistent models"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":105,
             "title":"Update specific model & view"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":106,
             "title":"Custom made models"
         }

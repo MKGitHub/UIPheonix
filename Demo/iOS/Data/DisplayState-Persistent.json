@@ -8,11 +8,11 @@
     "UIPCVCellModels":
     [
         {
-            "type":"SimpleTextFieldModel",
+            "appearance":"SimpleTextFieldModel",
             "text":"Some text in me, you will enter…"
         },
         {
-            "type":"SimpleButtonModel",
+            "appearance":"SimpleButtonModel",
             "id":1041,
             "title":"Go back, but persist data…"
         }
