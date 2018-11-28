@@ -1,166 +1,173 @@
 {
   "warnings": [
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 29,
       "symbol": "UIPBaseCellModel",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 41,
       "symbol": "UIPBaseCellModel.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 111,
       "symbol": "UIPBaseCellModelProtocol.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 627,
       "symbol": "UIPBaseViewController.newInstanceAttributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
+      "line": 630,
+      "symbol": "UIPBaseViewController.parentVC",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 761,
       "symbol": "UIPConstants.modelAppearance",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 763,
       "symbol": "UIPConstants.Collection",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 765,
       "symbol": "UIPConstants.Collection.modelViewRelationships",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 766,
       "symbol": "UIPConstants.Collection.cellModels",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 807,
       "symbol": "UIPPlatformFloat",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 808,
       "symbol": "UIPPlatformRect",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 809,
       "symbol": "UIPPlatformImage",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 810,
       "symbol": "UIPPlatformColor",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 811,
       "symbol": "UIPPlatformFont",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 812,
       "symbol": "UIPPlatformView",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 813,
       "symbol": "UIPPlatformImageView",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 814,
       "symbol": "UIPPlatformTextField",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 815,
       "symbol": "UIPPlatformLabel",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 816,
       "symbol": "UIPPlatformButton",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 817,
       "symbol": "UIPPlatformCollectionViewCell",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 818,
       "symbol": "UIPPlatformTableViewCell",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 819,
       "symbol": "UIPPlatformCollectionView",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 820,
       "symbol": "UIPPlatformTableView",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/mk/Desktop/qqq/Sources/UIPheonix/UIPheonix.swift",
+      "file": "/Users/mk/Desktop/ddd/Sources/UIPheonix/UIPheonix.swift",
       "line": 821,
       "symbol": "UIPPlatformViewController",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/mk/Desktop/qqq"
+  "source_directory": "/Users/mk/Desktop/ddd"
 }

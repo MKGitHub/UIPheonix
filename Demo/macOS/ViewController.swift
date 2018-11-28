@@ -42,9 +42,9 @@ final class ViewController:NSViewController
 
             // start the UIPheonix macOS demo
             // create & present a new instance of the demo VC
-            let demoVC = DemoCollectionViewController.makeViewController(attributes:attributes, parent:nil)
+            let demoVC = DemoCollectionViewController.makeViewController(attributes:attributes, parentVC:nil)
             // or
-            //let demoVC = DemoTableViewController.makeViewController(attributes:[:], parent:nil)
+            //let demoVC = DemoTableViewController.makeViewController(attributes:[:], parentVC:nil)
 
             // present using a custom view controller presentation animator
             self.present(demoVC, animator:CustomViewControllerPresentationAnimator())

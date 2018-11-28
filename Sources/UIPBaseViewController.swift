@@ -80,8 +80,8 @@ protocol UIPBaseViewControllerProtocol:class
         // MARK: Public Member
         var newInstanceAttributes = Dictionary<String, Any>()
 
-        // MARK: Private Weak Reference
-        private weak var parentVC:UIPBaseViewController?
+        // MARK: Public Weak Reference
+        weak var parentVC:UIPBaseViewController?
 
 
         // MARK: Life Cycle
@@ -94,7 +94,7 @@ protocol UIPBaseViewControllerProtocol:class
             with attributes
             and a parent view controller for sending attributes back.
         */
-        class func makeViewController<T:UIPBaseViewController>(attributes:Dictionary<String, Any>, parent:UIPBaseViewController?) -> T
+        class func makeViewController<T:UIPBaseViewController>(attributes:Dictionary<String, Any>, parentVC:UIPBaseViewController?) -> T
         {
             // with nib
             guard let vc:T = self.init(nibName:"\(self)", bundle:nil) as? T else
@@ -104,7 +104,7 @@ protocol UIPBaseViewControllerProtocol:class
 
             // init members
             vc.newInstanceAttributes = attributes
-            vc.parentVC = parent
+            vc.parentVC = parentVC
 
             return vc 
         }
@@ -188,8 +188,8 @@ protocol UIPBaseViewControllerProtocol:class
         // MARK: Public Member
         var newInstanceAttributes = Dictionary<String, Any>()
 
-        // MARK: Private Weak Reference
-        private weak var parentVC:UIPBaseViewController?
+        // MARK: Public Weak Reference
+        weak var parentVC:UIPBaseViewController?
 
 
         // MARK: Life Cycle
@@ -202,7 +202,7 @@ protocol UIPBaseViewControllerProtocol:class
             with attributes
             and a parent view controller for sending attributes back.
         */
-        class func makeViewController<T:UIPBaseViewController>(attributes:Dictionary<String, Any>, parent:UIPBaseViewController?) -> T
+        class func makeViewController<T:UIPBaseViewController>(attributes:Dictionary<String, Any>, parentVC:UIPBaseViewController?) -> T
         {
             // with nib
             guard let vc:T = self.init(nibName:NSNib.Name("\(self)"), bundle:nil) as? T else
@@ -212,7 +212,7 @@ protocol UIPBaseViewControllerProtocol:class
 
             // init members
             vc.newInstanceAttributes = attributes
-            vc.parentVC = parent
+            vc.parentVC = parentVC
 
             return vc
         }
