@@ -20,8 +20,13 @@
     limitations under the License.
 */
 
-import Foundation
 import CoreGraphics
+
+#if os(iOS) || os(tvOS)
+    import UIKit
+#elseif os(macOS)
+    import Cocoa
+#endif
 
 
 /**
@@ -49,8 +54,11 @@ protocol UIPBaseTableViewCellProtocol:class
         - Parameters:
             - model: The model to update the cell view with.
             - delegate: The delegate, if any actions are required to handle.
+            - tableView: The associated table view.
             - indexPath: Index path of the cell view.
+
+        - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
     */
-    func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
+    func update(withModel model:Any, delegate:Any, tableView:UIPPlatformTableView, indexPath:IndexPath) -> UIPCellSize
 }
 

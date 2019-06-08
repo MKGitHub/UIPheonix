@@ -48,7 +48,7 @@ final class SimpleLabelModelTVCell:UIPBaseTableViewCell
     #endif
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
+    override func update(withModel model:Any, delegate:Any, tableView:UIPPlatformTableView, indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleLabelModel2 = model as! SimpleLabelModel2
@@ -64,6 +64,8 @@ final class SimpleLabelModelTVCell:UIPBaseTableViewCell
         #elseif os(macOS)
             self.layer?.backgroundColor = UIPPlatformColor(hue:simpleLabelModel2.pBackgroundColorHue, saturation:0.5, brightness:1, alpha:1).cgColor
         #endif
+
+        return UIPCellSizeUnmodified
     }
 }
 

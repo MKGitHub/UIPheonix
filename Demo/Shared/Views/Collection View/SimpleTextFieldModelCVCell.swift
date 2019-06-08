@@ -48,7 +48,7 @@ final class SimpleTextFieldModelCVCell:UIPBaseCollectionViewCell
     // MARK:- UIPBaseCollectionViewCell/UIPBaseCollectionViewCellProtocol
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
+    override func update(withModel model:Any, delegate:Any, collectionView:UIPPlatformCollectionView, indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleTextFieldModel:SimpleTextFieldModel = model as! SimpleTextFieldModel
@@ -63,7 +63,8 @@ final class SimpleTextFieldModelCVCell:UIPBaseCollectionViewCell
         mSimpleTextFieldModelReference = model as? SimpleTextFieldModel
 
         // return view size
-        return UIPCellSizeUnmodified
+        return UIPCellSize(replaceWidth:true, width:collectionView.bounds.size.width,
+                           replaceHeight:false, height:0)
     }
 
 

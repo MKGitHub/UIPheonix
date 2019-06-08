@@ -51,16 +51,16 @@ struct UIPConstants
 
 
 /**
-    `absoluteWidth` & `absoluteHeight`:
+    `replaceWidth` & `replaceHeight`:
     - true = use the size as it is provided
     - false = the size is relative and should be added/subtracted to the original size
 */
-typealias UIPCellSize = (absoluteWidth:Bool, width:CGFloat, absoluteHeight:Bool, height:CGFloat)
+typealias UIPCellSize = (replaceWidth:Bool, width:CGFloat, replaceHeight:Bool, height:CGFloat)
 
 /**
     Convenient variable for providing an unmodified cell size.
 */
-var UIPCellSizeUnmodified = UIPCellSize(absoluteWidth:false, width:0, absoluteHeight:false, height:0)
+var UIPCellSizeUnmodified = UIPCellSize(replaceWidth:false, width:0, replaceHeight:false, height:0)
 
 
 // MARK: - Cross Platform Types

@@ -38,14 +38,20 @@ final class SimpleVerticalSpaceModelCVCell:UIPBaseCollectionViewCell
     // MARK:- UIPBaseCollectionViewCell/UIPBaseCollectionViewCellProtocol
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
+    override func update(withModel model:Any, delegate:Any, collectionView:UIPPlatformCollectionView, indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleVerticalSpaceModel = model as! SimpleVerticalSpaceModel
 
+        #if os(iOS) || os(tvOS)
+            backgroundColor = UIPPlatformColor.lightGray
+        #elseif os(macOS)
+            view.layer?.backgroundColor = UIPPlatformColor.lightGray.cgColor
+        #endif
+
         // return view size
-        return UIPCellSize(absoluteWidth:false, width:0,
-                           absoluteHeight:true, height:simpleVerticalSpaceModel.pSize)
+        return UIPCellSize(replaceWidth:true, width:(collectionView.bounds.size.width-20),
+                           replaceHeight:true, height:simpleVerticalSpaceModel.pSize)
     }
 }
 

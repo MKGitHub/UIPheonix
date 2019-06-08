@@ -1,13 +1,13 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
 [![Status](https://img.shields.io/badge/Status-Active_and_in_development-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
-[![Version](https://img.shields.io/badge/Version-2.3-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Carthage](https://img.shields.io/badge/carthage-2.3-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![SPM](https://img.shields.io/badge/SPM-2.3-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Version](https://img.shields.io/badge/Version-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Carthage](https://img.shields.io/badge/carthage-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![SPM](https://img.shields.io/badge/SPM-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![CocoaPods](https://img.shields.io/badge/CocoaPods-🤬-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Swift](https://img.shields.io/badge/Swift_Version-4.2-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Swift](https://img.shields.io/badge/Swift_Version-5-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 
 🌟 Give this repo a star and help its development grow! 🌟
@@ -68,6 +68,7 @@ Making a RUIC is pretty simple as making a model+view.
 
 What’s New?
 ------
+* Version 3.0 updates with new API and support for Swift 5.x.x.
 * Version 2.3 updates for Swift 4.2.
 * Version 2.2.1 adds support for Swift 4 and Xcode 9.
 * Version 2.2.0 adds support for Swift 4 and Xcode 9.
@@ -76,7 +77,7 @@ What’s New?
 
 Requirements
 ------
-* Swift Version 4.2
+* Swift Version 5
 * Xcode 10
 
 
@@ -86,7 +87,7 @@ There is no framework/library distibution, I recommend that you simply add the `
 
 * Using Git: `git clone https://github.com/MKGitHub/UIPheonix.git` then add `UIPheonix.swift` to your Xcode project.
 * Manual Way: Add `UIPheonix.swift` to your Xcode project.
-* Using Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 2.3` then `carthage update --no-build` then add `UIPheonix.swift` to your Xcode project.
+* Using Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 3.0` then `carthage update --no-build` then add `UIPheonix.swift` to your Xcode project.
 * Using Swift Package Manager: swift-tools-version:4.2
 * CocoaPods support has been removed! 🙌🙏🎉 Never use CocoaPods! 💀
 

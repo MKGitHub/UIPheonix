@@ -132,10 +132,7 @@ final class DemoCollectionViewController:UIPBaseViewController, UIPButtonDelegat
 
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
-        // default: full width, no margins
-        let defaultCellWidth:CGFloat = collectionView.bounds.size.width - 0 - 0
-
-        return mUIPheonix.collectionViewCellSize(forIndexPath:indexPath, preferredWidth:defaultCellWidth)
+        return mUIPheonix.collectionViewCellSize(forIndexPath:indexPath)
     }
 
 

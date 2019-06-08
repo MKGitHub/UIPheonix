@@ -20,8 +20,13 @@
     limitations under the License.
 */
 
-import Foundation
 import CoreGraphics
+
+#if os(iOS) || os(tvOS)
+    import UIKit
+#elseif os(macOS)
+    import Cocoa
+#endif
 
 
 /**
@@ -43,10 +48,11 @@ protocol UIPBaseCollectionViewCellProtocol:class
         - Parameters:
             - model: The model to update the cell view with.
             - delegate: The delegate, if any actions are required to handle.
+            - collectionView: The associated collection view.
             - indexPath: Index path of the cell view.
 
         - Returns: The size of the cell view, if you need to modify it. Else return `UIPCellSizeUnmodified`.
     */
-    func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
+    func update(withModel model:Any, delegate:Any, collectionView:UIPPlatformCollectionView, indexPath:IndexPath) -> UIPCellSize
 }
 

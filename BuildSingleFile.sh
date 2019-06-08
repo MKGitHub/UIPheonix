@@ -5,7 +5,7 @@
 
 cat Sources/*.swift > SingleFileSource/UIPheonix.swift
 
-echo "// UIPheonix 2.3" > /tmp/UIPheonix_temp
+echo "// UIPheonix 3.0" > /tmp/UIPheonix_temp
 echo "" >> /tmp/UIPheonix_temp
 cat SingleFileSource/UIPheonix.swift >> /tmp/UIPheonix_temp
 cp /tmp/UIPheonix_temp SingleFileSource/UIPheonix.swift

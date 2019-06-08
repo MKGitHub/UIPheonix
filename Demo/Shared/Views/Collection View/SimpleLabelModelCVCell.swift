@@ -52,7 +52,7 @@ final class SimpleLabelModelCVCell:UIPBaseCollectionViewCell
     // MARK:- UIPBaseCollectionViewCell/UIPBaseCollectionViewCellProtocol
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath) -> UIPCellSize
+    override func update(withModel model:Any, delegate:Any, collectionView:UIPPlatformCollectionView, indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleLabelModel:SimpleLabelModel = model as! SimpleLabelModel
@@ -90,8 +90,8 @@ final class SimpleLabelModelCVCell:UIPBaseCollectionViewCell
         #endif
 
         // return view size
-        return UIPCellSize(absoluteWidth:false, width:-20,
-                           absoluteHeight:false, height:0)
+        return UIPCellSize(replaceWidth:true, width:collectionView.bounds.size.width-20,
+                           replaceHeight:false, height:0)
     }
 
 

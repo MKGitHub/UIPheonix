@@ -362,15 +362,15 @@
 			isa = PBXGroup;
 			children = (
 				4D3814531E339D610098A0F2 /* UIPheonix.swift */,
-				4D3814541E339D610098A0F2 /* UIPMisc.swift */,
 				4D3814521E339D610098A0F2 /* UIPDelegates.swift */,
 				4D3814511E339D610098A0F2 /* UIPBaseViewController.swift */,
-				4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */,
+				4D3814541E339D610098A0F2 /* UIPMisc.swift */,
 				4D38144B1E339D610098A0F2 /* UIPBaseCellModel.swift */,
-				4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */,
+				4D38144C1E339D610098A0F2 /* UIPBaseCellModelProtocol.swift */,
 				4D38144D1E339D610098A0F2 /* UIPBaseCollectionViewCell.swift */,
-				4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */,
+				4D38144E1E339D610098A0F2 /* UIPBaseCollectionViewCellProtocol.swift */,
 				4D38144F1E339D610098A0F2 /* UIPBaseTableViewCell.swift */,
+				4D3814501E339D610098A0F2 /* UIPBaseTableViewCellProtocol.swift */,
 			);
 			name = Sources;
 			path = ../Sources;
@@ -707,6 +707,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

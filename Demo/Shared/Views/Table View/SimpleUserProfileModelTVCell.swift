@@ -49,7 +49,7 @@ final class SimpleUserProfileModelTVCell:UIPBaseTableViewCell
     #endif
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
+    override func update(withModel model:Any, delegate:Any, tableView:UIPPlatformTableView, indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleUserProfileModel = model as! SimpleUserProfileModel
@@ -65,6 +65,8 @@ final class SimpleUserProfileModelTVCell:UIPBaseTableViewCell
             //let s:NSSize = ibDescriptionLabel.sizeThatFits(NSSize(width:ibDescriptionLabel.bounds.size.width, height:CGFloat.greatestFiniteMagnitude))
             //Swift.print(s, ibDescriptionLabel.bounds)
         #endif
+
+        return UIPCellSizeUnmodified
     }
 }
 

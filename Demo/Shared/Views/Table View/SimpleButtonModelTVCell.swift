@@ -73,7 +73,7 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
     #endif
 
 
-    override func update(withModel model:Any, delegate:Any, forIndexPath indexPath:IndexPath)
+    override func update(withModel model:Any, delegate:Any, tableView:UIPPlatformTableView, indexPath:IndexPath) -> UIPCellSize
     {
         // apply model to view
         let simpleButtonModel:SimpleButtonModel = model as! SimpleButtonModel
@@ -95,6 +95,8 @@ final class SimpleButtonModelTVCell:UIPBaseTableViewCell
         // view delegate handling
         mDelegate = delegate as? UIPButtonDelegate
         mButtonId = simpleButtonModel.pId
+
+        return UIPCellSizeUnmodified
     }
 
 
