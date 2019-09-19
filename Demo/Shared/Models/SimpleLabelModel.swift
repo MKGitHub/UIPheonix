@@ -1,11 +1,11 @@
 /**
     UIPheonix
-    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
+    Copyright © 2016/2017/2018/2019 Mohsan Khan. All rights reserved.
 
     https://github.com/MKGitHub/UIPheonix
     http://www.xybernic.com
 
-    Copyright 2016/2017/2018 Mohsan Khan
+    Copyright 2016/2017/2018/2019 Mohsan Khan
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -117,11 +117,11 @@ final class SimpleLabelModel:UIPBaseCellModel
     override func toDictionary() -> Dictionary<String, Any>
     {
         return [
-            Key.text:pText,
-            Key.size:pSize,
-            Key.alignment:pAlignment,
+            Key.text:pText ?? "",
+            Key.size:pSize ?? "",
+            Key.alignment:pAlignment ?? "",
             Key.backgroundColorHue:CGFloat(pBackgroundColorHue),
-            Key.notificationId:pNotificationId
+            Key.notificationId:pNotificationId ?? ""
         ]
     }
 }

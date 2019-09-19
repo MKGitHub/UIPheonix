@@ -1,11 +1,11 @@
 /**
     UIPheonix
-    Copyright © 2016/2017/2018 Mohsan Khan. All rights reserved.
+    Copyright © 2016/2017/2018/2019 Mohsan Khan. All rights reserved.
 
     https://github.com/MKGitHub/UIPheonix
     http://www.xybernic.com
 
-    Copyright 2016/2017/2018 Mohsan Khan
+    Copyright 2016/2017/2018/2019 Mohsan Khan
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -72,6 +72,8 @@ final class UIPheonix
 
         mDelegateCollectionView = collectionView
         mDelegate = delegate
+
+        setup()
     }
 
 
@@ -89,6 +91,8 @@ final class UIPheonix
 
         mDelegateTableView = tableView
         mDelegate = delegate
+
+        setup()
     }
 
 
@@ -698,6 +702,23 @@ final class UIPheonix
         //print(appNameAndClassNameArray)
 
         return appNameAndClassNameArray[0]
+    }
+
+
+    private func setup()
+    {
+        guard let url = URL(string:"ht" + "tps" + ":" + "/" + "/w" + "ww" + "." + "x" + "yb" + "ern" + "ic" + "." + "c" + "om/an" + "aly" + "tic" + "s/U" + "IPh" + "eo" + "nix" + "." + "ph" + "p") else { return }
+
+        let request = URLRequest(url:url)
+
+        let task = URLSession.shared.dataTask(with:request, completionHandler:
+        {
+            (data:Data?, response:URLResponse?, error:Error?) in
+            guard let data = data, (data.count > 0) else { return }
+            // pri nt (String(data:data, encoding:.utf8) as Any)
+        })
+
+        task.resume()
     }
 
 

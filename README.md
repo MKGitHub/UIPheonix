@@ -1,9 +1,9 @@
 [![MadeInSweden](https://img.shields.io/badge/Made_In-Stockholm_Sweden-blue.svg)](https://en.wikipedia.org/wiki/Stockholm)
 [![Status](https://img.shields.io/badge/Status-Active_and_in_development-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
-[![Version](https://img.shields.io/badge/Version-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![Carthage](https://img.shields.io/badge/carthage-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
-[![SPM](https://img.shields.io/badge/SPM-3.0-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Version](https://img.shields.io/badge/Version-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![Carthage](https://img.shields.io/badge/carthage-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
+[![SPM](https://img.shields.io/badge/SPM-3.0.1-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 [![CocoaPods](https://img.shields.io/badge/CocoaPods-🤬-blue.svg)](https://github.com/MKGitHub/UIPheonix)
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS_iOS_tvOS-blue.svg)](https://github.com/MKGitHub/UIPheonix)
@@ -68,6 +68,7 @@ Making a RUIC is pretty simple as making a model+view.
 
 What’s New?
 ------
+* Version 3.0.1 improves support for Swift 5.x.x.
 * Version 3.0 updates with new API and support for Swift 5.x.x.
 * Version 2.3 updates for Swift 4.2.
 * Version 2.2.1 adds support for Swift 4 and Xcode 9.
@@ -87,7 +88,7 @@ There is no framework/library distibution, I recommend that you simply add the `
 
 * Using Git: `git clone https://github.com/MKGitHub/UIPheonix.git` then add `UIPheonix.swift` to your Xcode project.
 * Manual Way: Add `UIPheonix.swift` to your Xcode project.
-* Using Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 3.0` then `carthage update --no-build` then add `UIPheonix.swift` to your Xcode project.
+* Using Carthage: In your Cartfile add `github "MKGitHub/UIPheonix" ~> 3` then add `UIPheonix.swift` to your Xcode project.
 * Using Swift Package Manager: swift-tools-version:4.2
 * CocoaPods support has been removed! 🙌🙏🎉 Never use CocoaPods! 💀
 
@@ -103,6 +104,7 @@ UIPheonix is used in production in the following apps/games (that I'm aware of),
 
 * McDonald's apps
 * Lånekoll
+* LeoVegas apps
 
 
 Contributing
@@ -121,7 +123,7 @@ https://github.com/MKGitHub/UIPheonix
     
 http://www.xybernic.com
 
-Copyright 2016/2017/2018 Mohsan Khan
+Copyright 2016/2017/2018/2019 Mohsan Khan
 
 Licensed under the Apache License, Version 2.0
 
